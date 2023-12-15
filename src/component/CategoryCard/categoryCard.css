@@ -1,0 +1,23 @@
+.categoryCard{
+    height:13.5rem;
+    min-width:8.5rem;
+    gap:15px;
+    cursor: pointer;
+    /* outline:1px solid red; */
+}
+.cardImage{
+    height:90%;
+    width:100%;
+}
+.cardImage img{
+    height: 100%;
+    width: 100%;
+}
+.cardText{
+    font-size:11.5px;
+    font-family: montserrat,sans-serif;
+    font-weight: 700;
+    letter-spacing: .18px;
+    margin-top: 8px;
+    text-align: center;
+}

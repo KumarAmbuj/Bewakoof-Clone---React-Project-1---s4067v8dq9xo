@@ -1,0 +1,98 @@
+.cartSingleMainContainer{
+    width:100%;
+    border: 1px solid rgb(207, 204, 204);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.cartSingleComponentContainer{
+    width:100%;
+    /* height:300px; */
+    /* outline: 1px solid red; */
+    padding:15px 20px;
+    
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.cartSingleComponentContainer .cartImage{
+    height: 140px;
+    width:110px;
+    /* outline:1px solid red; */
+    border-radius: 5px;
+}
+.cartSingleComponentContainer .cartImage img{
+    height: 100%;
+    width:100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.cartDetailName{
+    font-family: montserrat-regular,sans-serif!important;
+    font-size: 14px!important;
+    line-height: 15px!important;
+    line-height: normal;
+    color: rgba(0,0,0,.7);
+}
+.cartDetailPrice{
+    margin-top: 10px;
+}
+.actualPrice{
+    font-family: montserrat-bold,sans-serif;
+    font-size: 18px;
+    margin-right: -3px;
+    font-weight: 700;
+}
+.deletedPrice{
+    color: #9c9c9c;
+    font-size: 14px
+}
+.youSaved{
+    margin-top: 8px;
+    font-size: 14px;
+    color: #1d8802;
+    padding: 3px 0 10px;
+    font-family: montserrat,sans-serif
+}
+.sizeAndQuantity{
+    margin-top: 15px;
+    display: flex;
+    font-size: 12px;
+    gap:20px;
+}
+.sizeAndQuantity select{
+    outline: none;
+    border: none;
+   
+}
+.sizeAndQuantity option{
+    font-size: 14px;
+    font-weight: 500;
+    
+    
+
+}
+.selectOption{
+    border:1px solid rgb(196, 192, 192);
+    padding:5px 5px;
+    border-radius: 4px;
+}
+.borderLine{
+    margin-top: 80px;
+    width:80%;
+    border:1px solid rgb(235, 233, 233);
+    margin: auto;
+}
+
+.removeMoveListButton{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.removeMoveListButton button{
+    cursor: pointer;
+    background-color: white;
+    color: rgba(0,0,0,.5);
+    font-size: 14px;
+    border: none;
+}

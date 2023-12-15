@@ -1,0 +1,14 @@
+.size{
+    height:47px;
+    width:47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: white;
+}
+.size span{
+    font-size: 14px;
+    color: grey;
+}

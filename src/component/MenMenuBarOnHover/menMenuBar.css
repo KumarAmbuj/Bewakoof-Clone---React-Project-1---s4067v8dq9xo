@@ -1,0 +1,78 @@
+.menMenuBar{
+    /* height: 500px; */
+    width: 85%;
+    /* outline: 1px solid red; */
+    z-index: 7;
+    position: fixed;
+    top:40px;
+    height: 100%;
+    overflow-y: scroll;
+    
+    background-color: white;
+    margin-left: 7%;
+    padding-bottom: 100px;
+}
+
+.hoverContainer{
+    margin-top: 80px;
+    display: flex;
+}
+.hoverChild1{
+    width:60%;
+    height: 200px;
+    /* outline: 1px solid black; */
+    display: flex;
+    /* border-right: 1px solid grey; */
+
+}
+.hoverChild2{
+    width:40%;
+    height: 200px;
+    /* outline: 1px solid black; */
+   
+    display: flex;
+    gap:5px;
+    flex-direction: column;
+    margin-left: 4%;
+}
+
+.hoverChild11{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    
+    gap:13px;
+    padding-left: 8%;
+}
+.hoverChild12{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    gap:13px;
+    padding-left: 8%;
+}
+
+.hoverChild13{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    gap:13px;
+    padding-left: 8%;
+}
+.hoverMenuHeader{
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #494949;
+    font-family: montserrat,sans-serif
+}
+.hoverMenuItem{
+    color: #7f7f7f;
+    font-size: 13px;
+    font-family: montserrat-regular,sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+.hoverMenuItem:hover{
+    text-decoration: underline;
+}

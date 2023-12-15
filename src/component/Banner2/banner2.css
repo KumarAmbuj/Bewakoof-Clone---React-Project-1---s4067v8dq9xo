@@ -1,0 +1,22 @@
+.bannerText{
+    padding-top: 5px;
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    
+    
+
+}
+.bannerImage{
+    display: flex;
+    width: 100%;
+    
+    
+}
+.bannerImage img{
+    object-fit: contain;
+    width: 50%;
+}

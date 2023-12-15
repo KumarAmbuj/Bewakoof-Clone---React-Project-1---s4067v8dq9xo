@@ -1,0 +1,38 @@
+.miniNavbar{
+    display: none;
+}
+@media only screen and (max-width: 990px) {
+    .miniNavbar {
+      display: flex;
+      height: 50px;
+      width:100%;
+      /* outline: 1px solid red; */
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 20px;
+      padding-top: 7px;
+      position: fixed;
+      width: 100%;
+      top:0;
+      background-color: white;
+      box-shadow: 1px 1px 1px grey;
+      z-index: 4;
+    }
+    .miniLogo{
+        display: flex;
+    }
+    .miniLogo .logo img{
+        height: 18px;
+        width:40px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+    .iconMenuOption{
+        margin-right: 40px;
+        display: flex;
+        gap:18px;
+        font-size: 20px;
+        
+        color: grey;
+    }
+  }

@@ -1,0 +1,27 @@
+.accordionCategory{
+    display: flex;
+    width: 100%;
+    
+    padding: 17px  7px 4px 30px;
+    
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.arrow{
+    
+   
+    font-size: 24px;
+    font-weight: 100;
+}
+.borderLine{
+    width: 90%;
+    border: 1px solid rgb(228, 224, 224);
+}
+.categoryType{
+    font-family: montserrat,sans-serif;
+    font-size: 14px;
+    color:#333;
+    cursor: pointer;
+
+}

@@ -1,0 +1,16 @@
+.trendingCard{
+    max-width: 17rem;
+    max-height: 21rem;
+    cursor: pointer;
+    /* outline: 1px solid red; */
+}
+
+.trendingImage{
+    height: 100%;
+    width: 100%;
+}
+.trendingImage img{
+    height: 100%;
+    width: 100%;
+    object-fit:fill;
+}

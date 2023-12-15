@@ -1,0 +1,37 @@
+.categories{
+    /* outline: 1px solid red; */
+    height:60px;
+    width:100%;
+    position: fixed;
+    top:76px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* padding-left: 30px;
+    padding-right: 30px;
+    gap:10px; */
+    cursor: pointer;
+    background-color: white;
+    text-decoration: none;
+
+}
+a{
+    list-style: none;
+    text-decoration: none;
+}
+.categoriesMenu{
+    color: black;
+    font-size: 16px;
+
+}
+
+@media only screen and (max-width: 767px) {
+    .categories{
+        top:60px;
+        font-size: 13px;
+        flex-wrap: nowrap;
+        text-transform: capitalize;
+        height:50px;
+    }
+  }

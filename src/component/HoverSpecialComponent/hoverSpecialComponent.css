@@ -1,0 +1,17 @@
+.specialComponent{
+    display: flex;
+}
+.Image img{
+    height:40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.hoverSpecialText{
+    color: #7f7f7f;
+    font-size: 13px;
+    font-family: montserrat-regular,sans-serif;
+    margin-top: 11px;
+    margin-left: 7px;
+
+}

@@ -1,0 +1,20 @@
+.cartUpperContainer{
+    
+    width:25rem;
+    /* height:15rem; */
+    outline: 1px solid red;
+    margin:78px  auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cartEmptyImage{
+   margin-top: 30px ;
+   display: flex;
+   justify-content: center;
+}
+.cartEmptyImage img{
+    width:40%;
+    height: auto;
+}

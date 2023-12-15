@@ -1,0 +1,115 @@
+.productCard{
+    
+    width: 31%;
+    margin-bottom: 15px;
+    cursor: pointer;
+    /* outline: 1px solid red; */
+}
+.productImage{
+    position: relative;
+}
+.tag{
+    position: absolute;
+    top:0;
+    left:0;
+    font-size: 9px;
+    background-color: rgb(102, 101, 101);
+    padding: 4px 8px;
+    color: white;
+    font-family: montserrat,sans-serif;
+}
+.star{
+    position: absolute;
+    bottom:10%;
+    left: 0;
+    
+    background-color: rgb(231, 235, 236);
+    
+    padding-left: 10px;
+    padding-right: 3px;
+
+    
+}
+.starIcon{
+    color:#ffc700;
+    margin-right: 5px;
+    font-size: 10px;
+    
+}
+.productIcon{
+    font-size: 16px;
+    font-weight: 200;
+    margin-left: auto;
+    margin-top: 10px;
+}
+.starRating{
+    font-size: 10px;
+    font-family: montserrat,sans-serif;
+    font-weight: 600;
+}
+.productImage img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.productNameIcon{
+    display: flex;
+}
+.productName{
+    line-height: 15px;
+}
+.productName .name{
+    font-size: 12px;
+    font-family: montserrat,sans-serif;
+    font-weight: 700;
+    color: #4f5362;
+}
+.productName .description{
+    font-size: 11px;
+    font-family: montserrat,sans-serif;
+    font-weight: 600;
+    color: #898a8b;
+    margin-top: 5px;
+
+}
+.actualPrice {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 7px;
+}
+.deletedPrice{
+    font-size: 13px;
+    color: rgb(168, 165, 165);
+    margin-left: 7px;
+}
+.specialMemberPrice{
+    font-size: 12px;
+    font-weight: 600;
+    font-family: montserrat,sans-serif;
+    margin-top: 7px;
+    margin-left: 7px;
+    
+}
+.priceBackground{
+    background-color: rgb(243, 241, 241);
+}
+.btn{
+    margin-top: 10px;
+}
+.btn button{
+    background-color: white;
+    color: rgb(92, 90, 90);
+    font-size: 10px;
+    border: 1px solid grey;
+    padding: 3px 7px;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 767px) {
+    .productCard{
+    
+        width: 48%;
+    
+        /* outline: 1px solid red; */
+    }
+}

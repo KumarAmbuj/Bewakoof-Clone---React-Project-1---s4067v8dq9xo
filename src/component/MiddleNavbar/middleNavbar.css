@@ -1,0 +1,141 @@
+.middleParent{
+    height: 50px;
+    width: 100%;
+    /* outline: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top:25px;
+    background-color: white;
+    border-bottom: 1px solid rgb(194, 189, 189);
+    z-index: 8;
+}
+.middleChild1{
+    /* outline: 1px solid black; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap:20px;
+    align-items: center;
+    margin-left: 12%;
+    
+    
+}
+.logo{
+    height:120%;
+    width:150px;
+    /* outline: 1px solid yellow; */
+    display: flex;
+    align-items: center;
+    margin-right: 28px;
+}
+.logo img{
+    height: 100%;
+    width: 100%;
+    
+
+}
+.middleNavbarMenu{
+    
+    font-size: 12.45px;
+    letter-spacing: 1.5px;
+    font-family: montserrat,sans-serif;
+    cursor: pointer;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: content-box;
+    color:rgb(77, 75, 75);
+    
+}
+/* .middleNavbarMenu:hover{
+    
+    border-bottom: 4px solid rgb(238, 238, 30);
+    
+} */
+.middleChild2{
+   
+    /* outline: 1px solid red; */
+    width:550px;
+    display: flex;
+    align-items: center;
+    gap:16px;
+    margin-right: 8%;
+   
+}
+.searchBar{
+    height: 80%;
+    width:18.8rem;
+    /* outline: 1px solid red; */
+    background-color: rgb(241, 239, 239);
+    border-radius: 4px;
+    display: flex;
+    
+
+}
+.searchIcon{
+    font-size: 15px;
+    font-weight: 100;
+    width: 15%;
+    padding-left: -4px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.searchBar input{
+    width:70%;
+    height:90%;
+    background-color: rgb(241, 239, 239);
+    outline: none;
+    border: none;
+    font-size: 12px;
+    font-weight: 50;
+    font-family: montserrat,'sans-serif';
+
+
+}
+.login{
+    font-size: 14px;
+    font-family: montserrat, sans-serif;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    color:rgb(77, 75, 75);
+}
+.line{
+    display: flex;
+    height: 40%;
+    border:0.1px solid rgb(156, 154, 154);
+    font-weight: 100;
+}
+.shoppingBag{
+    cursor: pointer;
+    color:rgb(77, 75, 75);
+}
+.heart{
+    cursor: pointer;
+    color:rgb(77, 75, 75);
+    font-size: 20px;
+}
+.flag{
+    height:50px;
+    width:50px; 
+    display: flex;
+    align-items: center;
+    margin-top: -10px;
+    margin-right: -15px;
+   
+}
+.flag img{
+    height:30px;
+    width:30px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+@media only screen and (max-width: 990px) {
+    .middleParent {
+      display: none;
+    }
+  }

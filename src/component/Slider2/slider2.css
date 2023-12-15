@@ -1,0 +1,41 @@
+.slider2{
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+    
+
+    
+}
+/* .sliderImage{
+    width:30%;
+    height: auto;
+}
+
+.sliderImage img{
+    width: 100%;
+    height: auto;
+} */
+.sliderCard{
+    padding: 0 15px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.sliderCard img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.slider2Text{
+    font-size:20px;
+    font-family: montserrat,sans-serif;
+    font-weight: 550;
+    letter-spacing: 2px;
+    margin-top: 16px;
+    text-align: center;
+
+}

@@ -1,0 +1,116 @@
+.footer{
+    background-color: #181818;
+    display: flex;
+    justify-content: center;
+}
+.footerContainer{
+    margin-top: 80px;
+    /* display: flex; */
+    width: 85%;
+    /* outline: 1px solid red;
+    height: 400px; */
+}
+
+.footerLogo{
+    height: 52px;
+    /* outline: 1px solid red; */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #fdd835;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+.footerContent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.footerBox{
+    min-width: 250px;
+    /* outline: 1px solid red; */
+    height: 150px;
+    
+    
+}
+.footerHeader{
+    color: #fdd835;
+    letter-spacing: 1px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.footerLink{
+    color: rgb(224, 219, 219);
+    font-size: 12px;
+    padding: 2px;
+    font-weight: 600;
+    
+}
+.footerLink:first-child{
+    margin-top: 20px;
+}
+.inputField{
+    border-bottom: 1px solid yellow;
+}
+.inputField input{
+    width: 120px;
+    outline: none;
+    border: none;
+    border-bottom: 1px soild #fdd835;
+    padding: 10px;
+    background-color: #181818;
+    color: hsla(0,0%,100%,.9);
+}
+
+.inputField button{
+    background-color: #fdd835;
+    color:black;
+    padding: 10px 30px;
+    border: none;
+    font-size: 12px;
+}
+.footerMiddle{
+    margin-top: 20px;
+    display: flex;
+    width: 85%;
+    /* background-color: black; */
+    justify-content: space-between;
+    
+}
+
+.footerMiddleHeader{
+    font-size: 20px;
+    font-weight: 500;
+    color: hsla(0,0%,100%,.9);
+    margin-bottom: 15px;
+}
+.footerStories{
+    background-color: #181818;
+    display: flex;
+    justify-content: center;
+    /* color: aliceblue; */
+
+
+}
+.footerStoriesContent{
+    margin-top: 30px;
+    width:85%;
+    /* color: aliceblue; */
+
+}
+.footerStoriesHeader{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: hsla(0,0%,100%,.9);
+}
+.footerStoriesText{
+    font-size: 18px;
+    color: hsla(0,0%,100%,.9);
+    font-weight: 500;
+    margin-top: 20px;
+    letter-spacing: 0.3px;
+}
