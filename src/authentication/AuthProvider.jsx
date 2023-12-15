@@ -3,12 +3,22 @@ import { AuthContext } from "./AuthContext";
 
 function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [token, setoken] = useState("");
-  const login = () => {};
-  const logout = () => {};
+  const [token, setToken] = useState("");
+  const login = () => {
+    setIsLoggedIn(true);
+  };
+  const SetToken = (val) => {
+    setToken(val);
+  };
+  const logout = () => {
+    setToken("");
+    setIsLoggedIn(false);
+  };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, login, logout }}>
+    <AuthContext.Provider
+      value={{ isLoggedIn, setIsLoggedIn, login, logout, SetToken,token }}
+    >
       {children}
     </AuthContext.Provider>
   );

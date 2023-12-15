@@ -1,6 +1,53 @@
+import { useState } from "react";
 import "./signup.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 function SignUp() {
+  const navigate = useNavigate();
+  const [signUpData, setSignUpData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    appType: "ecommerce",
+  });
+
+  async function sendSignUpData() {
+    try {
+      let result = await fetch(
+        `https://academics.newtonschool.co/api/v1/user/signup`,
+        {
+          method: "POST",
+          BODY: JSON.stringify({ ...signUpData }),
+          headers: {
+            projectId: "zl6mct4l5ib6",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      let resultResponse = await result.json();
+      console.log(resultResponse);
+
+      //console.log(result);
+      if (resultResponse.status === "success") {
+        navigate("/login");
+      } else {
+        navigate("/signup");
+      }
+    } catch {
+      //toast.error("Some error occured");
+      console.log("errorrrrrrrrrrrr");
+      navigate("/signup");
+    }
+  }
+
+  function handleChange(e) {
+    setSignUpData({ ...signUpData, [e.target.name]: e.target.value });
+  }
+  function handleSubmit() {
+    console.log(signUpData);
+    //
+    sendSignUpData();
+  }
   return (
     <div className="signupContainer">
       <div className="loginLeft">
@@ -20,25 +67,41 @@ function SignUp() {
         <div className="loginText">
           for Latest trends, exciting offers and everything Bewakoof®!
         </div>
+
         <div className="inputMobileNumber">
           <div className="mobileNumber">
-            <input type="text" placeholder="Name" />
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              onChange={handleChange}
+            />
           </div>
         </div>
 
         <div className="inputMobileNumber" style={{ marginTop: "10px" }}>
           <div className="mobileNumber">
-            <input type="email" placeholder="Email Id" />
+            <input
+              type="email"
+              placeholder="Email Id"
+              name="email"
+              onChange={handleChange}
+            />
           </div>
         </div>
 
         <div className="inputMobileNumber" style={{ marginTop: "10px" }}>
           <div className="mobileNumber">
-            <input type="password" placeholder="" />
+            <input
+              type="password"
+              placeholder=""
+              name="password"
+              onChange={handleChange}
+            />
           </div>
         </div>
         <div className="continueButton">
-          <button>CONTINUE</button>
+          <button onClick={handleSubmit}>CONTINUE</button>
         </div>
 
         <div className="lineOrLine">
@@ -48,7 +111,7 @@ function SignUp() {
         </div>
 
         <div className="continueWithEmail">
-          <button>CONTINUE WITH EMAIL</button>
+          <button onClick={handleSubmit}>CONTINUE WITH EMAIL</button>
         </div>
 
         <div className="googleFacebook">
