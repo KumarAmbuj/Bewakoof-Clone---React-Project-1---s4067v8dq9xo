@@ -7,7 +7,7 @@ import { FaAngleDown } from "react-icons/fa";
 
 function Accordion(props) {
   const { name, subCategoryList } = props.data;
-  console.log(name, subCategoryList);
+  //console.log(name, subCategoryList);
   const [show, setShow] = useState(false);
   return (
     <div>
@@ -17,11 +17,13 @@ function Accordion(props) {
           setShow(!show);
         }}
       >
-        <div className="categoryType">{name}</div>
+        <div className="categoryType" style={{ marginTop: "7px" }}>
+          {name}
+        </div>
         <div className="arrow">{!show ? <FaAngleDown /> : <FaAngleUp />}</div>
       </div>
       {show ? <AccordionInnerContainer data={subCategoryList} /> : ""}
-      <div className="borderLine"></div>
+      <div className="accordionBorderLine"></div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import "./middleNavbar.css";
 import { FaSearch } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
@@ -6,16 +6,22 @@ import { FaShoppingBag } from "react-icons/fa";
 import MenMenuBarOnHover from "../MenMenuBarOnHover";
 import WomenMenuBarOnHover from "../WomenMenuBarOnHover";
 import MobileMenuBarOnHover from "../MobileMenuOnHover";
+import SearchResultComponent from "../SearchResultComponent";
+
 import { AuthContext } from "../../authentication/AuthContext";
 
-import { Link } from "react-router-dom";
+import { searchResult } from "../../Constant/constant";
+
+import { Link, useNavigate } from "react-router-dom";
 
 function MiddleNavbar() {
   const [menMenuBar, setMenMenuBar] = useState(false);
   const [womenMenuBar, setWomenMenuBar] = useState(false);
   const [mobileMenuBar, setMobileMenuBar] = useState(false);
-  const { isLoggedIn } = useContext(AuthContext);
-  console.log(isLoggedIn);
+  const [searchResultData, setSearchResultData] = useState([]);
+  const { isLoggedIn, logout } = useContext(AuthContext);
+  //console.log(isLoggedIn);
+  const navigate = useNavigate();
 
   function menMenuOnMouseOver() {
     setMenMenuBar(true);
@@ -37,6 +43,30 @@ function MiddleNavbar() {
     setMobileMenuBar(false);
     // console.log(mobileMenuBar);
   }
+
+  function handleLogout() {
+    logout();
+    navigate("/");
+  }
+
+  function handleSearch(e) {
+    //console.log(e.target.value);
+    let x = e.target.value;
+    let arr = [];
+    if (x.length >= 3) {
+      arr = searchResult.filter((val) => {
+        return (
+          val.name.toLowerCase().search(x.toLowerCase()) >= 0 ||
+          val.filter.subCategory.toLowerCase().search(x.toLowerCase()) >= 0
+        );
+      });
+      //console.log(arr);
+      setSearchResultData(arr);
+    } else {
+      setSearchResultData([]);
+    }
+  }
+
   return (
     <>
       <div className="middleParent">
@@ -74,14 +104,23 @@ function MiddleNavbar() {
             <div className="searchIcon">
               <FaSearch />
             </div>
-            <input placeholder="Search by product, category or collection"></input>
+            <input
+              placeholder="Search by product, category or collection"
+              onChange={handleSearch}
+            ></input>
           </div>
           <div className="line"></div>
           <div className="login">
-            <Link to="/signup">Login</Link>
+            {!isLoggedIn ? (
+              <Link to="/signup">Login</Link>
+            ) : (
+              <span onClick={handleLogout}>Logout</span>
+            )}
           </div>
           <div className="heart">
-            <FaRegHeart />
+            <Link to={isLoggedIn ? "/wishlist" : "/login"}>
+              <FaRegHeart />
+            </Link>
           </div>
           <div className="shoppingBag">
             <Link to={isLoggedIn ? "/cart" : "/login"}>
@@ -116,6 +155,11 @@ function MiddleNavbar() {
           handleMobileMenuBarOnLeave={mobileMenuOnMouseLeave}
           handleMobileMenuBarOnOver={mobileMenuOnMouseOver}
         />
+      ) : (
+        ""
+      )}
+      {searchResultData.length > 0 ? (
+        <SearchResultComponent data={searchResultData} />
       ) : (
         ""
       )}

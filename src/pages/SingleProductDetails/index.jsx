@@ -7,14 +7,62 @@ import { FaRegHeart } from "react-icons/fa";
 
 import SizeComponent from "../../component/SizeComponent";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+
+import { AuthContext } from "../../authentication/AuthContext";
+import { useContext } from "react";
 
 function SingleProductDetails() {
   //console.log("hi");
+  const { isLoggedIn, logout, token } = useContext(AuthContext);
   const [data, setData] = useState({});
   const [Image, setImage] = useState(data?.displayImage);
+  const [addedToCart, setAddedToCart] = useState(false);
+
   const { productId } = useParams();
+  const navigate = useNavigate();
   //console.log(productId);
+
+  async function sendDataToCart() {
+    try {
+      let result = await fetch(
+        `https://academics.newtonschool.co/api/v1/ecommerce/cart/${productId}`,
+        {
+          method: "PATCH",
+          body: JSON.stringify({
+            quantity: 1,
+            size: "S",
+          }),
+          headers: {
+            projectId: "zl6mct4l5ib6",
+            Authorization: "Bearer " + token,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      let resultResponse = await result.json();
+      console.log(resultResponse);
+
+      //console.log(result);
+      if (resultResponse.status === "success") {
+        setAddedToCart(true);
+      } else {
+        //navigate("/signup");
+      }
+    } catch {
+      //toast.error("Some error occured");
+      console.log("errorrrrrrrrrrrr");
+      navigate("/");
+    }
+  }
+
+  function handleAddToCart() {
+    if (isLoggedIn) {
+      sendDataToCart();
+    } else {
+      navigate("/login");
+    }
+  }
 
   async function getProducts() {
     try {
@@ -136,11 +184,11 @@ function SingleProductDetails() {
           </div>
 
           <div className="addToBagWishlist">
-            <button className="addToBag">
+            <button className="addToBag" onClick={handleAddToCart}>
               <span>
                 <img src="/images/addToBag.svg" />
               </span>
-              ADD TO BAG
+              {!addedToCart ? "ADD TO BAG" : "GO TO BAG"}
             </button>
             <button className="wishlist">
               <span>

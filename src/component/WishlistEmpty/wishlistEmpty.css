@@ -1,0 +1,58 @@
+.wishlistEmpty{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 78px;
+   
+
+}
+
+.emptyWishlistImage img{
+    height: 150px;
+    width: 150px;
+    margin-top: 20px;
+}
+.boldText{
+    font-family: montserrat,sans-serif!important;
+    font-size: 12px!important;
+    line-height: 14px!important;
+    font-weight: 600;
+    color: #292d35;
+    margin-top: 21px;
+}
+.lightText{
+    font-weight: 400;
+    color: #8f98a9;
+    width: 221px;
+    font-style: normal;
+    text-align: center;
+    
+    font-family: montserrat,sans-serif!important;
+    font-size: 12px!important;
+    margin-top: 10px;
+    
+}
+.shopNowButton{
+    margin-top: 21px;
+}
+.shopNowButton button{
+    background-color: rgb(66, 162, 162);
+    padding: 14px;
+    
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    
+    font-size: 0.9rem;
+    
+    text-align: center;
+ 
+    font-weight: 500;
+    border: 1px solid rgb(66, 162, 162);
+    
+    border-radius: 4px;
+    width: 200px;
+    
+}
+    

@@ -1,8 +1,7 @@
 .cartUpperContainer{
     
     width:25rem;
-    /* height:15rem; */
-    /* outline: 1px solid red; */
+   
     margin:78px  auto;
     display: flex;
     flex-direction: column;

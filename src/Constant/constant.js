@@ -1,3 +1,5 @@
+export const projectId = "zl6mct4l5ib6";
+
 export const categoryListArr = [
   {
     name: "New Arrivals",
@@ -967,5 +969,471 @@ export const AccordionList = [
       "Price : High to Low",
       "Price : Low to High",
     ],
+  },
+];
+
+export const searchResult = [
+  {
+    name: "SALE",
+    search: { name: "", description: "" },
+    filter: { subCategory: "sweater" },
+  },
+  {
+    name: "WINTERWEAR",
+    search: { name: "", description: "" },
+    filter: { subCategory: "hoodie" },
+  },
+  {
+    name: "MEN",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jeans", gender: "Men" },
+  },
+  {
+    name: "WOMEN",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jumpsuit", gender: "Women" },
+  },
+  {
+    name: "ACCESSORIES",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jeans" },
+  },
+  {
+    name: "HEAVYDUTY",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jogger" },
+  },
+  {
+    name: "BEWAKOOF AIR",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt" },
+  },
+  {
+    name: "OFFICIAL MERCH",
+    search: { name: "", description: "" },
+    filter: { subCategory: "shirt" },
+  },
+  {
+    name: "Vests",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Pyjamas",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jeans", gender: "Women" },
+  },
+  {
+    name: "Vests",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Men" },
+  },
+  {
+    name: "Pyjamas",
+    search: { name: "pyjamas", description: "pyjamas" },
+    filter: { subCategory: "pyjamas", gender: "Men" },
+  },
+  {
+    name: "Boxers",
+    search: { name: "shorts", description: "shorts" },
+    filter: { subCategory: "shorts", gender: "Men" },
+  },
+  {
+    name: "T-shirts",
+    search: { name: "tshirt", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Shirts",
+    search: { name: "shirt", description: "shirt" },
+    filter: { subCategory: "shirt", gender: "Women" },
+  },
+  {
+    name: "Jackets",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Sweatshirts & Hoodies",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Bottomwear",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jogger", gender: "Women" },
+  },
+  {
+    name: "Jeans & Denims",
+    search: { name: "jeans", description: "jeans" },
+    filter: { subCategory: "jeans", gender: "Women" },
+  },
+  {
+    name: "T-shirts",
+    search: { name: "tshirt", description: "" },
+    filter: { subCategory: "tshirt", gender: "Men" },
+  },
+  {
+    name: "Shirts",
+    search: { name: "shirt", description: "shirt" },
+    filter: { subCategory: "shirt", gender: "Men" },
+  },
+  {
+    name: "Jackets",
+    search: { name: "", description: "" },
+    filter: { subCategory: "sweater", gender: "Men" },
+  },
+  {
+    name: "Sweatshirts & Hoodies",
+    search: { name: "hoodie", description: "hoodie" },
+    filter: { subCategory: "hoodie", gender: "Men" },
+  },
+  {
+    name: "Bottomwear",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jogger", gender: "Men" },
+  },
+  {
+    name: "Jeans & Denims",
+    search: { name: "jeans", description: "jeans" },
+    filter: { subCategory: "jeans", gender: "Men" },
+  },
+  {
+    name: "T-shirts",
+    search: { name: "tshirt", description: "" },
+    filter: { subCategory: "tshirt", gender: "Men" },
+  },
+  {
+    name: "Shirts",
+    search: { name: "shirt", description: "shirt" },
+    filter: { subCategory: "shirt", gender: "Men" },
+  },
+  {
+    name: "Jackets",
+    search: { name: "", description: "" },
+    filter: { subCategory: "sweater", gender: "Men" },
+  },
+  {
+    name: "Sweatshirts & Hoodies",
+    search: { name: "hoodie", description: "hoodie" },
+    filter: { subCategory: "hoodie", gender: "Men" },
+  },
+  {
+    name: "Bottomwear",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jogger", gender: "Men" },
+  },
+  {
+    name: "Jeans & Denims",
+    search: { name: "jeans", description: "jeans" },
+    filter: { subCategory: "jeans", gender: "Men" },
+  },
+  {
+    name: "Sweatshirts & Hoodies",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Jackets",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Sweaters",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Full Sleeve",
+    search: { name: "full", description: "full" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "T-Shirts",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Plus Size",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Joggers",
+    search: { name: "joggers", description: "joggers" },
+    filter: { subCategory: "jogger", gender: "Women" },
+  },
+  {
+    name: "Jeans & Denims",
+    search: { name: "jeans", description: "jeans" },
+    filter: { subCategory: "jeans", gender: "Women" },
+  },
+
+  {
+    name: "Pyjamas",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jeans", gender: "Women" },
+  },
+  {
+    name: "Trousers & Pants",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jeans", gender: "Women" },
+  },
+  {
+    name: "Cargos",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jeans", gender: "Women" },
+  },
+  {
+    name: "Shorts",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jeans", gender: "Women" },
+  },
+
+  {
+    name: "Combos",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jeans", gender: "Women" },
+  },
+  {
+    name: "Plus Size Bottomwear",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jogger", gender: "Women" },
+  },
+  {
+    name: "All Bottomwear",
+    search: { name: "jeans", description: "jeans" },
+    filter: { subCategory: "jeans", gender: "Women" },
+  },
+  {
+    name: "Joggers",
+    search: { name: "joggers", description: "joggers" },
+    filter: { subCategory: "jogger", gender: "Men" },
+  },
+  {
+    name: "Jeans & Denims",
+    search: { name: "jeans", description: "jeans" },
+    filter: { subCategory: "jeans", gender: "Men" },
+  },
+
+  {
+    name: "Pyjamas",
+    search: { name: "pyjamas", description: "pyjamas" },
+    filter: { subCategory: "pyjamas", gender: "Men" },
+  },
+  {
+    name: "Trousers & Pants",
+    search: { name: "trouser", description: "trouser" },
+    filter: { subCategory: "trouser", gender: "Men" },
+  },
+  {
+    name: "Cargos",
+    search: { name: "cargo", description: "cargo" },
+    filter: { subCategory: "trouser", gender: "Men" },
+  },
+  {
+    name: "Shorts",
+    search: { name: "shorts", description: "shorts" },
+    filter: { subCategory: "shorts", gender: "Men" },
+  },
+  {
+    name: "Boxers",
+    search: { name: "boxer", description: "boxer" },
+    filter: { subCategory: "shorts", gender: "Men" },
+  },
+  {
+    name: "Combos",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jeans", gender: "Men" },
+  },
+  {
+    name: "Plus Size Bottomwear",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jogger", gender: "Men" },
+  },
+  {
+    name: "All Bottomwear",
+    search: { name: "jeans", description: "jeans" },
+    filter: { subCategory: "jeans", gender: "Men" },
+  },
+  {
+    name: "Printed T-Shirts",
+    search: { name: "printed", description: "printed" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Oversized T-shirts",
+    search: { name: "oversized", description: "oversized" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Plain T-Shirts",
+    search: { name: "plain", description: "plain" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Full Sleeve T-Shirts",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Half Sleeve T-Shirts",
+    search: { name: "Half Sleeve", description: "Half Sleeve" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Henleys",
+    search: { name: "", description: "" },
+    filter: { subCategory: "shirt", gender: "Women" },
+  },
+  {
+    name: "Polo T-Shirts",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "T-shirt Combos",
+    search: { name: "tshirt", description: "T-shirt" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Sweatshirts & Hoodies",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jogger", gender: "Women" },
+  },
+  {
+    name: "Jackets",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Sweaters",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Shirts",
+    search: { name: "shirt", description: "shirt" },
+    filter: { subCategory: "shirt", gender: "Women" },
+  },
+  {
+    name: "Co-ord Sets",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Kurtis",
+    search: { name: "kurti", description: "kurti" },
+    filter: { subCategory: "kurti", gender: "Women" },
+  },
+  {
+    name: "Vests",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Plus Size Topwear",
+    search: { name: "Plus Size", description: "Plus Size" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Customize T-shirts",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "All Topwear",
+    search: { name: "All", description: "All" },
+    filter: { subCategory: "tshirt", gender: "Women" },
+  },
+  {
+    name: "Printed T-Shirts",
+    search: { name: "printed", description: "printed" },
+    filter: { subCategory: "tshirt", gender: "Men" },
+  },
+  {
+    name: "Oversized T-shirts",
+    search: { name: "oversized", description: "oversized" },
+    filter: { subCategory: "tshirt", gender: "Men" },
+  },
+  {
+    name: "Plain T-Shirts",
+    search: { name: "plain", description: "plain" },
+    filter: { subCategory: "tshirt" },
+  },
+  {
+    name: "Full Sleeve T-Shirts",
+    search: { name: "Full Sleeve", description: "Full Sleeve" },
+    filter: { subCategory: "tshirt", gender: "Men" },
+  },
+  {
+    name: "Half Sleeve T-Shirts",
+    search: { name: "Half Sleeve", description: "Half Sleeve" },
+    filter: { subCategory: "tshirt", gender: "Men" },
+  },
+  {
+    name: "Henleys",
+    search: { name: "", description: "" },
+    filter: { subCategory: "shirt", gender: "Men" },
+  },
+  {
+    name: "Polo T-Shirts",
+    search: { name: "Polo", description: "Polo" },
+    filter: { subCategory: "tshirt", gender: "Men" },
+  },
+  {
+    name: "T-shirt Combos",
+    search: { name: "tshirt", description: "T-shirt" },
+    filter: { subCategory: "tshirt", gender: "Men" },
+  },
+  {
+    name: "Sweatshirts & Hoodies",
+    search: { name: "", description: "" },
+    filter: { subCategory: "hoodie", gender: "Men" },
+  },
+  {
+    name: "Jackets",
+    search: { name: "", description: "" },
+    filter: { subCategory: "sweater", gender: "Men" },
+  },
+  {
+    name: "Sweaters",
+    search: { name: "sweater", description: "sweater" },
+    filter: { subCategory: "sweater", gender: "Men" },
+  },
+  {
+    name: "Shirts",
+    search: { name: "shirt", description: "shirt" },
+    filter: { subCategory: "shirt", gender: "Men" },
+  },
+  {
+    name: "Co-ord Sets",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Men" },
+  },
+  {
+    name: "Kurtas",
+    search: { name: "kurta", description: "kurta" },
+    filter: { subCategory: "kurta", gender: "Men" },
+  },
+  {
+    name: "Vests",
+    search: { name: "vest", description: "vest" },
+    filter: { subCategory: "tshirt", gender: "Men" },
+  },
+  {
+    name: "Plus Size Topwear",
+    search: { name: "Plus Size", description: "Plus Size" },
+    filter: { subCategory: "tshirt", gender: "Men" },
+  },
+  {
+    name: "Customize T-shirts",
+    search: { name: "", description: "" },
+    filter: { subCategory: "tshirt", gender: "Men" },
+  },
+  {
+    name: "All Topwear",
+    search: { name: "All", description: "All" },
+    filter: { subCategory: "tshirt", gender: "Men" },
   },
 ];

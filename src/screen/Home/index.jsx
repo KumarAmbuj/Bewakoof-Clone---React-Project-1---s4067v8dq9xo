@@ -10,6 +10,7 @@ import SignUp from "../../pages/SignUp";
 import Cart from "../../pages/Cart";
 import Login from "../../pages/Login";
 import AuthProvider from "../../authentication/AuthProvider";
+import Wishlist from "../../pages/Wishlist";
 
 function Home() {
   return (
@@ -28,6 +29,7 @@ function Home() {
           <Route path="signup" element={<SignUp />} />
           <Route path="login" element={<Login />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="wishlist" element={<Wishlist />} />
         </Routes>
 
         <Footer />

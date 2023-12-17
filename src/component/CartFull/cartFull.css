@@ -2,7 +2,7 @@
     margin: 78px auto;
     width:78%;
     /* height: 500px; */
-    /* outline: 1px solid red; */
+   
     display: flex;
     
     
@@ -23,11 +23,11 @@
     padding:10px;
 }
 .cartCount{
-    font-size: 16px;
+    font-size: 18px;
     font-family: montserrat,sans-serif;
     color: #181818;
     padding-left: 5px;
-    margin-top: 30px;
+    margin-top: 20px;
 
 }
 .freeDelivery{
@@ -150,7 +150,7 @@
     
         width: 90%;
     
-        /* outline: 1px solid red; */
+       
     }
 }
 

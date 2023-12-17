@@ -24,8 +24,11 @@ function ProductDetails() {
       const responseJson = await response.json();
       setData(responseJson.data);
       //console.log(responseJson.data);
-    } catch (error) {}
+    } catch (error) {
+      console.log("errrrorrrr");
+    }
   }
+  
   useEffect(() => {
     getProducts();
   }, [location]);

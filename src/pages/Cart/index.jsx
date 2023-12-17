@@ -1,11 +1,59 @@
+import { useEffect, useState } from "react";
 import CartEmpty from "../../component/CartEmpty";
 import CartFull from "../../component/CartFull";
 import "./cart.css";
+
+import { AuthContext } from "../../authentication/AuthContext";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+
 function Cart() {
+  const [cartData, setCartDat] = useState([]);
+  const { isLoggedIn, logout, token } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  async function getCartData() {
+    try {
+      let result = await fetch(
+        `https://academics.newtonschool.co/api/v1/ecommerce/cart`,
+        {
+          method: "GET",
+
+          headers: {
+            projectId: "zl6mct4l5ib6",
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+      let resultResponse = await result.json();
+      //console.log(resultResponse);
+
+      //console.log(result);
+      if (resultResponse.status === "success") {
+        setCartDat(resultResponse.data.items);
+        //console.log(cartData);
+      } else {
+        navigate("/");
+      }
+    } catch {
+      console.log("errorrrrrrrrrrrr");
+      navigate("/");
+    }
+  }
+
+  useEffect(() => {
+    getCartData();
+  }, []);
+
   return (
     <div>
+      {cartData.length == 0 ? (
+        <CartEmpty />
+      ) : (
+        <CartFull data={cartData} getCartData={getCartData} />
+      )}
       {/* <CartEmpty /> */}
-      <CartFull />
+      {/* <CartFull /> */}
     </div>
   );
 }

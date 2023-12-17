@@ -1,18 +1,45 @@
 import "./cartSingleComponent.css";
-function CartSingleComponent() {
+
+import { AuthContext } from "../../authentication/AuthContext";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+
+//functions
+import { addToWishlistDataAPI } from "../../ConstantAPI/constantAPI";
+import { removeFromCartAPI } from "../../ConstantAPI/constantAPI";
+
+import { projectId } from "../../Constant/constant";
+
+function CartSingleComponent(props) {
+  const { deleteHandler } = props;
+  const { isLoggedIn, logout, token } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  function addToWishlist() {
+    let id = props.data.product._id;
+    addToWishlistDataAPI(id, projectId, token);
+    removeFromCartAPI(id, projectId, token);
+  }
+
   return (
     <div className="cartSingleMainContainer">
       <div className="cartSingleComponentContainer">
         <div className="cartDetail">
-          <div className="cartDetailName">Men's White T-Shirt</div>
+          <div className="cartDetailName">{props.data.product.name}</div>
 
           <div className="cartDetailPrice">
-            <span className="actualPrice">₹399</span>{" "}
+            <span className="actualPrice">₹{props.data.product.price}</span>{" "}
             <span className="deletedPrice">
-              <del>₹1399</del>
+              <del>
+                ₹
+                {props.data.product.price +
+                  Math.floor(props.data.product.price / 2)}
+              </del>
             </span>
           </div>
-          <div className="youSaved">You saved ₹1000!</div>
+          <div className="youSaved">
+            You saved ₹{Math.floor(props.data.product.price / 2)}!
+          </div>
           <div className="sizeAndQuantity">
             <div className="selectOption">
               Size:
@@ -37,14 +64,14 @@ function CartSingleComponent() {
         </div>
 
         <div className="cartImage">
-          <img src="./images/singleImage.webp" />
+          <img src={props.data.product.displayImage} />
         </div>
       </div>
       <div className="borderLine"></div>
 
       <div className="removeMoveListButton">
-        <button>Remove</button>
-        <button>Move to Wishlist</button>
+        <button onClick={deleteHandler}>Remove</button>
+        <button onClick={addToWishlist}>Move to Wishlist</button>
       </div>
     </div>
   );

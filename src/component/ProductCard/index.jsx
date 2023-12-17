@@ -1,14 +1,57 @@
 import "./productCard.css";
 import { FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
+import { AuthContext } from "../../authentication/AuthContext";
+import { useContext } from "react";
 
 function ProductCard(props) {
+  const { isLoggedIn, logout, token } = useContext(AuthContext);
+  //console.log(token);
+
   const navigate = useNavigate();
   const { ratings, brand, displayImage, name, price, _id } = props.data;
+
   function navigateToSingleProductDetails(id) {
     navigate(`/single-product-details/${id}`);
   }
+
+  async function sendWishlistData() {
+    try {
+      let result = await fetch(
+        `https://academics.newtonschool.co/api/v1/ecommerce/wishlist`,
+        {
+          method: "PATCH",
+          body: JSON.stringify({
+            productId: _id,
+          }),
+          headers: {
+            projectId: "zl6mct4l5ib6",
+            Authorization: "Bearer " + token,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      let resultResponse = await result.json();
+      console.log(resultResponse);
+
+      //console.log(result);
+    } catch {
+      //toast.error("Some error occured");
+      console.log("errorrrrrrrrrrrr");
+      //navigate("/signup");
+    }
+  }
+
+  function handleFavourite(e) {
+    e.stopPropagation();
+    if (!isLoggedIn) {
+      navigate("/login");
+    } else {
+      sendWishlistData();
+    }
+  }
+
   return (
     <div
       className="productCard"
@@ -33,7 +76,7 @@ function ProductCard(props) {
         </div>
         <div className="productIcon">
           <span className="heart">
-            <FaRegHeart />
+            <FaRegHeart onClick={handleFavourite} />
           </span>
         </div>
       </div>

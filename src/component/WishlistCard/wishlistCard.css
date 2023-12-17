@@ -1,0 +1,146 @@
+.wishlistCard{
+    width:23%;
+    border: 1px solid rgb(228, 225, 225);
+}
+.wishlistCardImage{
+    width:100%;
+    height: auto;
+    position: relative;
+}
+.tag{
+    position: absolute;
+    top:0;
+    left:0;
+    font-size: 9px;
+    background-color: rgb(102, 101, 101);
+    padding: 4px 8px;
+    color: white;
+    font-family: montserrat,sans-serif;
+}
+.crossButton{
+    position:absolute;
+    top:10px;
+    right:10px;
+}
+.crossButton img{
+    height:15px;
+    width: 15px;
+    cursor: pointer;
+}
+.star{
+    position: absolute;
+    bottom:5%;
+    left: 0;
+    
+    background-color: rgb(231, 235, 236);
+    
+    padding-left: 10px;
+    padding-right: 3px;
+
+    
+}
+.starIcon{
+    color:#ffc700;
+    margin-left: 5px;
+    font-size: 6px;
+    
+}
+/* .productIcon{
+    font-size: 16px;
+    font-weight: 200;
+    margin-left: auto;
+    margin-top: 10px;
+} */
+.starRating{
+    font-size: 12px;
+    font-family: montserrat,sans-serif;
+    font-weight: 600;
+}
+.wishlistCardImage img{
+    width: 100%;
+    height: auto;
+}
+.wishlistCardHeader{
+    font-weight: 600;
+    font-family: montserrat,sans-serif!important;
+    font-size: 12px!important;
+    line-height: 18px!important;
+    color: #4e5664;
+    margin-top: 4px;
+    padding-left: 10px;
+}
+.wishlistCardDescription{
+    font-weight: 400;
+    color: #8f98a9!important;
+    letter-spacing: 0;
+    height: 31px;
+    padding-top: 5px;
+    font-style: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: auto;
+    font-family: montserrat,sans-serif!important;
+    font-size: 12px!important;
+    line-height: 18px!important;
+    padding-left: 10px;
+}
+.wishlistCardPrice{
+    margin-top: 4px;
+    padding-left: 10px;
+}
+
+.actualPrice{
+    font-weight: 750;
+    color: #292d35;
+    font-family: montserrat,sans-serif!important;
+    font-size: 14px!important;
+    line-height: 15px!important;
+}
+.deletedPrice{
+    font-style: normal;
+    font-weight: 400;
+    color: #8f98a9;
+    font-family: montserrat,sans-serif!important;
+    font-size: 12px!important;
+    line-height: 15px!important
+}
+.percentageOff{
+    opacity: .7;
+    font-size: 12px;
+    color: #08ba0d;
+    font-style: normal;
+    font-weight: 500;
+    font-family: montserrat,sans-serif!important;
+    font-size: 12px!important;
+    line-height: 18px!important;
+    margin-left: 4px;
+}
+.borderLine{
+    margin-top: 15px;
+    width: 100%;
+    border:1px solid rgb(243, 241, 241);
+}
+.addToBagButton{
+    display: flex;
+    justify-content: center;
+}
+.addToBagButton button{
+    padding: 7px;
+    outline: none;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    font-weight: 700;
+    font-family: montserrat,sans-serif!important;
+    font-size: 10px!important;
+    line-height: 15px!important;
+    text-transform: uppercase;
+    color: #207bb4;
+    
+}
+@media only screen and (max-width: 767px) {
+    .wishlistCard{
+        width:46%;
+    }
+}

@@ -14,9 +14,11 @@
     font-size: 24px;
     font-weight: 100;
 }
-.borderLine{
-    width: 90%;
-    border: 1px solid rgb(228, 224, 224);
+.accordionBorderLine{
+    
+    width: 80%;
+    border: 0.5px solid rgb(247, 243, 243);
+    margin: auto;
 }
 .categoryType{
     font-family: montserrat,sans-serif;

@@ -17,7 +17,9 @@ function SignUp() {
         `https://academics.newtonschool.co/api/v1/user/signup`,
         {
           method: "POST",
-          BODY: JSON.stringify({ ...signUpData }),
+          body: JSON.stringify({
+            ...signUpData,
+          }),
           headers: {
             projectId: "zl6mct4l5ib6",
             "Content-Type": "application/json",
@@ -25,7 +27,7 @@ function SignUp() {
         }
       );
       let resultResponse = await result.json();
-      console.log(resultResponse);
+      //console.log(resultResponse);
 
       //console.log(result);
       if (resultResponse.status === "success") {

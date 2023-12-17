@@ -1,0 +1,52 @@
+.searchResult{
+    top:78px;
+    z-index:9;
+    /* height:200px; */
+    width: 23rem;
+    /* outline: 1px solid red; */
+    position: fixed;
+    background-color: white;
+    right:22%;
+    height: auto;
+    border: 1px solid rgb(223, 220, 220);
+    /* padding: 1px 10px 10px 10px; */
+    
+}
+
+.link{
+    
+    height:36px;
+    border: 0.5px solid rgb(243, 242, 242);
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-family: montserrat-regular,sans-serif;
+    font-weight: 500;
+    padding-left: 10px;
+
+
+}
+
+.exploreCollection{
+    padding-left: 10px;
+    font-size: 12px;
+    font-family: montserrat-regular,sans-serif;
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+.searchImage{
+    margin-top: 10px;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    
+}
+
+.searchImage img{
+    width: 100%;
+    height: 100%;
+    
+}

@@ -1,0 +1,52 @@
+.wishlistMainContainer{
+    margin: 78px auto;
+    width:78%;
+    padding:20px;
+    
+}
+.wishlistContainer{
+    display: flex;
+    justify-content: flex-start;
+    gap:17px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.topButton{
+    margin-top: 10px;
+    display: flex;
+    gap:13px;
+    padding-left: 10px;
+
+}
+
+.topButton button{
+    /* background: #ffc700; */
+    background-color: white;
+    border: 0.5px solid #292d35;
+    color: #292d35;
+    padding: 4px 12px;
+    height: 23px;
+    width: auto;
+    white-space: nowrap;
+    color: #737e93;
+    border: 0.5px solid #737e93;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .wishlistMainContainer{
+        margin: 78px auto;
+        width:90%;
+        
+    }
+}
+@media only screen and (max-width: 767px) {
+    .wishlistMainContainer{
+        margin: 78px auto;
+        width:100%;
+        
+    }
+}
