@@ -1,0 +1,23 @@
+.bestSellerHeading{
+    font-family: montserrat,sans-serif!important;
+    font-size: 16px!important;
+    font-weight: 530;
+    
+    margin-top: 16px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.sliderCard{
+    width:40%;
+}
+
+.exploreAll{
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #42a2a2!important;
+    font-weight: 600;
+    text-decoration: underline;
+}

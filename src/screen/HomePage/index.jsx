@@ -20,6 +20,7 @@ import Slider3 from "../../component/Slider3";
 // import WomenMenuBarOnHover from "../../component/WomenMenuBarOnHover";
 import { useState } from "react";
 import Home from "../Home";
+import BestSellerSlider from "../../component/BestSellerSlider";
 
 function HomePage() {
   // const [menMenuBar, setMenMenuBar] = useState(false);
@@ -66,6 +67,7 @@ function HomePage() {
       <CategoriesToBag />
       <Slider3 />
       <TopAccessories />
+      <BestSellerSlider />
       <Banner4 />
       {/* <Footer /> */}
       {/* {menMenuBar ? (

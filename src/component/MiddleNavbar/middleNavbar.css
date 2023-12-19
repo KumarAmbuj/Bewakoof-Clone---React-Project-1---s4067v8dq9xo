@@ -97,11 +97,14 @@
 
 
 }
-.login{
+.loginMenu{
     font-size: 14px;
     font-family: montserrat, sans-serif;
     letter-spacing: 0.6px;
     cursor: pointer;
+    color:rgb(77, 75, 75);
+}
+.loginMenu a{
     color:rgb(77, 75, 75);
 }
 .line{

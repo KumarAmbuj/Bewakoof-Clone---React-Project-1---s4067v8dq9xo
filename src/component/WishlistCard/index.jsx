@@ -47,7 +47,7 @@ function WishlistCard(props) {
   // }
 
   function removeFromWishlist(id) {
-    removeFromWishlistAPI(id);
+    removeFromWishlistAPI(id, projectId, token);
   }
 
   function addToCart() {

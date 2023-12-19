@@ -4,6 +4,7 @@
     margin-bottom: 15px;
     cursor: pointer;
     /* outline: 1px solid red; */
+    border: 1px soild rgb(156, 155, 155);
 }
 .productImage{
     position: relative;

@@ -3,9 +3,21 @@ import { FaShoppingBag } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
 import { useState } from "react";
+//import SideNavbar from "../SideNavBar";
 import SideNavbar from "../SideNavBar";
+import { AuthContext } from "../../authentication/AuthContext";
+
+import { searchResult } from "../../Constant/constant";
+
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+
 function MiniNavbar() {
   const [showSideNavbar, setShowSideNavbar] = useState(false);
+
+  const { isLoggedIn, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="miniNavbar">
@@ -18,19 +30,27 @@ function MiniNavbar() {
               }}
             />
           </div>
-          <div className="logo">
-            <img src="https://images.bewakoof.com/web/ic-web-head-bwk-primary-logo-eyes.svg" />
-          </div>
+          <Link to="/">
+            <div className="logo">
+              <img src="https://images.bewakoof.com/web/ic-web-head-bwk-primary-logo-eyes.svg" />
+            </div>
+          </Link>
         </div>
         <div className="iconMenuOption">
           <div>
             <FaMagnifyingGlass />
           </div>
           <div>
-            <FaRegHeart />
+            <Link to={isLoggedIn ? "/wishlist" : "/login"}>
+              {" "}
+              <FaRegHeart />
+            </Link>
           </div>
           <div>
-            <FaShoppingBag style={{ cursor: "pointer" }} />
+            <Link to={isLoggedIn ? "/cart" : "/login"}>
+              {" "}
+              <FaShoppingBag style={{ cursor: "pointer" }} />
+            </Link>
           </div>
         </div>
       </div>

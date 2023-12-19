@@ -12,7 +12,7 @@ import { AuthContext } from "../../authentication/AuthContext";
 
 import { searchResult } from "../../Constant/constant";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 function MiddleNavbar() {
   const [menMenuBar, setMenMenuBar] = useState(false);
@@ -66,6 +66,11 @@ function MiddleNavbar() {
       setSearchResultData([]);
     }
   }
+  const location = useLocation();
+  // useEffect(() => {
+  //   console.log("inside useeffect");
+  //   setSearchResultData([]);
+  // }, [location.pathname]);
 
   return (
     <>
@@ -110,7 +115,7 @@ function MiddleNavbar() {
             ></input>
           </div>
           <div className="line"></div>
-          <div className="login">
+          <div className="loginMenu">
             {!isLoggedIn ? (
               <Link to="/signup">Login</Link>
             ) : (

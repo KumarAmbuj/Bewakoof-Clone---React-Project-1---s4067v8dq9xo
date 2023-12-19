@@ -7,7 +7,8 @@ import { useContext } from "react";
 
 function ProductCard(props) {
   const { isLoggedIn, logout, token } = useContext(AuthContext);
-  //console.log(token);
+  const { slider } = props;
+  //console.log(slider);
 
   const navigate = useNavigate();
   const { ratings, brand, displayImage, name, price, _id } = props.data;
@@ -58,6 +59,7 @@ function ProductCard(props) {
       onClick={() => {
         navigateToSingleProductDetails(_id);
       }}
+      style={{ width: slider?.width }}
     >
       <div className="productImage">
         <img src={displayImage} />
