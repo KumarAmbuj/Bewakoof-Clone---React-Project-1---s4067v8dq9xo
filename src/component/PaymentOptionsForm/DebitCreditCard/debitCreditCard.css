@@ -1,0 +1,88 @@
+.debitCardContainer{
+    box-sizing: border-box;
+    padding:15px;
+}
+.paymentMethodTypeImages{
+    display: flex;
+    gap:20px;
+}
+
+.paymentMethodTypeImages img{
+    height: 13px;
+    width: 43px;
+}
+.cardNumber{
+    margin-top: 50px;
+}
+.cardNumber input{
+    outline: none;
+    border: none;
+    width:98%;
+    font-family: montserrat-regular,sans-serif;
+    font-size: 12px;
+    padding: 5px 0;
+    border-bottom: 1px solid #bcbcbc;
+    
+
+}
+.cardNumber input[placeholder]{
+    color:rgb(182, 180, 180);
+}
+
+.expiryDateAndCvv{
+    margin-top: 40px;
+}
+
+.expiryDateAndCvv input{
+    outline: none;
+    border: none;
+   
+    font-family: montserrat-regular,sans-serif;
+    font-size: 12px;
+    padding: 5px 0;
+    border-bottom: 1px solid #bcbcbc;
+}
+.checkbox{
+    margin-top: 30px;
+
+}
+.checkbox span{
+    font-size: 14px;
+    font-weight: 500;
+    font-family: montserrat-regular,sans-serif;
+    color: #525252;
+    margin-left: 1 rem;
+}
+
+.checkbox input{
+    height: 18px;
+    width: 18px;
+    background: #42a2a2;
+    color: #fff;
+}
+.formText{
+    font-size: 14px;
+    font-family: montserrat-regular,sans-serif;
+    color:#737373;
+    margin-top: 20px;
+    line-height: 21px;
+}
+
+.debitButton{
+    width:100%;
+    margin-top: 15px;
+}
+
+.debitButton button{
+    height:40px;
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 4px;
+    background-color: #d6d6d6;
+    color: #949494;
+    font-size: 14px;
+    font-weight: 600;
+}

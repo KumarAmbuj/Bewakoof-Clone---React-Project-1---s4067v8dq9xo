@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 
 function Login() {
   const navigate = useNavigate();
-  const { login, logout, SetToken } = useContext(AuthContext);
+  const { login, logout, SetToken, SetUserName } = useContext(AuthContext);
   //console.log(login, logout, SetToken);
   const [loginData, setLoginData] = useState({
     email: "",
@@ -33,9 +33,10 @@ function Login() {
 
       //console.log(result);
       if (resultResponse.status === "success") {
+        //console.log("usernameeeeee", resultResponse.name);
         login();
         SetToken(resultResponse.token);
-
+        SetUserName(resultResponse.data.name);
         navigate("/");
       } else {
         navigate("/signup");

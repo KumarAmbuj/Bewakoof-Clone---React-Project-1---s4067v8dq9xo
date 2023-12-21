@@ -43,13 +43,18 @@ function MiniNavbar() {
           <div>
             <Link to={isLoggedIn ? "/wishlist" : "/login"}>
               {" "}
-              <FaRegHeart />
+              {/* <FaRegHeart /> */}
+              <i className="fa fa-heart-o"></i>
             </Link>
           </div>
           <div>
             <Link to={isLoggedIn ? "/cart" : "/login"}>
               {" "}
-              <FaShoppingBag style={{ cursor: "pointer" }} />
+              {/* <FaShoppingBag style={{ cursor: "pointer" }} /> */}
+              <img
+                src="./images/shoppingBag.png"
+                style={{ height: "24px", width: "24px" }}
+              />
             </Link>
           </div>
         </div>
@@ -59,6 +64,7 @@ function MiniNavbar() {
           hideNavbar={() => {
             setShowSideNavbar(!showSideNavbar);
           }}
+          isOpen={showSideNavbar}
         />
       ) : (
         ""

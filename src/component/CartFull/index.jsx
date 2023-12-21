@@ -3,7 +3,7 @@ import CartSingleComponent from "../CartSingleComponent";
 import "./cartFull.css";
 import { AuthContext } from "../../authentication/AuthContext";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function CartFull(props) {
   const [cartData, setCartData] = useState(props.data);
@@ -128,7 +128,9 @@ function CartFull(props) {
             </p>
           </div>
           <div>
-            <button>ADD ADDRESS</button>
+            <Link to="/checkout">
+              <button>ADD ADDRESS</button>
+            </Link>
           </div>
         </div>
       </div>

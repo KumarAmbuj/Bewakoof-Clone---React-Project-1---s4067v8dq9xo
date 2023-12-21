@@ -124,15 +124,20 @@ function MiddleNavbar() {
           </div>
           <div className="heart">
             <Link to={isLoggedIn ? "/wishlist" : "/login"}>
-              <FaRegHeart />
+              {/* <FaRegHeart /> */}
+              <i className="fa fa-heart-o"></i>
             </Link>
           </div>
           <div className="shoppingBag">
             <Link to={isLoggedIn ? "/cart" : "/login"}>
-              <FaShoppingBag />
+              {/* <FaShoppingBag /> */}
+              <img
+                src="./images/shoppingBag.png"
+                style={{ height: "22px", width: "22px" }}
+              />
             </Link>
           </div>
-          <div className="flag">
+          <div className="Flag">
             <img src="./images/indiaFlag.png" />
           </div>
         </div>

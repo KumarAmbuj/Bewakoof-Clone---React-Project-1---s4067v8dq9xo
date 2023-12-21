@@ -6,11 +6,13 @@ import { searchResult } from "../../Constant/constant";
 
 import { Link, useNavigate } from "react-router-dom";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { createPortal } from "react-dom";
 
-function SideNavbar({ hideNavbar }) {
-  const { isLoggedIn, logout } = useContext(AuthContext);
+function SideNavbar({ hideNavbar, isOpen }) {
+  const { isLoggedIn, logout, userName } = useContext(AuthContext);
   const navigate = useNavigate();
+  //console.log("username", userName);
 
   function handleLogout() {
     logout();
@@ -40,7 +42,19 @@ function SideNavbar({ hideNavbar }) {
     filter: { subCategory: "jogger", gender: "Men" },
   };
 
-  return (
+  if (!isOpen) {
+    return null;
+  }
+  const mount = document.getElementById("portal");
+  const element = document.createElement("div");
+  useEffect(() => {
+    mount.appendChild(element);
+    return () => {
+      mount.removeChild(element);
+    };
+  }, [element, mount]);
+
+  return createPortal(
     <>
       <div className="overlay" onClick={hideNavbar} />
       <div className="side">
@@ -50,7 +64,7 @@ function SideNavbar({ hideNavbar }) {
             <div className="loginSignup">Login / Sign Up</div>
           </>
         ) : (
-          <div className="guest">Hello User</div>
+          <div className="guest">Hello {userName}</div>
         )}
         <div className="Line"></div>
         <div className="flag">
@@ -133,7 +147,8 @@ function SideNavbar({ hideNavbar }) {
           )}
         </div>
       </div>
-    </>
+    </>,
+    element
   );
 }
 export default SideNavbar;

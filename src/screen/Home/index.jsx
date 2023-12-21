@@ -11,6 +11,7 @@ import Cart from "../../pages/Cart";
 import Login from "../../pages/Login";
 import AuthProvider from "../../authentication/AuthProvider";
 import Wishlist from "../../pages/Wishlist";
+import Checkout from "../../pages/Checkout";
 
 function Home() {
   return (
@@ -30,6 +31,7 @@ function Home() {
           <Route path="login" element={<Login />} />
           <Route path="cart" element={<Cart />} />
           <Route path="wishlist" element={<Wishlist />} />
+          <Route path="checkout" element={<Checkout />} />
         </Routes>
 
         <Footer />

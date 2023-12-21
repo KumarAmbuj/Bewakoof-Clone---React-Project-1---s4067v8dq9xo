@@ -3,15 +3,38 @@ import { FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { AuthContext } from "../../authentication/AuthContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+
+import { removeFromWishlistAPI } from "../../ConstantAPI/constantAPI";
+import { projectId } from "../../Constant/constant";
 
 function ProductCard(props) {
-  const { isLoggedIn, logout, token } = useContext(AuthContext);
+  const { isLoggedIn, logout, token, wishlistData, getWishlistDataAPI } =
+    useContext(AuthContext);
+  const [addedToWishlist, setAddedToWishlist] = useState(false);
+  //console.log(wishlistData);
+
   const { slider } = props;
+
   //console.log(slider);
 
   const navigate = useNavigate();
   const { ratings, brand, displayImage, name, price, _id } = props.data;
+  //console.log(_id);
+
+  // let x = wishlistData.filter((val) => {
+  //   return val.products._id === _id;
+  // });
+  // console.log(x);
+
+  useEffect(() => {
+    let x = wishlistData.filter((val) => {
+      return val.products._id === _id;
+    });
+    setAddedToWishlist(x.length > 0);
+  }, []);
+
+  //setAddedToWishlist(x.length > 0);
 
   function navigateToSingleProductDetails(id) {
     navigate(`/single-product-details/${id}`);
@@ -50,7 +73,17 @@ function ProductCard(props) {
       navigate("/login");
     } else {
       sendWishlistData();
+      setAddedToWishlist(true);
+      getWishlistDataAPI();
     }
+  }
+
+  function handleRemoveFromFavourite(e) {
+    e.stopPropagation();
+    removeFromWishlistAPI(_id, projectId, token);
+    getWishlistDataAPI();
+    setAddedToWishlist(false);
+    console.log("hello");
   }
 
   return (
@@ -78,7 +111,25 @@ function ProductCard(props) {
         </div>
         <div className="productIcon">
           <span className="heart">
-            <FaRegHeart onClick={handleFavourite} />
+            {/* <FaRegHeart onClick={handleFavourite} /> */}
+            {!addedToWishlist ? (
+              <img
+                src="	https://images.bewakoof.com/web/Wishlist.svg"
+                style={{ height: "28px", width: "28px" }}
+                onClick={handleFavourite}
+              />
+            ) : (
+              <img
+                src="		https://images.bewakoof.com/web/Wishlist-selected.svg"
+                style={{ height: "28px", width: "28px" }}
+                onClick={handleRemoveFromFavourite}
+              />
+            )}
+            {/* <img
+              src="	https://images.bewakoof.com/web/Wishlist.svg"
+              style={{ height: "28px", width: "28px" }}
+              onClick={handleFavourite}
+            /> */}
           </span>
         </div>
       </div>

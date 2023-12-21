@@ -1,0 +1,58 @@
+.UPIContainer{
+    padding: 15px;
+}
+.UPIInput{
+    margin-top: 50px;
+}
+.UPIInput input{
+    outline: none;
+    border: none;
+    width:98%;
+    font-family: montserrat-regular,sans-serif;
+    font-size: 12px;
+    padding: 5px 0;
+    border-bottom: 1px solid #bcbcbc;
+}
+.UPIText{
+    margin-top: 10px;
+    color: #737373;
+    font-size: 12px;
+    font-family: montserrat-regular,sans-serif;;
+}
+.checkbox{
+    margin-top: 60px;
+
+}
+.checkbox span{
+    font-size: 14px;
+    font-weight: 500;
+    font-family: montserrat-regular,sans-serif;
+    color: #525252;
+    margin-left: 1 rem;
+}
+
+.checkbox input{
+    height: 18px;
+    width: 18px;
+    background: #42a2a2;
+    color: #fff;
+}
+
+.UPIButton{
+    width:100%;
+    margin-top: 25px;
+}
+
+.UPIButton button{
+    height:50px;
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 4px;
+    background-color: #d6d6d6;
+    color: #949494;
+    font-size: 14px;
+    font-weight: 600;
+}

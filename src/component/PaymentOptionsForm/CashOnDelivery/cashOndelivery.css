@@ -1,0 +1,25 @@
+.cashOnDeliveryContainer{
+    padding:15px;
+}
+.paymentText{
+    font-size: 16px;
+    font-family: montserrat-regular,sans-serif!important;
+    color:#4e5664!important;
+}
+.CODPayButton{
+    margin-top: 20px;
+}
+
+.CODPayButton button{
+    height:50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 4px;
+    background-color: #42a2a2;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+}

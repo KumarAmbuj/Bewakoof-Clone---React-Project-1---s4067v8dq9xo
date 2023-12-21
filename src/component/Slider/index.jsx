@@ -19,13 +19,22 @@ const SliderShow = () => {
     <div className="slider">
       <Slider {...settings}>
         <div className="card">
-          <img src="/images/slider1.jpg" alt="" />
+          <img
+            src="https://images.bewakoof.com/uploads/grid/app/NEW-1x1-GoToJackets70Off-Common-1703147023.jpg"
+            alt=""
+          />
         </div>
         <div className="card">
-          <img src="/images/slider2.webp" alt="" />
+          <img
+            src="https://images.bewakoof.com/uploads/grid/app/YearEndSale-1x1-commmon-RMIK--1--1703076004.gif"
+            alt=""
+          />
         </div>
         <div className="card">
-          <img src="/images/slider3.webp" alt="" />
+          <img
+            src="	https://images.bewakoof.com/uploads/grid/app/1x1-1703164584.gif"
+            alt=""
+          />
         </div>
         <div className="card">
           <img src="/images/slider4.gif" alt="" />

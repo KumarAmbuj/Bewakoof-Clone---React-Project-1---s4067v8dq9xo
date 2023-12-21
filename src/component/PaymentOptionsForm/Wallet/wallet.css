@@ -1,0 +1,38 @@
+.walletContainer{
+    padding:0 20px;
+}
+.walletPriceContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-top: 1px solid rgb(190, 190, 190);
+    /* border-bottom: 1px solid rgb(190, 190, 190); */
+    cursor: pointer;
+}
+.walletImageAndType{
+    display: flex;
+    gap:15px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.walletImageAndType img{
+    height:36px;
+    width: 36px;
+   
+}
+
+.walletText{
+    font-size: 14px;
+    font-family: montserrat-regular,sans-serif!important;
+    color: #494949;
+    
+}
+.radioButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.radioButton input{
+   height: 16px;
+   width: 16px;
+}

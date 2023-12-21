@@ -28,7 +28,7 @@ function ProductDetails() {
       console.log("errrrorrrr");
     }
   }
-  
+
   useEffect(() => {
     getProducts();
   }, [location]);
@@ -63,7 +63,7 @@ function ProductDetails() {
         </div>
         <div className="productDetails">
           <div className="productBanner">
-            <img src="./images/productBanner.webp" />
+            <img src="https://images.bewakoof.com/uploads/category/desktop/Statement-Winter-jackets_Men_Inside-Desktop-banner_(1)-1702820716.jpg" />
           </div>
           <div className="productDetailsCards">
             {/* <ProductCard />
