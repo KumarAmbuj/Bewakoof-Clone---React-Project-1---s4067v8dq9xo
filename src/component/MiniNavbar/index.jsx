@@ -4,7 +4,10 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
 import { useState } from "react";
 //import SideNavbar from "../SideNavBar";
-import SideNavbar from "../SideNavBar";
+//import SideNavbar from "./SideNavBar";
+
+import SideNavbar from "../SideNavbar";
+
 import { AuthContext } from "../../authentication/AuthContext";
 
 import { searchResult } from "../../Constant/constant";
