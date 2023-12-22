@@ -1,4 +1,4 @@
-import "./TrendingCategories.css";
+import "./trendingCategories.css";
 import { trendingList1, trendingList2 } from "../../Constant/constant";
 import TrendingCard from "../TrendingCard";
 
