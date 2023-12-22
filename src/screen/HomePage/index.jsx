@@ -14,7 +14,7 @@ import CategoriesToBag from "../../component/CategoriesToBag";
 import TopAccessories from "../../component/TopAccessories";
 import Banner4 from "../../component/Banner4";
 import Slider2 from "../../component/Slider2";
-//import Slider3 from "../../component/Slider3";
+import Slider3 from "../../component/Slider3";
 // import Slider3 from "../../component/Slider3";
 // import Footer from "../../component/Footer";
 // import MenMenuBarOnHover from "../../component/MenMenuBarOnHover";
@@ -66,7 +66,7 @@ function HomePage() {
       <Slider2 />
       <Banner3 />
       <CategoriesToBag />
-      {/* <Slider3 /> */}
+      <Slider3 />
       <TopAccessories />
       <BestSellerSlider />
       <Banner4 />
