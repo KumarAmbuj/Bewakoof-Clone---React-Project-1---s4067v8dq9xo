@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import ProductCard from "../../component/ProductCard";
-import "./ProductDetails.css";
+import "./productDetails.css";
 import Accordion from "../../component/Accordion";
 import { AccordionList } from "../../Constant/constant";
 
