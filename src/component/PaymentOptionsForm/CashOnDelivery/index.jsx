@@ -1,4 +1,4 @@
-import "./cashOnDelivery.css";
+import "./cashOndelivery.css";
 function CashOnDeliveryForm(props) {
   return (
     <div className="cashOnDeliveryContainer">
