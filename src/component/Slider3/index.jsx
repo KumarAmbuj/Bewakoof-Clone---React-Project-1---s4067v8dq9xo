@@ -1,6 +1,6 @@
 //import "./slider3.css";
 
-import "./slider3.css";
+import "./sliders3.css";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
