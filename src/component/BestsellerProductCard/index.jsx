@@ -1,4 +1,4 @@
-import "./productCard.css";
+import "./bestSellerProductCard.css";
 import { FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { useNavigate, useParams, Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import { useContext, useEffect, useState } from "react";
 import { removeFromWishlistAPI } from "../../ConstantAPI/constantAPI";
 import { projectId } from "../../Constant/constant";
 
-function ProductCard(props) {
+function BestsellerProductCard(props) {
   const { isLoggedIn, logout, token, wishlistData, getWishlistDataAPI } =
     useContext(AuthContext);
   const [addedToWishlist, setAddedToWishlist] = useState(false);
@@ -88,24 +88,24 @@ function ProductCard(props) {
 
   return (
     <div
-      className={`productCard`}
+      className="bestsellerProductCard"
       onClick={() => {
         navigateToSingleProductDetails(_id);
       }}
       // style={{ width: slider?.width }}
     >
-      <div className="productImage">
+      <div className="bestSellerProductCardImage">
         <img src={displayImage ? displayImage : "./images/singleImage.webp"} />
         <div className="tag">OVERSIZED FIT</div>
-        <div className="star">
+        {/* <div className="star">
           <span className="starIcon">
             <FaStar />
           </span>
           <span className="starRating">{Math.round(ratings)}</span>
-        </div>
+        </div> */}
       </div>
       <div className="productNameIcon">
-        <div className="productName">
+        <div className="productName" style={{ padding: "7px" }}>
           <div className="name">{brand}</div>
           <div className="description">{name.slice(0, 25)}..</div>
         </div>
@@ -134,26 +134,31 @@ function ProductCard(props) {
         </div>
       </div>
 
-      <div className="productPrice">
+      <div
+        className="productPrice"
+        style={{ paddingLeft: "7px", paddingBottom: "20px" }}
+      >
         <span className="actualPrice">
           <span style={{ fontSize: "12px" }}>₹</span>
-          {price}
+          <b>{price}</b>
         </span>
         <span className="deletedPrice">
           <span>₹</span>
           <del>{Math.round(price + (price * 30) / 100)}</del>
         </span>
+
+        <span className="perOff">53% OFF</span>
       </div>
-      <div className="specialMemberPrice">
+      {/* <div className="specialMemberPrice">
         <span className="priceBackground">
           <span>₹</span>
           {Math.round(price - (price * 10) / 100)} For Tribe Members
         </span>
-      </div>
-      <div className="btn">
+      </div> */}
+      {/* <div className="btn">
         <button>100% COTTON</button>
-      </div>
+      </div> */}
     </div>
   );
 }
-export default ProductCard;
+export default BestsellerProductCard;

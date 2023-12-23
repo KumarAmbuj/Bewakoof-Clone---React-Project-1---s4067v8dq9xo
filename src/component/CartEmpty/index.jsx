@@ -2,7 +2,7 @@ import "./emptyCart.css";
 function CartEmpty() {
   return (
     <div>
-      <div className="cartUpperContainer">
+      <div className="CartUpperContainer">
         <div className="cartEmptyImage">
           <img src="./images/emptyCartImage.png" />
         </div>

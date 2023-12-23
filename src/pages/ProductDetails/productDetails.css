@@ -65,18 +65,21 @@
     /* outline: 1px solid red; */
     margin:10px auto !important;
     display: flex;
+   
     
 }
 .productDetailsFilter{
     flex:1;
     /* outline: 1px solid black; */
     /* height: 400px; */
+    
 }
 
 .productDetails{
     flex:3;
     /* outline: 1px solid green; */
     /* height: 400px; */
+    
 }
 .productBanner img{
     width:96%;

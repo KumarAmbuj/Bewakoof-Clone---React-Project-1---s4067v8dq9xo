@@ -8,9 +8,39 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import ProductCard from "../ProductCard";
+import BestsellerProductCard from "../BestsellerProductCard";
 
 function BestSellerSlider() {
   const [productData, setProductData] = useState([]);
+  const [cardshow, setCardshow] = useState(5);
+
+  // const [windowSize, setWindowSize] = useState([
+  //   window.innerWidth,
+  //   window.innerHeight,
+  // ]);
+
+  //console.log(windowSize);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      //setWindowSize([window.innerWidth, window.innerHeight]);
+      if (window.innerWidth > 767) {
+        setCardshow(5);
+      } else if (window.innerWidth <= 390) {
+        setCardshow(1);
+      } else if (window.innerWidth <= 500) {
+        setCardshow(2);
+      } else if (window.innerWidth <= 767) {
+        setCardshow(3);
+      }
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
 
   const men = {
     name: "",
@@ -37,7 +67,7 @@ function BestSellerSlider() {
       //console.log(result);
       if (resultResponse.status === "success") {
         setProductData(resultResponse.data);
-        console.log(productData);
+        //console.log(productData);
         //navigate("/cart");
       } else {
         navigate("/");
@@ -57,7 +87,7 @@ function BestSellerSlider() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: cardshow,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -68,7 +98,7 @@ function BestSellerSlider() {
     <div>
       <div className="bestSellerHeading">BESTSELLERS</div>
 
-      <div className="slider2">
+      <div className="bestSellerSlider">
         <Slider {...settings}>
           {/* <div className="sliderCard">
             <img src="/images/slider31.webp" alt="" />
@@ -93,13 +123,7 @@ function BestSellerSlider() {
           </div> */}
           {productData.length > 0 &&
             productData.map((val) => {
-              return (
-                <ProductCard
-                  data={val}
-                  slider={{ width: "85%" }}
-                  key={val._id}
-                />
-              );
+              return <BestsellerProductCard data={val} key={val._id} />;
             })}
         </Slider>
       </div>

@@ -1,3 +1,8 @@
+.bestSellerSliderCard{
+    width: 10%;
+}
+
+
 .bestSellerHeading{
     font-family: montserrat,sans-serif!important;
     font-size: 16px!important;
@@ -20,4 +25,15 @@
     color: #42a2a2!important;
     font-weight: 600;
     text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .bestSellerSliderCard{
+    
+        width: 50% !important;
+        
+    
+      
+    }
 }

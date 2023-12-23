@@ -1,6 +1,6 @@
 .menMenuBar{
     /* height: 500px; */
-    width: 87%;
+    width: 78%;
     /* outline: 1px solid red; */
     z-index: 7;
     position: fixed;
@@ -9,7 +9,7 @@
     overflow-y: scroll;
     
     background-color: white;
-    margin-left: 7%;
+    margin-left: 11%;
     padding-bottom: 100px;
     border: 1px solid grey;
 }
