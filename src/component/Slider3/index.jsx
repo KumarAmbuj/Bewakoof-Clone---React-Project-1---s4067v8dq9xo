@@ -24,20 +24,35 @@ const Slider3 = () => {
       <div className="slider3">
         <Slider {...settings}>
           <div className="slider3Card">
+            <img
+              src="https://images.bewakoof.com/uploads/grid/app/NEW-1x1-cargo-common--2--1701959177.jpg"
+              alt=""
+            />
+          </div>
+          <div className="slider3Card">
+            <img
+              src="	https://images.bewakoof.com/uploads/grid/app/1x1-Year-End-Sale-Joggers-1703165020.jpg"
+              alt=""
+            />
+          </div>
+          <div className="slider3Card">
+            <img
+              src="https://images.bewakoof.com/uploads/grid/app/NEW-1x1-GPOT-Common-NewShoot-1702819180.jpg"
+              alt=""
+            />
+          </div>
+          <div className="slider3Card">
             <img src="/images/slider31.webp" alt="" />
           </div>
           <div className="slider3Card">
+            <img
+              src="	https://images.bewakoof.com/uploads/grid/app/1x1-Year-End-Sale-Joggers-1703165020.jpg"
+              alt=""
+            />
+          </div>
+          {/* <div className="slider3Card">
             <img src="/images/slider32.jpg" alt="" />
-          </div>
-          <div className="slider3Card">
-            <img src="/images/slider33.webp" alt="" />
-          </div>
-          <div className="slider3Card">
-            <img src="/images/slider31.webp" alt="" />
-          </div>
-          <div className="slider3Card">
-            <img src="/images/slider32.jpg" alt="" />
-          </div>
+          </div> */}
           {/* <div className="sliderCard">
             <img src="/images/slider21.webp" alt="" />
           </div>
