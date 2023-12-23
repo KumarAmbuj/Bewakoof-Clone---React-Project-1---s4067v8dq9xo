@@ -18,21 +18,21 @@ const Slider3 = () => {
   return (
     <>
       {/* <div className="slider2Text">Bewakoof Originals</div> */}
-      <div className="slider2">
+      <div className="slider3">
         <Slider {...settings}>
-          <div className="sliderCard">
+          <div className="slider3Card">
             <img src="/images/slider31.webp" alt="" />
           </div>
-          <div className="sliderCard">
+          <div className="slider3Card">
             <img src="/images/slider32.jpg" alt="" />
           </div>
-          <div className="sliderCard">
+          <div className="slider3Card">
             <img src="/images/slider33.webp" alt="" />
           </div>
-          <div className="sliderCard">
+          <div className="slider3Card">
             <img src="/images/slider31.webp" alt="" />
           </div>
-          <div className="sliderCard">
+          <div className="slider3Card">
             <img src="/images/slider32.jpg" alt="" />
           </div>
           {/* <div className="sliderCard">

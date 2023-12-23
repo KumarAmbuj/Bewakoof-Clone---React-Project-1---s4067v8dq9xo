@@ -1,4 +1,4 @@
-.slider2{
+/* .slider3{
     margin-top: 10px;
     margin-left: 5px;
     margin-right: 5px;
@@ -8,7 +8,7 @@
     
 
     
-}
+} */
 /* .sliderImage{
     width:30%;
     height: auto;
@@ -18,13 +18,13 @@
     width: 100%;
     height: auto;
 } */
-.sliderCard{
+.slider3Card{
     padding: 0 15px;
     overflow: hidden;
     background-color: white;
 }
 
-.sliderCard img{
+.slider3Card img{
     width: 100%;
     height: 100%;
     object-fit: contain;
