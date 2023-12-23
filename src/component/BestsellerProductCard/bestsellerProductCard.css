@@ -1,4 +1,4 @@
-.bestsellerProductCard{
+.bestSellerProductCard{
     
     width: 90%;
     margin-bottom: 15px;
@@ -12,7 +12,7 @@
     0%{opacity: 0.5;}
     100%{opacity: 1;}
 }
-.bestsellerProductCard:hover{
+.bestSellerProductCard:hover{
     animation: myAnimation 1s;
     
 }

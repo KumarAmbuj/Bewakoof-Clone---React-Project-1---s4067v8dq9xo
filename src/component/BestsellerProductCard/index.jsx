@@ -88,7 +88,7 @@ function BestsellerProductCard(props) {
 
   return (
     <div
-      className="bestsellerProductCard"
+      className="bestSellerProductCard"
       onClick={() => {
         navigateToSingleProductDetails(_id);
       }}
