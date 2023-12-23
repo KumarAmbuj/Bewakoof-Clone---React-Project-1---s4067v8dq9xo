@@ -1,4 +1,5 @@
-import "./bestSellerProductCard.css";
+import "./bestsellerProductCard.css";
+
 import { FaStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { useNavigate, useParams, Link } from "react-router-dom";
