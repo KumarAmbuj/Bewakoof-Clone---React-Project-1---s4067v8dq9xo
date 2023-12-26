@@ -9,7 +9,7 @@ function Footer() {
           <div className="footerContent">
             <div className="footerBox">
               <div className="footerHeader">CUSTOMER SERVICE</div>
-              <div className="footerLink">Contsct Us</div>
+              <div className="footerLink">Contact Us</div>
               <div className="footerLink">Track Order</div>
               <div className="footerLink">Return Order</div>
               <div className="footerLink">Cancel Order</div>

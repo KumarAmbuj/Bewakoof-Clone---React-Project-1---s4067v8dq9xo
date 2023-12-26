@@ -108,7 +108,7 @@ function BestsellerProductCard(props) {
       <div className="productNameIcon">
         <div className="productName" style={{ padding: "7px" }}>
           <div className="name">{brand}</div>
-          <div className="description">{name.slice(0, 25)}..</div>
+          <div className="description">{name.slice(0, 22)}..</div>
         </div>
         <div className="productIcon">
           <span className="heart">

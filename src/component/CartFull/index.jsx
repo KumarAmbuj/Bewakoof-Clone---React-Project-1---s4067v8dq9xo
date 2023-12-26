@@ -61,17 +61,20 @@ function CartFull(props) {
         <div className="freeDelivery">
           Yay! You get FREE delivery on this order
         </div>
-        {cartData.map((val) => {
-          return (
-            <CartSingleComponent
-              data={val}
-              key={val.product._id}
-              deleteHandler={() => {
-                deleteFromCart(val.product._id);
-              }}
-            />
-          );
-        })}
+        {cartData
+          .slice()
+          .reverse()
+          .map((val) => {
+            return (
+              <CartSingleComponent
+                data={val}
+                key={val.product._id}
+                deleteHandler={() => {
+                  deleteFromCart(val.product._id);
+                }}
+              />
+            );
+          })}
 
         {/* <CartSingleComponent />
         <CartSingleComponent /> */}

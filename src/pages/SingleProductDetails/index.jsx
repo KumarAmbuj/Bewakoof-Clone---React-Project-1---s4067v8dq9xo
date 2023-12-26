@@ -52,7 +52,7 @@ function SingleProductDetails() {
     } catch {
       //toast.error("Some error occured");
       console.log("errorrrrrrrrrrrr");
-      navigate("/");
+      //navigate("/");
     }
   }
 
@@ -62,6 +62,10 @@ function SingleProductDetails() {
     } else {
       navigate("/login");
     }
+  }
+
+  function handleGoToBag() {
+    navigate("/cart");
   }
 
   async function getProducts() {
@@ -188,7 +192,11 @@ function SingleProductDetails() {
               <span>
                 <img src="/images/addToBag.svg" />
               </span>
-              {!addedToCart ? "ADD TO BAG" : "GO TO BAG"}
+              {!addedToCart ? (
+                <span>ADD TO BAG</span>
+              ) : (
+                <span onClick={handleGoToBag}>GO TO BAG</span>
+              )}
             </button>
             <button className="wishlist">
               <span>

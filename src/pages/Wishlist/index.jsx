@@ -52,9 +52,12 @@ function Wishlist() {
             <button>Tshirt</button>
           </div>
           <div className="wishlistContainer">
-            {wishlistData.map((val) => {
-              return <WishlistCard data={val} key={val.products._id} />;
-            })}
+            {wishlistData
+              .slice()
+              .reverse()
+              .map((val) => {
+                return <WishlistCard data={val} key={val.products._id} />;
+              })}
             {/* <WishlistCard />
             <WishlistCard />
             <WishlistCard />
