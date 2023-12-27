@@ -132,7 +132,7 @@ function CartFull(props) {
           </div>
           <div>
             <Link to="/checkout">
-              <button>ADD ADDRESS</button>
+              <button>GO TO CHECKOUT</button>
             </Link>
           </div>
         </div>

@@ -162,9 +162,9 @@ function Checkout() {
         <div className="youArePayingFor">You are paying for these items</div>
 
         {cartData.length > 0 &&
-          cartData.map((val) => {
+          cartData.map((val, index) => {
             return (
-              <div className="checkoutCartCard">
+              <div className="checkoutCartCard" key={index}>
                 <div>
                   <img src={val.product.displayImage} />
                 </div>

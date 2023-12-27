@@ -95,8 +95,8 @@ function SignUp() {
         <div className="inputMobileNumber" style={{ marginTop: "10px" }}>
           <div className="mobileNumber">
             <input
-              type="password"
-              placeholder=""
+              type="text"
+              placeholder="password"
               name="password"
               onChange={handleChange}
             />

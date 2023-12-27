@@ -12,12 +12,18 @@ import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../authentication/AuthContext";
 import { useContext } from "react";
 
+import { addToWishlistDataAPI } from "../../ConstantAPI/constantAPI";
+import { removeFromWishlistAPI } from "../../ConstantAPI/constantAPI";
+
+import { projectId } from "../../Constant/constant";
+
 function SingleProductDetails() {
   //console.log("hi");
   const { isLoggedIn, logout, token } = useContext(AuthContext);
   const [data, setData] = useState({});
   const [Image, setImage] = useState(data?.displayImage);
   const [addedToCart, setAddedToCart] = useState(false);
+  const [addedToWishlist, setAddedToWishlist] = useState(false);
 
   const { productId } = useParams();
   const navigate = useNavigate();
@@ -66,6 +72,24 @@ function SingleProductDetails() {
 
   function handleGoToBag() {
     navigate("/cart");
+  }
+
+  function handleFavourite() {
+    if (!isLoggedIn) {
+      navigate("/login");
+    } else {
+      addToWishlistDataAPI(productId, projectId, token);
+      setAddedToWishlist(true);
+      //getWishlistDataAPI();
+    }
+  }
+
+  function handleRemoveFromFavourite(e) {
+    e.stopPropagation();
+    removeFromWishlistAPI(productId, projectId, token);
+    //getWishlistDataAPI();
+    setAddedToWishlist(false);
+    console.log("hello");
   }
 
   async function getProducts() {
@@ -198,11 +222,22 @@ function SingleProductDetails() {
                 <span onClick={handleGoToBag}>GO TO BAG</span>
               )}
             </button>
-            <button className="wishlist">
+            <button className="wishlist" onClick={handleFavourite}>
               <span>
-                <FaRegHeart />
+                {!addedToWishlist ? (
+                  <img
+                    src="	https://images.bewakoof.com/web/Wishlist.svg"
+                    style={{ height: "28px", width: "28px" }}
+                  />
+                ) : (
+                  <img
+                    src="		https://images.bewakoof.com/web/Wishlist-selected.svg"
+                    style={{ height: "28px", width: "28px" }}
+                    onClick={handleRemoveFromFavourite}
+                  />
+                )}
               </span>
-              WISHLIST
+              <span>WISHLIST</span>
             </button>
           </div>
 

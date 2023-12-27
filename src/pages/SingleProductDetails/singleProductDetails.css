@@ -181,32 +181,46 @@
    margin-top: 3px;
    margin-right: 5px;
 }
+.addToBagWishlist{
+    display: flex;
+}
 .addToBagWishlist .addToBag {
     background-color: #ffd84d;
-    padding: 10px 50px;
+    /* padding: 10px 50px; */
     border: none;
     font-size: 14px;
     font-weight: 600;
     border-radius: 2px;
     cursor: pointer;
-    
+    height: 44px;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
 }
 .addToBagWishlist .wishlist{
-    margin-left: 20px;
+    margin-left: 15px;
     background-color: white;
-    padding: 10px 50px;
+    /* padding: 7px 50px; */
     border: none;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
-    border-radius: 2px;
-    color: rgb(141, 140, 140);
-    border: 1px solid grey;
+    border-radius: 3px;
+    color: #333;
+    border: 1px solid rgb(192, 190, 190);
     cursor: pointer;
+    height: 44px;
+    width: 37%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 .addToBagWishlist .wishlist span{
     font-size: 16px;
     font-weight: 100;
-    margin-right: 10px;
+    
 }
 
 .getThisBy{
