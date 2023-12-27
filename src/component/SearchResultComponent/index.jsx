@@ -13,7 +13,9 @@ function SearchResultComponent(props) {
               )}&filter=${JSON.stringify(val.filter)}`}
               key={index}
             >
-              <div className="link">{val.name}</div>
+              <div className="link" onClick={props.onclick}>
+                {val.name}
+              </div>
             </Link>
           </>
         );

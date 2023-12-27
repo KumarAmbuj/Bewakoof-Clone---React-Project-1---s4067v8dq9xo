@@ -2,6 +2,7 @@ import "./login.css";
 import { AuthContext } from "../../authentication/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
+import Loader from "../../component/Loader";
 
 function Login() {
   const navigate = useNavigate();
@@ -12,9 +13,11 @@ function Login() {
     password: "",
     appType: "ecommerce",
   });
+  const [isLoader, setIsLoader] = useState(false);
 
   async function sendLoginData() {
     try {
+      setIsLoader(true);
       let result = await fetch(
         `https://academics.newtonschool.co/api/v1/user/login`,
         {
@@ -45,6 +48,8 @@ function Login() {
       //toast.error("Some error occured");
       console.log("errorrrrrrrrrrrr");
       navigate("/signup");
+    } finally {
+      setIsLoader(false);
     }
   }
 
@@ -58,32 +63,35 @@ function Login() {
   }
 
   return (
-    <div className="loginContainer">
-      <div className="loginInnerContainer">
-        <div className="loginHeading">Login to your account</div>
-        <div className="loginInputField">
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="loginInputField">
-          <input
-            type="text"
-            placeholder="Password"
-            name="password"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="forgotPassword">Forgot Password ?</div>
+    <>
+      {isLoader ? <Loader /> : ""}
+      <div className="loginContainer">
+        <div className="loginInnerContainer">
+          <div className="loginHeading">Login to your account</div>
+          <div className="loginInputField">
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="loginInputField">
+            <input
+              type="text"
+              placeholder="Password"
+              name="password"
+              onChange={handleChange}
+            />
+          </div>
+          <div className="forgotPassword">Forgot Password ?</div>
 
-        <div className="loginButton">
-          <button onClick={handleSubmit}>LOGIN</button>
+          <div className="loginButton">
+            <button onClick={handleSubmit}>LOGIN</button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 export default Login;

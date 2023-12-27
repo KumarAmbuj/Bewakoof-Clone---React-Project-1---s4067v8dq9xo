@@ -1,0 +1,15 @@
+.loader{
+    height:90px;
+    width:130px;
+    /* outline: 1px solid red; */
+    z-index: 34;
+    top:40%;
+    left:45%;
+    position: fixed;
+    background-color: white;
+    border-radius: 10px;
+}
+.loader img{
+    height: 100%;
+    width: 100%;
+}

@@ -19,8 +19,13 @@ function MiddleNavbar() {
   const [womenMenuBar, setWomenMenuBar] = useState(false);
   const [mobileMenuBar, setMobileMenuBar] = useState(false);
   const [searchResultData, setSearchResultData] = useState([]);
-  const { isLoggedIn, logout } = useContext(AuthContext);
+  const { isLoggedIn, logout, cartData } = useContext(AuthContext);
   //console.log(isLoggedIn);
+
+  function clearSearchData() {
+    setSearchResultData([]);
+  }
+
   const navigate = useNavigate();
 
   function menMenuOnMouseOver() {
@@ -129,6 +134,12 @@ function MiddleNavbar() {
             </Link>
           </div>
           <div className="shoppingBag">
+            {cartData.length > 0 ? (
+              <div className="itemCount">{cartData?.length}</div>
+            ) : (
+              ""
+            )}
+
             <Link to={isLoggedIn ? "/cart" : "/login"}>
               {/* <FaShoppingBag /> */}
               <img
@@ -169,7 +180,10 @@ function MiddleNavbar() {
         ""
       )}
       {searchResultData.length > 0 ? (
-        <SearchResultComponent data={searchResultData} />
+        <SearchResultComponent
+          data={searchResultData}
+          onclick={clearSearchData}
+        />
       ) : (
         ""
       )}

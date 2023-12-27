@@ -7,12 +7,14 @@ import { useContext, useEffect, useState } from "react";
 
 import { removeFromWishlistAPI } from "../../ConstantAPI/constantAPI";
 import { projectId } from "../../Constant/constant";
+import Loader from "../Loader";
 
 function ProductCard(props) {
   const { isLoggedIn, logout, token, wishlistData, getWishlistDataAPI } =
     useContext(AuthContext);
   const [addedToWishlist, setAddedToWishlist] = useState(false);
   //console.log(wishlistData);
+  const [isLoader, setIsLoader] = useState(false);
 
   const { slider } = props;
 
@@ -42,6 +44,7 @@ function ProductCard(props) {
 
   async function sendWishlistData() {
     try {
+      setIsLoader(true);
       let result = await fetch(
         `https://academics.newtonschool.co/api/v1/ecommerce/wishlist`,
         {
@@ -64,6 +67,8 @@ function ProductCard(props) {
       //toast.error("Some error occured");
       console.log("errorrrrrrrrrrrr");
       //navigate("/signup");
+    } finally {
+      setIsLoader(false);
     }
   }
 
@@ -87,73 +92,78 @@ function ProductCard(props) {
   }
 
   return (
-    <div
-      className={`productCard`}
-      onClick={() => {
-        navigateToSingleProductDetails(_id);
-      }}
-      // style={{ width: slider?.width }}
-    >
-      <div className="productImage">
-        <img src={displayImage ? displayImage : "./images/singleImage.webp"} />
-        <div className="tag">OVERSIZED FIT</div>
-        <div className="star">
-          <span className="starIcon">
-            <FaStar />
-          </span>
-          <span className="starRating">{Math.round(ratings)}</span>
+    <>
+      {isLoader ? <Loader /> : ""}
+      <div
+        className={`productCard`}
+        onClick={() => {
+          navigateToSingleProductDetails(_id);
+        }}
+        // style={{ width: slider?.width }}
+      >
+        <div className="productImage">
+          <img
+            src={displayImage ? displayImage : "./images/singleImage.webp"}
+          />
+          <div className="tag">OVERSIZED FIT</div>
+          <div className="star">
+            <span className="starIcon">
+              <FaStar />
+            </span>
+            <span className="starRating">{Math.round(ratings)}</span>
+          </div>
         </div>
-      </div>
-      <div className="productNameIcon">
-        <div className="productName">
-          <div className="name">{brand}</div>
-          <div className="description">{name.slice(0, 25)}..</div>
-        </div>
-        <div className="productIcon">
-          <span className="heart">
-            {/* <FaRegHeart onClick={handleFavourite} /> */}
-            {!addedToWishlist ? (
-              <img
-                src="	https://images.bewakoof.com/web/Wishlist.svg"
-                style={{ height: "28px", width: "28px" }}
-                onClick={handleFavourite}
-              />
-            ) : (
-              <img
-                src="		https://images.bewakoof.com/web/Wishlist-selected.svg"
-                style={{ height: "28px", width: "28px" }}
-                onClick={handleRemoveFromFavourite}
-              />
-            )}
-            {/* <img
+        <div className="productNameIcon">
+          <div className="productName">
+            <div className="name">{brand}</div>
+            <div className="description">{name.slice(0, 25)}..</div>
+          </div>
+          <div className="productIcon">
+            <span className="heart">
+              {/* <FaRegHeart onClick={handleFavourite} /> */}
+              {!addedToWishlist ? (
+                <img
+                  src="	https://images.bewakoof.com/web/Wishlist.svg"
+                  style={{ height: "28px", width: "28px" }}
+                  onClick={handleFavourite}
+                />
+              ) : (
+                <img
+                  src="		https://images.bewakoof.com/web/Wishlist-selected.svg"
+                  style={{ height: "28px", width: "28px" }}
+                  onClick={handleRemoveFromFavourite}
+                />
+              )}
+              {/* <img
               src="	https://images.bewakoof.com/web/Wishlist.svg"
               style={{ height: "28px", width: "28px" }}
               onClick={handleFavourite}
             /> */}
+            </span>
+          </div>
+        </div>
+
+        <div className="productPrice">
+          <span className="actualPrice">
+            <span style={{ fontSize: "12px" }}>₹</span>
+            {price}
+          </span>
+          <span className="deletedPrice">
+            <span>₹</span>
+            <del>{Math.round(price + (price * 30) / 100)}</del>
           </span>
         </div>
+        <div className="specialMemberPrice">
+          <span className="priceBackground">
+            <span>₹</span>
+            {Math.round(price - (price * 10) / 100)} For Tribe Members
+          </span>
+        </div>
+        <div className="btn">
+          <button>100% COTTON</button>
+        </div>
       </div>
-
-      <div className="productPrice">
-        <span className="actualPrice">
-          <span style={{ fontSize: "12px" }}>₹</span>
-          {price}
-        </span>
-        <span className="deletedPrice">
-          <span>₹</span>
-          <del>{Math.round(price + (price * 30) / 100)}</del>
-        </span>
-      </div>
-      <div className="specialMemberPrice">
-        <span className="priceBackground">
-          <span>₹</span>
-          {Math.round(price - (price * 10) / 100)} For Tribe Members
-        </span>
-      </div>
-      <div className="btn">
-        <button>100% COTTON</button>
-      </div>
-    </div>
+    </>
   );
 }
 export default ProductCard;

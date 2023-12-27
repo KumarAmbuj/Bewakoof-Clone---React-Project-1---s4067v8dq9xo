@@ -7,6 +7,7 @@ function AuthProvider({ children }) {
   const [token, setToken] = useState("");
   const [userName, setUserName] = useState("");
   const [wishlistData, setWishlistdata] = useState([]);
+  const [cartData, setCartdata] = useState([]);
 
   //console.log(isLoggedIn, token);
 
@@ -36,8 +37,36 @@ function AuthProvider({ children }) {
       //navigate("/signup");
     }
   }
+  async function getCartDataAPI() {
+    try {
+      let result = await fetch(
+        `https://academics.newtonschool.co/api/v1/ecommerce/cart`,
+        {
+          method: "GET",
+
+          headers: {
+            projectId: projectId,
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+      let resultResponse = await result.json();
+      //console.log(resultResponse);
+      if (resultResponse.status === "success") {
+        setCartdata(resultResponse.data.items);
+      }
+
+      //console.log(result);
+    } catch {
+      //toast.error("Some error occured");
+      console.log("errorrrrrrrrrrrr");
+      //navigate("/signup");
+    }
+  }
+
   useEffect(() => {
     getWishlistDataAPI();
+    getCartDataAPI();
   }, [token]);
   const login = () => {
     setIsLoggedIn(true);
@@ -49,6 +78,7 @@ function AuthProvider({ children }) {
     setToken("");
     SetUserName("");
     setIsLoggedIn(false);
+    setCartdata([]);
   };
 
   const SetUserName = (val) => {
@@ -68,6 +98,7 @@ function AuthProvider({ children }) {
         userName,
         wishlistData,
         getWishlistDataAPI,
+        cartData,
       }}
     >
       {children}

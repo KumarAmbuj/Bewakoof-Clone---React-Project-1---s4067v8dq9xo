@@ -5,12 +5,15 @@ import { AuthContext } from "../../authentication/AuthContext";
 import { useContext } from "react";
 
 import "./wishlist.css";
+import Loader from "../../component/Loader";
 function Wishlist() {
   const { isLoggedIn, logout, token } = useContext(AuthContext);
   const [wishlistData, setWishlistData] = useState([]);
+  const [isLoader, setIsLoader] = useState(false);
 
   async function getWishlistData() {
     try {
+      setIsLoader(true);
       let result = await fetch(
         `https://academics.newtonschool.co/api/v1/ecommerce/wishlist`,
         {
@@ -36,6 +39,8 @@ function Wishlist() {
       //toast.error("Some error occured");
       console.log("errorrrrrrrrrrrr");
       navigate("/");
+    } finally {
+      setIsLoader(false);
     }
   }
   useEffect(() => {
@@ -43,6 +48,7 @@ function Wishlist() {
   }, []);
   return (
     <>
+      {isLoader ? <Loader /> : ""}
       {wishlistData.length == 0 ? (
         <WishlistEmpty />
       ) : (

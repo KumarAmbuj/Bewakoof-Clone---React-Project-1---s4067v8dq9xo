@@ -116,6 +116,24 @@
 .shoppingBag{
     cursor: pointer;
     color:rgb(77, 75, 75);
+    position: relative;
+    
+}
+
+.itemCount{
+    position: absolute;
+    top:-5px;
+    right:-7px;
+    background: #fdd835;
+    color: rgba(0,0,0,.8);
+    font-size: 12px;
+    
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .heart{
     cursor: pointer;

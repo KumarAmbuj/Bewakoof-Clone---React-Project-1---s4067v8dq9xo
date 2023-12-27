@@ -22,8 +22,10 @@ import Slider3 from "../../component/Slider3";
 import { useState } from "react";
 import Home from "../Home";
 import BestSellerSlider from "../../component/BestSellerSlider";
+import Loader from "../../component/Loader";
 
 function HomePage() {
+  const [isLoader, setIsLoader] = useState(false);
   // const [menMenuBar, setMenMenuBar] = useState(false);
   // const [womenMenuBar, setWomenMenuBar] = useState(false);
   // const [mobileMenuBar, setMobileMenuBar] = useState(false);
@@ -57,6 +59,8 @@ function HomePage() {
       // handleMobileBarOnLeave={mobileMenuOnMouseLeave}
       /> */}
       {/* <MiniNavbar /> */}
+      {isLoader ? <Loader /> : ""}
+
       <CategoryNavbar />
       <SliderShow />
       <CategoryList />

@@ -6,14 +6,17 @@ import "./cart.css";
 import { AuthContext } from "../../authentication/AuthContext";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../component/Loader";
 
 function Cart() {
   const [cartData, setCartDat] = useState([]);
+  const [isLoader, setIsLoader] = useState(false);
   const { isLoggedIn, logout, token } = useContext(AuthContext);
   const navigate = useNavigate();
 
   async function getCartData() {
     try {
+      setIsLoader(true);
       let result = await fetch(
         `https://academics.newtonschool.co/api/v1/ecommerce/cart`,
         {
@@ -38,6 +41,8 @@ function Cart() {
     } catch {
       console.log("errorrrrrrrrrrrr");
       navigate("/");
+    } finally {
+      setIsLoader(false);
     }
   }
 
@@ -46,15 +51,18 @@ function Cart() {
   }, []);
 
   return (
-    <div>
-      {cartData.length == 0 ? (
-        <CartEmpty />
-      ) : (
-        <CartFull data={cartData} getCartData={getCartData} />
-      )}
-      {/* <CartEmpty /> */}
-      {/* <CartFull /> */}
-    </div>
+    <>
+      {isLoader ? <Loader /> : ""}
+      <div>
+        {cartData.length == 0 ? (
+          <CartEmpty />
+        ) : (
+          <CartFull data={cartData} getCartData={getCartData} />
+        )}
+        {/* <CartEmpty /> */}
+        {/* <CartFull /> */}
+      </div>
+    </>
   );
 }
 export default Cart;
