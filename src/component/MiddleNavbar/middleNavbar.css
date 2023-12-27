@@ -123,10 +123,10 @@
 .itemCount{
     position: absolute;
     top:-5px;
-    right:-7px;
+    right:-9px;
     background: #fdd835;
     color: rgba(0,0,0,.8);
-    font-size: 12px;
+    font-size: 10px;
     
     border-radius: 50%;
     height: 18px;
@@ -134,6 +134,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: montserrat-regular,sans-serif;
 }
 .heart{
     cursor: pointer;
