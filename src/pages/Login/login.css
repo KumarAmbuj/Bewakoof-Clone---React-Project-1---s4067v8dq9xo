@@ -8,9 +8,9 @@
 }
 
 .loginInnerContainer{
-    width: 80%;
-    height:80%;
-    margin:auto;
+    width: 40%;
+    height:57%;
+    margin: auto;
     /* outline: 1px solid red; */
     background-color: white;
     display: flex;
@@ -47,7 +47,7 @@
      color:white;
      font-size: 16px;
      font-weight: 700;
-     background-color: gray;
+     background-color: #42a2a2;
      padding: 10px;
      border: none;
      border-radius: 5px;
@@ -68,5 +68,13 @@
     }
     .loginButton button{
         width: 200px;
+    }
+    .loginInnerContainer{
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .loginInnerContainer{
+        width: 90%;
     }
 }

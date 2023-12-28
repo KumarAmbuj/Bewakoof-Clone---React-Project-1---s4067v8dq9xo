@@ -19,11 +19,14 @@ function MiddleNavbar() {
   const [womenMenuBar, setWomenMenuBar] = useState(false);
   const [mobileMenuBar, setMobileMenuBar] = useState(false);
   const [searchResultData, setSearchResultData] = useState([]);
-  const { isLoggedIn, logout, cartData } = useContext(AuthContext);
+  const [searchVal, setSearchVal] = useState("");
+  const { isLoggedIn, logout, cartData, wishlistData } =
+    useContext(AuthContext);
   //console.log(isLoggedIn);
 
   function clearSearchData() {
     setSearchResultData([]);
+    setSearchVal("");
   }
 
   const navigate = useNavigate();
@@ -56,6 +59,7 @@ function MiddleNavbar() {
 
   function handleSearch(e) {
     //console.log(e.target.value);
+    setSearchVal(e.target.value);
     let x = e.target.value;
     let arr = [];
     if (x.length >= 3) {
@@ -117,6 +121,7 @@ function MiddleNavbar() {
             <input
               placeholder="Search by product, category or collection"
               onChange={handleSearch}
+              value={searchVal}
             ></input>
           </div>
           <div className="line"></div>
@@ -128,6 +133,11 @@ function MiddleNavbar() {
             )}
           </div>
           <div className="heart">
+            {wishlistData.length > 0 ? (
+              <div className="itemCount">{wishlistData?.length}</div>
+            ) : (
+              ""
+            )}
             <Link to={isLoggedIn ? "/wishlist" : "/login"}>
               {/* <FaRegHeart /> */}
               <i className="fa fa-heart-o"></i>
