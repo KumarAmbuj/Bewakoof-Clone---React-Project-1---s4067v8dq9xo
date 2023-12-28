@@ -36,11 +36,13 @@ function ProductDetails() {
 
   useEffect(() => {
     getProducts();
+    //document.getElementById("prod").scrollTop.toFixed;
+    window.scrollTo(0, 0);
   }, [location]);
   return (
     <>
       {isLoader ? <Loader /> : ""}
-      <div className="prod">
+      <div className="prod" id="prod">
         <div className="miniCategory">
           Home / Clothing / T-Shirts for / Printed T Shirts for
         </div>
