@@ -14,6 +14,7 @@ function Login() {
     appType: "ecommerce",
   });
   const [isLoader, setIsLoader] = useState(false);
+  const [message, setMessage] = useState({});
 
   async function sendLoginData() {
     try {
@@ -40,20 +41,23 @@ function Login() {
         login();
         SetToken(resultResponse.token);
         SetUserName(resultResponse.data.name);
+        setMessage(resultResponse);
         navigate("/");
       } else {
-        navigate("/signup");
+        setMessage(resultResponse);
+        navigate("/login");
       }
     } catch {
       //toast.error("Some error occured");
       console.log("errorrrrrrrrrrrr");
-      navigate("/signup");
+      navigate("/login");
     } finally {
       setIsLoader(false);
     }
   }
 
   function handleChange(e) {
+    setMessage({});
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
   }
 
@@ -84,7 +88,16 @@ function Login() {
               onChange={handleChange}
             />
           </div>
-          <div className="forgotPassword">Forgot Password ?</div>
+          <div
+            className={`loginResponse ${
+              message?.status === "fail" ? "fail" : "success"
+            }`}
+          >
+            {message?.message}
+          </div>
+          <div className="forgotPassword" style={{ display: "none" }}>
+            Forgot Password ?
+          </div>
 
           <div className="loginButton">
             <button onClick={handleSubmit}>LOGIN</button>

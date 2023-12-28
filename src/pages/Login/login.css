@@ -37,10 +37,10 @@
     font-size: 16px;
     font-weight: 600;
     color: rgb(69, 69, 248);
-    margin-top: 60px;
+    margin-top: 30px;
 }
 .loginButton{
-    margin-top: 60px;
+    margin-top: 30px;
 }
 .loginButton button{
      width: 300px;
@@ -53,7 +53,15 @@
      border-radius: 5px;
      cursor:pointer;
 }
-
+.loginResponse{
+    font-size: 14px;
+    margin-top: 30px;
+    font-family: montserrat,sans-serif;
+    font-weight: 600;
+}
+.fail{
+    color:red
+}
 @media only screen and (max-width: 767px) {
     .loginInputField input{
         width:200px;

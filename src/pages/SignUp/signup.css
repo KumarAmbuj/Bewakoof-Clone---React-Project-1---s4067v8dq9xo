@@ -182,3 +182,16 @@
     line-height: 20px;
     font-weight: 400;
 }
+
+.signupResponse{
+    margin-top: 20px;
+    font-family: montserrat,sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+}
+.fail{
+    color:red;
+}
+.success{
+    color:green;
+}
