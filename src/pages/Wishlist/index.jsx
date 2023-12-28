@@ -45,6 +45,7 @@ function Wishlist() {
   }
   useEffect(() => {
     getWishlistData();
+    window.scrollTo(0, 0);
   }, []);
   return (
     <>

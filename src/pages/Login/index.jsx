@@ -1,7 +1,7 @@
 import "./login.css";
 import { AuthContext } from "../../authentication/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import Loader from "../../component/Loader";
 
 function Login() {
@@ -70,6 +70,9 @@ function Login() {
   function passwordHandler() {
     setHidePassword(!hidePassword);
   }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

@@ -79,6 +79,7 @@ function AuthProvider({ children }) {
     SetUserName("");
     setIsLoggedIn(false);
     setCartdata([]);
+    setWishlistdata([]);
   };
 
   const SetUserName = (val) => {
