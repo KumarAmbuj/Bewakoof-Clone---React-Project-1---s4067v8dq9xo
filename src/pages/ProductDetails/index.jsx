@@ -48,7 +48,7 @@ function ProductDetails() {
         </div>
         <div className="productDetailsHeading">
           Printed T Shirts for
-          <span className="resultCount">({data.length})</span>
+          <span className="resultCount">({data?.length})</span>
         </div>
 
         <div className="filterTextFilter">
@@ -81,10 +81,9 @@ function ProductDetails() {
             <ProductCard />
             <ProductCard />
             <ProductCard /> */}
-              {data.length > 0 &&
-                data.map((val) => {
-                  return <ProductCard data={val} key={val._id} />;
-                })}
+              {data?.map((val) => {
+                return <ProductCard data={val} key={val._id} />;
+              })}
             </div>
           </div>
         </div>
