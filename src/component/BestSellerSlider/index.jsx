@@ -27,7 +27,7 @@ function BestSellerSlider() {
       if (window.innerWidth > 767) {
         setCardshow(5);
       } else if (window.innerWidth <= 390) {
-        setCardshow(1);
+        setCardshow(2);
       } else if (window.innerWidth <= 500) {
         setCardshow(2);
       } else if (window.innerWidth <= 767) {
