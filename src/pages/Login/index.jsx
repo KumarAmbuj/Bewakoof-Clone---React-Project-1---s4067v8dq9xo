@@ -15,6 +15,7 @@ function Login() {
   });
   const [isLoader, setIsLoader] = useState(false);
   const [message, setMessage] = useState({});
+  const [hidePassword, setHidePassword] = useState(true);
 
   async function sendLoginData() {
     try {
@@ -66,6 +67,10 @@ function Login() {
     sendLoginData();
   }
 
+  function passwordHandler() {
+    setHidePassword(!hidePassword);
+  }
+
   return (
     <>
       {isLoader ? <Loader /> : ""}
@@ -82,11 +87,21 @@ function Login() {
           </div>
           <div className="loginInputField">
             <input
-              type="text"
+              type={hidePassword ? "password" : "text"}
               placeholder="Password"
               name="password"
               onChange={handleChange}
             />
+            <span
+              style={{ marginLeft: "-15px", cursor: "pointer" }}
+              onClick={passwordHandler}
+            >
+              {hidePassword ? (
+                <i class="fa fa-eye-slash" aria-hidden="true"></i>
+              ) : (
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              )}
+            </span>
           </div>
           <div
             className={`loginResponse ${
