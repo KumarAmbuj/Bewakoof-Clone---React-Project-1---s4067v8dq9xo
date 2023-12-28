@@ -5,6 +5,7 @@ import "./sliders3.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 const Slider3 = () => {
   const settings = {
@@ -18,37 +19,91 @@ const Slider3 = () => {
     cssEase: "linear",
   };
 
+  const men = {
+    name: "",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jeans", gender: "Men" },
+  };
+
+  const women = {
+    name: "",
+    search: { name: "", description: "" },
+    filter: { subCategory: "kurti", gender: "Women" },
+  };
+
+  const customized = {
+    name: "",
+    search: { name: "printed", description: "printed" },
+    filter: { subCategory: "tshirt", gender: "Men" },
+  };
+
+  const fandom = {
+    name: "",
+    search: { name: "", description: "" },
+    filter: { subCategory: "jogger", gender: "Men" },
+  };
+
   return (
     <>
       {/* <div className="slider2Text">Bewakoof Originals</div> */}
       <div className="slider3">
         <Slider {...settings}>
           <div className="slider3Card">
-            <img
-              src="https://images.bewakoof.com/uploads/grid/app/NEW-1x1-cargo-common--2--1701959177.jpg"
-              alt=""
-            />
+            <Link
+              to={`/product-details?search=${JSON.stringify(
+                men.search
+              )}&filter=${JSON.stringify(men.filter)}`}
+            >
+              <img
+                src="https://images.bewakoof.com/uploads/grid/app/NEW-1x1-cargo-common--2--1701959177.jpg"
+                alt=""
+              />
+            </Link>
           </div>
           <div className="slider3Card">
-            <img
-              src="	https://images.bewakoof.com/uploads/grid/app/1x1-Year-End-Sale-Joggers-1703165020.jpg"
-              alt=""
-            />
+            <Link
+              to={`/product-details?search=${JSON.stringify(
+                women.search
+              )}&filter=${JSON.stringify(men.filter)}`}
+            >
+              <img
+                src="	https://images.bewakoof.com/uploads/grid/app/1x1-Year-End-Sale-Joggers-1703165020.jpg"
+                alt=""
+              />
+            </Link>
           </div>
           <div className="slider3Card">
-            <img
-              src="https://images.bewakoof.com/uploads/grid/app/NEW-1x1-GPOT-Common-NewShoot-1702819180.jpg"
-              alt=""
-            />
+            <Link
+              to={`/product-details?search=${JSON.stringify(
+                fandom.search
+              )}&filter=${JSON.stringify(men.filter)}`}
+            >
+              <img
+                src="https://images.bewakoof.com/uploads/grid/app/NEW-1x1-GPOT-Common-NewShoot-1702819180.jpg"
+                alt=""
+              />
+            </Link>
           </div>
           <div className="slider3Card">
-            <img src="/images/slider31.webp" alt="" />
+            <Link
+              to={`/product-details?search=${JSON.stringify(
+                men.search
+              )}&filter=${JSON.stringify(men.filter)}`}
+            >
+              <img src="/images/slider31.webp" alt="" />
+            </Link>
           </div>
           <div className="slider3Card">
-            <img
-              src="	https://images.bewakoof.com/uploads/grid/app/1x1-Year-End-Sale-Joggers-1703165020.jpg"
-              alt=""
-            />
+            <Link
+              to={`/product-details?search=${JSON.stringify(
+                men.search
+              )}&filter=${JSON.stringify(men.filter)}`}
+            >
+              <img
+                src="	https://images.bewakoof.com/uploads/grid/app/1x1-Year-End-Sale-Joggers-1703165020.jpg"
+                alt=""
+              />
+            </Link>
           </div>
           {/* <div className="slider3Card">
             <img src="/images/slider32.jpg" alt="" />
