@@ -1,5 +1,10 @@
+import { useState } from "react";
 import "./debitCreditCard.css";
 function DebitCreditCardForm(props) {
+  const [checkbox, setCheckbox] = useState(false);
+  function checkBoxHandler() {
+    setCheckbox(!checkbox);
+  }
   return (
     <div className="debitCardContainer">
       <div className="paymentMethodTypeImages">
@@ -33,11 +38,7 @@ function DebitCreditCardForm(props) {
       </div>
 
       <div className="expiryDateAndCvv">
-        <input
-          type="text"
-          placeholder="Valid through(MM/YYYY)"
-          style={{ width: "40%" }}
-        />
+        <input type="text" placeholder="MM/YYYY" style={{ width: "40%" }} />
         <input
           type="text"
           placeholder="CVV"
@@ -50,7 +51,7 @@ function DebitCreditCardForm(props) {
       </div>
 
       <div className="checkbox">
-        <input type="checkbox"></input>
+        <input type="checkbox" onClick={checkBoxHandler}></input>
         <span style={{ marginLeft: "0.8rem" }}>
           Save card details for later
         </span>
@@ -61,8 +62,10 @@ function DebitCreditCardForm(props) {
         number.
       </div>
 
-      <div className="debitButton">
-        <button>Pay ₹{props.totalPrice}</button>
+      <div className={`debitButton `}>
+        <button className={`${checkbox ? "check" : "uncheck"}`}>
+          Pay ₹{props.totalPrice}
+        </button>
       </div>
     </div>
   );

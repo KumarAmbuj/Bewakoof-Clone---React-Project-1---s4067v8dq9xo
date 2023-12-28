@@ -81,8 +81,17 @@
     align-items: center;
     border: none;
     border-radius: 4px;
-    background-color: #d6d6d6;
-    color: #949494;
+    /* background-color:#42a2a2 ; */
+    
     font-size: 14px;
     font-weight: 600;
+}
+
+.uncheck{
+    background-color: #d6d6d6;
+    color: #949494;
+}
+.check{
+    background-color: #42a2a2;
+    color:black;
 }
