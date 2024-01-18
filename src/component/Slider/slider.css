@@ -4,10 +4,43 @@
     margin-right: 5px;
     overflow-x: hidden;
     overflow-y: hidden;
+    position: relative;
     
     
-
-    
+}
+.sliderLeftArrow{
+    position: absolute;
+    left:0;
+    top:45%;
+    z-index: 4;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.sliderLeftArrow i{
+    font-size: 36px;
+}
+.sliderRightArrow{
+    position: absolute;
+    right:0;
+    top:45%;
+    z-index: 4;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.sliderRightArrow i{
+    font-size: 36px;
 }
 /* .sliderImage{
     width:30%;

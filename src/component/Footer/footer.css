@@ -103,12 +103,12 @@
 }
 .footerStoriesHeader{
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     color: hsla(0,0%,100%,.9);
 }
 .footerStoriesText{
-    font-size: 18px;
+    font-size: 14px;
     color: hsla(0,0%,100%,.9);
     font-weight: 500;
     margin-top: 20px;

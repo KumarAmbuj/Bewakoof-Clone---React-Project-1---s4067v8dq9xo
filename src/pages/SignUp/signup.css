@@ -150,6 +150,13 @@
     font-weight: 700;
     cursor: pointer;
 }
+.haveAnAccountText{
+    font-size: 18px;
+    font-family: montserrat-bold,sans-serif;
+    font-weight: 600;
+    margin-top: 35px;
+
+}
 .googleFacebook{
     margin-top: 20px;
     width: 50%;

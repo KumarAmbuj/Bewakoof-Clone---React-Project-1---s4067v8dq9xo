@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
 
 const Slider3 = () => {
   const settings = {
@@ -42,12 +43,25 @@ const Slider3 = () => {
     search: { name: "", description: "" },
     filter: { subCategory: "jogger", gender: "Men" },
   };
+  var sliderRef = useRef();
+  const goToNext = () => {
+    sliderRef.current.slickNext();
+  };
+  const goToPrev = () => {
+    sliderRef.current.slickPrev();
+  };
 
   return (
     <>
       {/* <div className="slider2Text">Bewakoof Originals</div> */}
       <div className="slider3">
-        <Slider {...settings}>
+        <div className="slider3LeftArrow" onClick={goToPrev}>
+          <i className="fa fa-angle-left" aria-hidden="true"></i>
+        </div>
+        <div className="slider3RightArrow" onClick={goToNext}>
+          <i className="fa fa-angle-right" aria-hidden="true"></i>
+        </div>
+        <Slider {...settings} ref={sliderRef}>
           <div className="slider3Card">
             <Link
               to={`/product-details?search=${JSON.stringify(

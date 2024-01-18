@@ -3,6 +3,7 @@ import { AuthContext } from "../../authentication/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 import Loader from "../../component/Loader";
+import { Link } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
@@ -119,6 +120,12 @@ function Login() {
 
           <div className="loginButton">
             <button onClick={handleSubmit}>LOGIN</button>
+          </div>
+          <div className="loginHaveAnAcoountText">
+            Don't have an account{" "}
+            <Link to="/signup" style={{ color: "blue" }}>
+              signup
+            </Link>
           </div>
         </div>
       </div>

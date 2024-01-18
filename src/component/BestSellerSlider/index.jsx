@@ -3,7 +3,7 @@ import "./bestSellerSlider.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -93,13 +93,26 @@ function BestSellerSlider() {
     autoplaySpeed: 2000,
     cssEase: "linear",
   };
+  var sliderRef = useRef();
+  const goToNext = () => {
+    sliderRef.current.slickNext();
+  };
+  const goToPrev = () => {
+    sliderRef.current.slickPrev();
+  };
 
   return (
     <div>
       <div className="bestSellerHeading">BESTSELLERS</div>
 
       <div className="bestSellerSlider">
-        <Slider {...settings}>
+        <div className="bestSellerSliderLeftArrow" onClick={goToPrev}>
+          <i className="fa fa-angle-left" aria-hidden="true"></i>
+        </div>
+        <div className="bestSellerSliderRightArrow" onClick={goToNext}>
+          <i className="fa fa-angle-right" aria-hidden="true"></i>
+        </div>
+        <Slider {...settings} ref={sliderRef}>
           {/* <div className="sliderCard">
             <img src="/images/slider31.webp" alt="" />
           </div>

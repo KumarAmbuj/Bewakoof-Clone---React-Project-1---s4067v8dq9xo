@@ -80,7 +80,8 @@ function SignUp() {
         </div>
         <div className="loginRight">
           <div className="signupLogin">
-            <Link to="/login">Log in</Link> / Sign up
+            <Link to="/login">Log in</Link> /{" "}
+            <span style={{ borderBottom: "5px solid yellow" }}>Sign up</span>
           </div>
 
           <div className="loginText">
@@ -140,13 +141,19 @@ function SignUp() {
           </div>
 
           <div className="continueWithEmail">
-            <button onClick={handleSubmit}>CONTINUE WITH EMAIL</button>
+            {/* <button onClick={handleSubmit}>CONTINUE WITH EMAIL</button> */}
+            <span className="haveAnAccountText">
+              Already have an account{" "}
+              <Link to="/login" style={{ color: "blue" }}>
+                login
+              </Link>
+            </span>
           </div>
 
-          <div className="googleFacebook">
+          {/* <div className="googleFacebook">
             <button>GOOGLE</button>
             <button>FACEBOOK</button>
-          </div>
+          </div> */}
 
           <div className="bottomText">
             By creating an account or logging in, you agree with Bewakoof®'s{" "}

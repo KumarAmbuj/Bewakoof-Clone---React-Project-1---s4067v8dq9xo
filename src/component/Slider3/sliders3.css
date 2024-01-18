@@ -4,10 +4,42 @@
     margin-right: 5px;
     overflow-x: hidden;
     overflow-y: hidden;
+    position: relative;
     
-    
-
-    
+}
+.slider3LeftArrow{
+    position: absolute;
+    left:0;
+    top:45%;
+    z-index: 4;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.slider3LeftArrow i{
+    font-size: 36px;
+}
+.slider3RightArrow{
+    position: absolute;
+    right:0;
+    top:45%;
+    z-index: 4;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.slider3RightArrow i{
+    font-size: 36px;
 }
 /* .sliderImage{
     width:30%;

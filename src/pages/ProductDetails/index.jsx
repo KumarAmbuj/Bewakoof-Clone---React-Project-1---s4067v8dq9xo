@@ -11,6 +11,8 @@ function ProductDetails() {
   const [data, setData] = useState([]);
   const [isLoader, setIsLoader] = useState(false);
   const location = useLocation();
+  console.log(location);
+  //let x = JSON.parse(location.search.slice(8));
 
   async function getProducts() {
     try {
