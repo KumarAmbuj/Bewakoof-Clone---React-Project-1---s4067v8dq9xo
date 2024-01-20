@@ -32,6 +32,18 @@ function MenMenuBarOnHover(props) {
 
               {hoverMenTopWearMenu.map((val, index) => {
                 return (
+                  // <Link
+                  //   to={{
+                  //     pathname: `/product-details?search=${JSON.stringify(
+                  //       val.search
+                  //     )}&filter=${JSON.stringify(val.filter)}`,
+                  //     state: { category: val.name },
+                  //   }}
+                  //   className="hoverMenuItem"
+                  //   key={index}
+                  // >
+                  //   {val.name}
+                  // </Link>
                   <Link
                     to={`/product-details?search=${JSON.stringify(
                       val.search

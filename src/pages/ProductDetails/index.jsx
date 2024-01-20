@@ -7,11 +7,16 @@ import Accordion from "../../component/Accordion";
 import { AccordionList } from "../../Constant/constant";
 import Loader from "../../component/Loader";
 
-function ProductDetails() {
+function ProductDetails(props) {
+  const location = useLocation();
+  //const { state } = location;
+  //console.log(state);
+  // const { category } = props.state;
+  //console.log(category);
   const [data, setData] = useState([]);
   const [isLoader, setIsLoader] = useState(false);
-  const location = useLocation();
-  console.log(location);
+  //const location = useLocation();
+  //console.log(location);
   //let x = JSON.parse(location.search.slice(8));
 
   async function getProducts() {
@@ -29,6 +34,7 @@ function ProductDetails() {
       const responseJson = await response.json();
       setData(responseJson.data);
       //console.log(responseJson.data);
+      //console.log(data[0].subCategory);
     } catch (error) {
       console.log("errrrorrrr");
     } finally {
@@ -46,10 +52,14 @@ function ProductDetails() {
       {isLoader ? <Loader /> : ""}
       <div className="prod" id="prod">
         <div className="miniCategory">
-          Home / Clothing / T-Shirts for / Printed T Shirts for
+          Home / Clothing / {data.length > 0 ? data[0].subCategory : ""}
         </div>
         <div className="productDetailsHeading">
-          Printed T Shirts for
+          {data.length > 0
+            ? data[0].subCategory[0].toUpperCase() +
+              data[0].subCategory.slice(1)
+            : ""}{" "}
+          for
           <span className="resultCount">({data?.length})</span>
         </div>
 

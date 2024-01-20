@@ -23,6 +23,7 @@ import { useState } from "react";
 import Home from "../Home";
 import BestSellerSlider from "../../component/BestSellerSlider";
 import Loader from "../../component/Loader";
+import { useEffect } from "react";
 
 function HomePage() {
   const [isLoader, setIsLoader] = useState(false);
@@ -47,6 +48,9 @@ function HomePage() {
   // function mobileMenuOnMouseLeave() {
   //   setMobileMenuBar(false);
   // }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="container">
       {/* <TopNavbar /> */}
