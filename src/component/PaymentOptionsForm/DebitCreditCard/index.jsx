@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./debitCreditCard.css";
+import { memo } from "react";
+
 function DebitCreditCardForm(props) {
   const [checkbox, setCheckbox] = useState(false);
   function checkBoxHandler() {
@@ -70,4 +72,4 @@ function DebitCreditCardForm(props) {
     </div>
   );
 }
-export default DebitCreditCardForm;
+export default memo(DebitCreditCardForm);

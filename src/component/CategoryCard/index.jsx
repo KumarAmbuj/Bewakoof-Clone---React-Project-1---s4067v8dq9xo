@@ -1,4 +1,5 @@
 import "./categoryCard.css";
+import { memo } from "react";
 function CategoryCard(props) {
   const { name, image } = props.data;
   return (
@@ -12,4 +13,4 @@ function CategoryCard(props) {
     </>
   );
 }
-export default CategoryCard;
+export default memo(CategoryCard);

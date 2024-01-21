@@ -5,7 +5,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { AuthContext } from "../../authentication/AuthContext";
 import { useContext, useEffect, useState } from "react";
-
+import { memo } from "react";
 import { removeFromWishlistAPI } from "../../ConstantAPI/constantAPI";
 import { projectId } from "../../Constant/constant";
 
@@ -162,4 +162,4 @@ function BestsellerProductCard(props) {
     </div>
   );
 }
-export default BestsellerProductCard;
+export default memo(BestsellerProductCard);

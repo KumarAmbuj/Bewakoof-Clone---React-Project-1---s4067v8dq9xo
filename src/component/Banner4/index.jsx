@@ -1,5 +1,6 @@
 import "./banner4.css";
 import { useNavigate } from "react-router-dom";
+import { memo } from "react";
 
 function Banner4() {
   const navigate = useNavigate();
@@ -79,4 +80,4 @@ function Banner4() {
     </div>
   );
 }
-export default Banner4;
+export default memo(Banner4);

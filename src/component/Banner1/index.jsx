@@ -1,5 +1,6 @@
 import "./banner1.css";
 import { Link } from "react-router-dom";
+import { memo } from "react";
 function Banner1() {
   const men = {
     name: "",
@@ -25,4 +26,4 @@ function Banner1() {
     </div>
   );
 }
-export default Banner1;
+export default memo(Banner1);

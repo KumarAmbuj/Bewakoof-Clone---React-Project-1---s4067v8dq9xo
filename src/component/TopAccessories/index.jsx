@@ -1,6 +1,8 @@
 import "./topAccessories.css";
 import { topAccessoriesList } from "../../Constant/constant";
 import TrendingCard from "../TrendingCard";
+import { memo } from "react";
+
 function TopAccessories() {
   return (
     <div>
@@ -13,4 +15,4 @@ function TopAccessories() {
     </div>
   );
 }
-export default TopAccessories;
+export default memo(TopAccessories);

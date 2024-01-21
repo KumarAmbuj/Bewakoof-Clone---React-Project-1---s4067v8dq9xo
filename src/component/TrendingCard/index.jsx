@@ -1,4 +1,5 @@
 import "./trendingCard.css";
+import { memo } from "react";
 function TrendingCard(props) {
   const { name, image } = props.data;
   return (
@@ -9,4 +10,4 @@ function TrendingCard(props) {
     </div>
   );
 }
-export default TrendingCard;
+export default memo(TrendingCard);

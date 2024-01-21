@@ -2,6 +2,8 @@ import "./banner2.css";
 
 import { Link, useNavigate } from "react-router-dom";
 
+import { memo } from "react";
+
 function Banner2() {
   const navigate = useNavigate();
   const men = {
@@ -53,4 +55,4 @@ function Banner2() {
     </div>
   );
 }
-export default Banner2;
+export default memo(Banner2);

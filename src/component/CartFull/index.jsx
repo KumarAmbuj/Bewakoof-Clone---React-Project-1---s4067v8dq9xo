@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import CartSingleComponent from "../CartSingleComponent";
 import "./cartFull.css";
 import { AuthContext } from "../../authentication/AuthContext";
@@ -141,4 +141,4 @@ function CartFull(props) {
   );
 }
 
-export default CartFull;
+export default memo(CartFull);

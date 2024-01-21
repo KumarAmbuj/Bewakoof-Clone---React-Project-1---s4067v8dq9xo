@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
+import { memo } from "react";
 
 import { useRef } from "react";
 
@@ -111,4 +112,4 @@ const Slider2 = () => {
   );
 };
 
-export default Slider2;
+export default memo(Slider2);

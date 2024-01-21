@@ -10,6 +10,8 @@ import { hoverMobileOnePlusList } from "../../Constant/constant";
 import { hoverMobileRealmeList } from "../../Constant/constant";
 import { hoverMobileVivoList } from "../../Constant/constant";
 import HoverSpecialComponent from "../HoverSpecialComponent";
+import { memo } from "react";
+
 function MobileMenuBarOnHover(props) {
   const { handleMobileMenuBarOnOver, handleMobileMenuBarOnLeave } = props;
   return (
@@ -111,4 +113,4 @@ function MobileMenuBarOnHover(props) {
   );
 }
 
-export default MobileMenuBarOnHover;
+export default memo(MobileMenuBarOnHover);

@@ -1,4 +1,5 @@
 import "./hoverSpecialComponent.css";
+import { memo } from "react";
 function HoverSpecialComponent(props) {
   const { name, image } = props.data;
   return (
@@ -10,4 +11,4 @@ function HoverSpecialComponent(props) {
     </div>
   );
 }
-export default HoverSpecialComponent;
+export default memo(HoverSpecialComponent);

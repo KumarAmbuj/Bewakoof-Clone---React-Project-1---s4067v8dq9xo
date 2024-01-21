@@ -5,6 +5,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { useState } from "react";
 //import SideNavbar from "../SideNavBar";
 //import SideNavbar from "./SideNavBar";
+import { memo } from "react";
 
 import SideNavbar from "../SideNavbar";
 
@@ -75,4 +76,4 @@ function MiniNavbar() {
     </>
   );
 }
-export default MiniNavbar;
+export default memo(MiniNavbar);

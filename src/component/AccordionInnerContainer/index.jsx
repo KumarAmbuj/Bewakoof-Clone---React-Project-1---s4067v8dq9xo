@@ -1,5 +1,6 @@
 import "./accordionInnerContainer.css";
 import { Link } from "react-router-dom";
+import { memo } from "react";
 function AccordionInnerContainer(props) {
   const arr = props.data;
   return (
@@ -29,4 +30,4 @@ function AccordionInnerContainer(props) {
     </div>
   );
 }
-export default AccordionInnerContainer;
+export default memo(AccordionInnerContainer);

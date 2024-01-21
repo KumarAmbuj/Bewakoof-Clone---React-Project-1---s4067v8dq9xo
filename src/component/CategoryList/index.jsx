@@ -2,6 +2,7 @@ import CategoryCard from "../CategoryCard";
 import "./categoryList.css";
 import { Link } from "react-router-dom";
 import { categoryListArr } from "../../Constant/constant";
+import { memo } from "react";
 function CategoryList() {
   // console.log(categoryListArr);
   return (
@@ -22,4 +23,4 @@ function CategoryList() {
     </div>
   );
 }
-export default CategoryList;
+export default memo(CategoryList);

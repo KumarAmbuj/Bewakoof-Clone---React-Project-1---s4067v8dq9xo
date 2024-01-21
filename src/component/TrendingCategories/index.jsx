@@ -1,6 +1,7 @@
 import "./trendingCategories.css";
 import { trendingList1, trendingList2 } from "../../Constant/constant";
 import TrendingCard from "../TrendingCard";
+import { memo } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -39,4 +40,4 @@ function TrendingCategories() {
     </div>
   );
 }
-export default TrendingCategories;
+export default memo(TrendingCategories);

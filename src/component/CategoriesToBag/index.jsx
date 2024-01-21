@@ -2,6 +2,7 @@ import "./categoriesToBag.css";
 import { categoriesToBagList } from "../../Constant/constant";
 // import CategoryCard from "../CategoryCard";
 import TrendingCard from "../TrendingCard";
+import { memo } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -26,4 +27,4 @@ function CategoriesToBag() {
     </div>
   );
 }
-export default CategoriesToBag;
+export default memo(CategoriesToBag);

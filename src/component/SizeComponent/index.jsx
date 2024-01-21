@@ -1,4 +1,5 @@
 import "./sizeComponent.css";
+import { memo } from "react";
 function SizeComponent(props) {
   return (
     <button className="size">
@@ -6,4 +7,4 @@ function SizeComponent(props) {
     </button>
   );
 }
-export default SizeComponent;
+export default memo(SizeComponent);

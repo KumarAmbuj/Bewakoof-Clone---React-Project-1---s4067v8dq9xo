@@ -1,4 +1,6 @@
 import "./upi.css";
+import { memo } from "react";
+
 function UPIForm() {
   return (
     <div className="UPIContainer">
@@ -40,4 +42,4 @@ function UPIForm() {
     </div>
   );
 }
-export default UPIForm;
+export default memo(UPIForm);

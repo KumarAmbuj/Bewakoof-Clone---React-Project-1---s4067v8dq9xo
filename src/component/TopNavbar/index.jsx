@@ -1,4 +1,5 @@
 import "./topNavbar.css";
+import { memo } from "react";
 function TopNavbar() {
   return (
     <>
@@ -22,4 +23,4 @@ function TopNavbar() {
   );
 }
 
-export default TopNavbar;
+export default memo(TopNavbar);

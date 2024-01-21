@@ -1,5 +1,6 @@
 import "./searchResult.css";
 import { Link } from "react-router-dom";
+import { memo } from "react";
 
 function SearchResultComponent(props) {
   return (
@@ -33,4 +34,4 @@ function SearchResultComponent(props) {
     </div>
   );
 }
-export default SearchResultComponent;
+export default memo(SearchResultComponent);

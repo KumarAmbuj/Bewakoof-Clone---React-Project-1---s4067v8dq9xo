@@ -1,4 +1,5 @@
 import "./emptyCart.css";
+import { memo } from "react";
 function CartEmpty() {
   return (
     <div>
@@ -47,4 +48,4 @@ function CartEmpty() {
     </div>
   );
 }
-export default CartEmpty;
+export default memo(CartEmpty);

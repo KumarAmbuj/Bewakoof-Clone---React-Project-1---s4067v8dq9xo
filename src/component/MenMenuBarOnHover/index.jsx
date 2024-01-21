@@ -10,6 +10,8 @@ import { hoverMenLoungeWearList } from "../../Constant/constant";
 import { hoverSpecialList } from "../../Constant/constant";
 import HoverSpecialComponent from "../HoverSpecialComponent";
 import { useNavigate, useParams, Link } from "react-router-dom";
+import { memo } from "react";
+
 function MenMenuBarOnHover(props) {
   const { handleMenMenuBarOnOver, handleMenMenuBarOnLeave } = props;
   const navigate = useNavigate();
@@ -158,4 +160,4 @@ function MenMenuBarOnHover(props) {
   );
 }
 
-export default MenMenuBarOnHover;
+export default memo(MenMenuBarOnHover);

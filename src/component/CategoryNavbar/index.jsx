@@ -1,5 +1,6 @@
 import "./categoryNavbar.css";
 import { categoryNavbarList } from "../../Constant/constant";
+import { memo } from "react";
 import { Link } from "react-router-dom";
 function CategoryNavbar() {
   return (
@@ -27,4 +28,4 @@ function CategoryNavbar() {
     </div>
   );
 }
-export default CategoryNavbar;
+export default memo(CategoryNavbar);

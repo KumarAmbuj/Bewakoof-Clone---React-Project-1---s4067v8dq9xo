@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 import { AuthContext } from "../../authentication/AuthContext";
-import { useContext } from "react";
+import { useContext, memo } from "react";
 
 import { addToCartAPI } from "../../ConstantAPI/constantAPI";
 import { removeFromWishlistAPI } from "../../ConstantAPI/constantAPI";
@@ -108,4 +108,4 @@ function WishlistCard(props) {
     </div>
   );
 }
-export default WishlistCard;
+export default memo(WishlistCard);

@@ -7,7 +7,7 @@ import MenMenuBarOnHover from "../MenMenuBarOnHover";
 import WomenMenuBarOnHover from "../WomenMenuBarOnHover";
 import MobileMenuBarOnHover from "../MobileMenuOnHover";
 import SearchResultComponent from "../SearchResultComponent";
-
+import { memo } from "react";
 import { AuthContext } from "../../authentication/AuthContext";
 
 import { searchResult } from "../../Constant/constant";
@@ -200,4 +200,4 @@ function MiddleNavbar() {
     </>
   );
 }
-export default MiddleNavbar;
+export default memo(MiddleNavbar);

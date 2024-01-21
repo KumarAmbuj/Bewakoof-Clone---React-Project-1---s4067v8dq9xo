@@ -3,7 +3,7 @@ import "./bestSellerSlider.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, memo } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -151,4 +151,4 @@ function BestSellerSlider() {
     </div>
   );
 }
-export default BestSellerSlider;
+export default memo(BestSellerSlider);

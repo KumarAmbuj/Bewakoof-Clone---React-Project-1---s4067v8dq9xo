@@ -1,4 +1,5 @@
 import "./cartSingleComponent.css";
+import { memo } from "react";
 
 import { AuthContext } from "../../authentication/AuthContext";
 import { useContext } from "react";
@@ -76,4 +77,4 @@ function CartSingleComponent(props) {
     </div>
   );
 }
-export default CartSingleComponent;
+export default memo(CartSingleComponent);

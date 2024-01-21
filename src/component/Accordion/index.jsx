@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import "./accordion.css";
 import AccordionInnerContainer from "../AccordionInnerContainer";
 
@@ -27,4 +27,4 @@ function Accordion(props) {
     </div>
   );
 }
-export default Accordion;
+export default memo(Accordion);

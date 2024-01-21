@@ -1,5 +1,6 @@
 import React from "react";
 import "./womenMenubar.css";
+import { memo } from "react";
 
 import { hoverWomenTopWearMenu } from "../../Constant/constant";
 import { hoverWomenBottomWearMenu } from "../../Constant/constant";
@@ -141,4 +142,4 @@ function WomenMenuBarOnHover(props) {
   );
 }
 
-export default WomenMenuBarOnHover;
+export default memo(WomenMenuBarOnHover);

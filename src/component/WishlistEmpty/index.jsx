@@ -1,5 +1,6 @@
 import "./wishlistEmpty.css";
 import { Link } from "react-router-dom";
+import { memo } from "react";
 function WishlistEmpty() {
   return (
     <div className="wishlistEmpty">
@@ -20,4 +21,4 @@ function WishlistEmpty() {
     </div>
   );
 }
-export default WishlistEmpty;
+export default memo(WishlistEmpty);

@@ -1,4 +1,5 @@
 import "./cashOndelivery.css";
+import { memo } from "react";
 function CashOnDeliveryForm(props) {
   return (
     <div className="cashOnDeliveryContainer">
@@ -12,4 +13,4 @@ function CashOnDeliveryForm(props) {
     </div>
   );
 }
-export default CashOnDeliveryForm;
+export default memo(CashOnDeliveryForm);

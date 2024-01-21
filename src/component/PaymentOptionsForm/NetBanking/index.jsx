@@ -1,6 +1,8 @@
 import "./netBanking.css";
 import { useState } from "react";
 import PayButton from "../PayButton";
+import { memo } from "react";
+
 function NetBankingForm(props) {
   const [paymentNumber, setPaymentNumber] = useState(0);
   function handlePaymentOption(val) {
@@ -115,4 +117,4 @@ function NetBankingForm(props) {
     </div>
   );
 }
-export default NetBankingForm;
+export default memo(NetBankingForm);

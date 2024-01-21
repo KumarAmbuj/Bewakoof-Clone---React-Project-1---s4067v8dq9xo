@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { useContext, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { memo } from "react";
 
 function SideNavbar({ hideNavbar, isOpen }) {
   const { isLoggedIn, logout, userName } = useContext(AuthContext);
@@ -151,4 +152,4 @@ function SideNavbar({ hideNavbar, isOpen }) {
     element
   );
 }
-export default SideNavbar;
+export default memo(SideNavbar);

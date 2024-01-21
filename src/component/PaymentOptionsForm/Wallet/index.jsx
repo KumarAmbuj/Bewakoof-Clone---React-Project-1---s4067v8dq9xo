@@ -1,5 +1,7 @@
 import { useState } from "react";
 import PayButton from "../PayButton";
+import { memo } from "react";
+
 import "./wallet.css";
 function WalletForm(props) {
   const [paymentNumber, setPaymentNumber] = useState(0);
@@ -26,7 +28,7 @@ function WalletForm(props) {
             <input type="radio" />
           </div>
         </div>
-        {paymentNumber == 1 && <PayButton totalPrice={props.totalPrice}/>}
+        {paymentNumber == 1 && <PayButton totalPrice={props.totalPrice} />}
       </div>
 
       <div>
@@ -47,7 +49,7 @@ function WalletForm(props) {
             <input type="radio" />
           </div>
         </div>
-        {paymentNumber == 2 && <PayButton totalPrice={props.totalPrice}/>}
+        {paymentNumber == 2 && <PayButton totalPrice={props.totalPrice} />}
       </div>
 
       <div>
@@ -68,7 +70,7 @@ function WalletForm(props) {
             <input type="radio" />
           </div>
         </div>
-        {paymentNumber == 3 && <PayButton totalPrice={props.totalPrice}/>}
+        {paymentNumber == 3 && <PayButton totalPrice={props.totalPrice} />}
       </div>
 
       <div>
@@ -89,9 +91,9 @@ function WalletForm(props) {
             <input type="radio" />
           </div>
         </div>
-        {paymentNumber == 4 && <PayButton totalPrice={props.totalPrice}/>}
+        {paymentNumber == 4 && <PayButton totalPrice={props.totalPrice} />}
       </div>
     </div>
   );
 }
-export default WalletForm;
+export default memo(WalletForm);

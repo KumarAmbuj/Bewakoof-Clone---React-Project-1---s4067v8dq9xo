@@ -1,4 +1,6 @@
 import "./payButton.css";
+import { memo } from "react";
+
 function PayButton(props) {
   return (
     <div className="payButton">
@@ -6,4 +8,4 @@ function PayButton(props) {
     </div>
   );
 }
-export default PayButton;
+export default memo(PayButton);

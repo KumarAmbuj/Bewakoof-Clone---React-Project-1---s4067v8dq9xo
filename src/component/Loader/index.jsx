@@ -1,4 +1,6 @@
 import "./loader.css";
+
+import { memo } from "react";
 function Loader() {
   return (
     <div className="loader">
@@ -6,4 +8,4 @@ function Loader() {
     </div>
   );
 }
-export default Loader;
+export default memo(Loader);
