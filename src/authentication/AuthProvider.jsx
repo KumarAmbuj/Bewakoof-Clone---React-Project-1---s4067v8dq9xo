@@ -20,7 +20,8 @@ function AuthProvider({ children }) {
 
           headers: {
             projectId: projectId,
-            Authorization: "Bearer " + token || val,
+            Authorization:
+              "Bearer " + token || val || localStorage.getItem("bewakoof"),
           },
         }
       );
@@ -46,7 +47,8 @@ function AuthProvider({ children }) {
 
           headers: {
             projectId: projectId,
-            Authorization: "Bearer " + token || val,
+            Authorization:
+              "Bearer " + token || val || localStorage.getItem("bewakoof"),
           },
         }
       );
