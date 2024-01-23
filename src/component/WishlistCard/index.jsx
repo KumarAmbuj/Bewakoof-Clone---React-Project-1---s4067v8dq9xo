@@ -9,10 +9,17 @@ import { addToCartAPI } from "../../ConstantAPI/constantAPI";
 import { removeFromWishlistAPI } from "../../ConstantAPI/constantAPI";
 
 import { projectId } from "../../Constant/constant";
+import Loader from "../Loader";
 
 function WishlistCard(props) {
-  const { isLoggedIn, logout, token, getWishlistDataAPI, getCartDataAPI } =
-    useContext(AuthContext);
+  const {
+    isLoggedIn,
+    logout,
+    token,
+    getWishlistDataAPI,
+    getCartDataAPI,
+    loader,
+  } = useContext(AuthContext);
   const navigate = useNavigate();
   // async function removeFromWishlistAPI(id) {
   //   try {
@@ -50,6 +57,9 @@ function WishlistCard(props) {
   function removeFromWishlist(id) {
     removeFromWishlistAPI(id, projectId, token);
     getWishlistDataAPI();
+    getWishlistDataAPI();
+    getCartDataAPI();
+    getCartDataAPI();
   }
 
   function addToCart() {
@@ -57,59 +67,66 @@ function WishlistCard(props) {
     addToCartAPI(id, projectId, token);
     removeFromWishlistAPI(id, projectId, token);
     getWishlistDataAPI();
+    getWishlistDataAPI();
+    getCartDataAPI();
     getCartDataAPI();
   }
 
   return (
-    <div className="wishlistCard">
-      <div className="wishlistCardImage">
-        <img src={props.data.products.displayImage} />
-        <div className="tag">OVERSIZED FIT</div>
+    <>
+      {loader ? <Loader /> : ""}
+      <div className="wishlistCard">
+        <div className="wishlistCardImage">
+          <img src={props.data.products.displayImage} />
+          <div className="tag">OVERSIZED FIT</div>
 
-        <div className="crossButton">
-          <img
-            src="https://images.bewakoof.com/web/crossBtnIcon.svg"
-            onClick={() => {
-              removeFromWishlist(props.data.products._id);
-            }}
-          />
+          <div className="crossButton">
+            <img
+              src="https://images.bewakoof.com/web/crossBtnIcon.svg"
+              onClick={() => {
+                removeFromWishlist(props.data.products._id);
+              }}
+            />
+          </div>
+
+          <div className="star">
+            <span className="starRating">
+              {Math.floor(props.data.products.ratings * 10) / 10}
+            </span>
+            <span className="starIcon">
+              <FaStar />
+            </span>
+          </div>
         </div>
 
-        <div className="star">
-          <span className="starRating">
-            {Math.floor(props.data.products.ratings * 10) / 10}
+        <div className="wishlistCardHeader">Bewakoof</div>
+
+        <div className="wishlistCardDescription">
+          {props.data.products.name}
+        </div>
+
+        <div className="wishlistCardPrice">
+          <span className="actualPrice">
+            <span style={{ fontSize: "12px" }}>₹</span>
+            {props.data.products.price}
           </span>
-          <span className="starIcon">
-            <FaStar />
+
+          <span className="deletedPrice">
+            <del>
+              <span>₹</span>1499
+            </del>
           </span>
+
+          <span className="percentageOff">50% OFF</span>
+        </div>
+
+        <div className="borderLine"></div>
+
+        <div className="addToBagButton">
+          <button onClick={addToCart}>ADD TO BAG</button>
         </div>
       </div>
-
-      <div className="wishlistCardHeader">Bewakoof</div>
-
-      <div className="wishlistCardDescription">{props.data.products.name}</div>
-
-      <div className="wishlistCardPrice">
-        <span className="actualPrice">
-          <span style={{ fontSize: "12px" }}>₹</span>
-          {props.data.products.price}
-        </span>
-
-        <span className="deletedPrice">
-          <del>
-            <span>₹</span>1499
-          </del>
-        </span>
-
-        <span className="percentageOff">50% OFF</span>
-      </div>
-
-      <div className="borderLine"></div>
-
-      <div className="addToBagButton">
-        <button onClick={addToCart}>ADD TO BAG</button>
-      </div>
-    </div>
+    </>
   );
 }
 export default memo(WishlistCard);

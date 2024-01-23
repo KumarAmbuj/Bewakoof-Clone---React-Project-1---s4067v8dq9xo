@@ -8,11 +8,13 @@ function AuthProvider({ children }) {
   const [userName, setUserName] = useState("");
   const [wishlistData, setWishlistdata] = useState([]);
   const [cartData, setCartdata] = useState([]);
+  const [loader, setLoader] = useState(false);
 
   //console.log(isLoggedIn, token);
 
   async function getWishlistDataAPI(val) {
     try {
+      setLoader(true);
       let result = await fetch(
         `https://academics.newtonschool.co/api/v1/ecommerce/wishlist`,
         {
@@ -36,10 +38,13 @@ function AuthProvider({ children }) {
       //toast.error("Some error occured");
       console.log("errorrrrrrrrrrrr");
       //navigate("/signup");
+    } finally {
+      setLoader(false);
     }
   }
   async function getCartDataAPI(val) {
     try {
+      setLoader(true);
       let result = await fetch(
         `https://academics.newtonschool.co/api/v1/ecommerce/cart`,
         {
@@ -63,6 +68,8 @@ function AuthProvider({ children }) {
       //toast.error("Some error occured");
       console.log("errorrrrrrrrrrrr");
       //navigate("/signup");
+    } finally {
+      setLoader(false);
     }
   }
 
@@ -119,6 +126,8 @@ function AuthProvider({ children }) {
         getWishlistDataAPI,
         cartData,
         getCartDataAPI,
+        loader,
+        setLoader,
       }}
     >
       {children}

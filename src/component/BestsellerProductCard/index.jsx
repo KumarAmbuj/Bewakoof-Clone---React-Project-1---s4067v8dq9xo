@@ -8,11 +8,13 @@ import { useContext, useEffect, useState } from "react";
 import { memo } from "react";
 import { removeFromWishlistAPI } from "../../ConstantAPI/constantAPI";
 import { projectId } from "../../Constant/constant";
+import Loader from "../Loader";
 
 function BestsellerProductCard(props) {
   const { isLoggedIn, logout, token, wishlistData, getWishlistDataAPI } =
     useContext(AuthContext);
   const [addedToWishlist, setAddedToWishlist] = useState(false);
+  const [loader, setLoader] = useState(false);
   //console.log(wishlistData);
 
   const { slider } = props;
@@ -43,6 +45,7 @@ function BestsellerProductCard(props) {
 
   async function sendWishlistData() {
     try {
+      setLoader(true);
       let result = await fetch(
         `https://academics.newtonschool.co/api/v1/ecommerce/wishlist`,
         {
@@ -65,6 +68,8 @@ function BestsellerProductCard(props) {
       //toast.error("Some error occured");
       console.log("errorrrrrrrrrrrr");
       //navigate("/signup");
+    } finally {
+      setLoader(false);
     }
   }
 
@@ -74,11 +79,10 @@ function BestsellerProductCard(props) {
       navigate("/login");
     } else {
       setAddedToWishlist(true);
-      const myPromise = new Promise((resolve, reject) => {
-        resolve(sendWishlistData());
-      });
 
-      myPromise.then(getWishlistDataAPI());
+      sendWishlistData();
+      getWishlistDataAPI();
+      getWishlistDataAPI();
 
       //getWishlistDataAPI();
     }
@@ -88,83 +92,89 @@ function BestsellerProductCard(props) {
     e.stopPropagation();
     removeFromWishlistAPI(_id, projectId, token);
     getWishlistDataAPI();
+    getWishlistDataAPI();
     setAddedToWishlist(false);
     //console.log("hello");
   }
 
   return (
-    <div
-      className="bestSellerProductCard"
-      onClick={() => {
-        navigateToSingleProductDetails(_id);
-      }}
-      // style={{ width: slider?.width }}
-    >
-      <div className="bestSellerProductCardImage">
-        <img src={displayImage ? displayImage : "./images/singleImage.webp"} />
-        <div className="tag">OVERSIZED FIT</div>
-        {/* <div className="star">
+    <>
+      {loader ? <Loader /> : ""}
+      <div
+        className="bestSellerProductCard"
+        onClick={() => {
+          navigateToSingleProductDetails(_id);
+        }}
+        // style={{ width: slider?.width }}
+      >
+        <div className="bestSellerProductCardImage">
+          <img
+            src={displayImage ? displayImage : "./images/singleImage.webp"}
+          />
+          <div className="tag">OVERSIZED FIT</div>
+          {/* <div className="star">
           <span className="starIcon">
             <FaStar />
           </span>
           <span className="starRating">{Math.round(ratings)}</span>
         </div> */}
-      </div>
-      <div className="productNameIcon">
-        <div className="productName" style={{ padding: "7px" }}>
-          <div className="name">{brand}</div>
-          <div className="description">{name.slice(0, 22)}..</div>
         </div>
-        <div className="productIcon">
-          <span className="heart">
-            {/* <FaRegHeart onClick={handleFavourite} /> */}
-            {!addedToWishlist ? (
-              <img
-                src="	https://images.bewakoof.com/web/Wishlist.svg"
-                style={{ height: "28px", width: "28px" }}
-                onClick={handleFavourite}
-              />
-            ) : (
-              <img
-                src="		https://images.bewakoof.com/web/Wishlist-selected.svg"
-                style={{ height: "28px", width: "28px" }}
-                onClick={handleRemoveFromFavourite}
-              />
-            )}
-            {/* <img
+        <div className="productNameIcon">
+          <div className="productName" style={{ padding: "7px" }}>
+            <div className="name">{brand}</div>
+            <div className="description">{name.slice(0, 22)}..</div>
+          </div>
+          <div className="productIcon">
+            <span className="heart">
+              {/* <FaRegHeart onClick={handleFavourite} /> */}
+              {!addedToWishlist ? (
+                <img
+                  src="	https://images.bewakoof.com/web/Wishlist.svg"
+                  style={{ height: "28px", width: "28px" }}
+                  onClick={handleFavourite}
+                />
+              ) : (
+                <img
+                  src="		https://images.bewakoof.com/web/Wishlist-selected.svg"
+                  style={{ height: "28px", width: "28px" }}
+                  onClick={handleRemoveFromFavourite}
+                />
+              )}
+              {/* <img
               src="	https://images.bewakoof.com/web/Wishlist.svg"
               style={{ height: "28px", width: "28px" }}
               onClick={handleFavourite}
             /> */}
-          </span>
+            </span>
+          </div>
         </div>
-      </div>
 
-      <div
-        className="productPrice"
-        style={{ paddingLeft: "7px", paddingBottom: "20px" }}
-      >
-        <span className="actualPrice">
-          <span style={{ fontSize: "12px" }}>₹</span>
-          <b>{price}</b>
-        </span>
-        <span className="deletedPrice">
-          <span>₹</span>
-          <del>{Math.round(price + (price * 30) / 100)}</del>
-        </span>
+        <div
+          className="productPrice"
+          style={{ paddingLeft: "7px", paddingBottom: "20px" }}
+        >
+          <span className="actualPrice">
+            <span style={{ fontSize: "12px" }}>₹</span>
+            <b>{price}</b>
+          </span>
+          <span className="deletedPrice">
+            <span>₹</span>
+            <del>{Math.round(price + (price * 30) / 100)}</del>
+          </span>
 
-        <span className="perOff">53% OFF</span>
-      </div>
-      {/* <div className="specialMemberPrice">
+          <span className="perOff">53% OFF</span>
+        </div>
+        {/* <div className="specialMemberPrice">
         <span className="priceBackground">
           <span>₹</span>
           {Math.round(price - (price * 10) / 100)} For Tribe Members
         </span>
       </div> */}
-      {/* <div className="btn">
+        {/* <div className="btn">
         <button>100% COTTON</button>
       </div> */}
-    </div>
+      </div>
+    </>
   );
 }
 export default memo(BestsellerProductCard);

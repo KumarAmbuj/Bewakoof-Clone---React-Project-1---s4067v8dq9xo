@@ -20,13 +20,14 @@ import Loader from "../../component/Loader";
 
 function SingleProductDetails() {
   //console.log("hi");
-  const { isLoggedIn, logout, token } = useContext(AuthContext);
+  const { isLoggedIn, logout, token, getCartDataAPI, getWishlistDataAPI } =
+    useContext(AuthContext);
   const [data, setData] = useState({});
   const [Image, setImage] = useState(data?.displayImage);
   const [addedToCart, setAddedToCart] = useState(false);
   const [addedToWishlist, setAddedToWishlist] = useState(false);
   const [isLoader, setIsLoader] = useState(false);
-
+  const [selectSize, setSelectSize] = useState();
   const { productId } = useParams();
   const navigate = useNavigate();
   //console.log(productId);
@@ -54,6 +55,8 @@ function SingleProductDetails() {
       //console.log(result);
       if (resultResponse.status === "success") {
         setAddedToCart(true);
+        getCartDataAPI();
+        getCartDataAPI();
       } else {
         //navigate("/signup");
       }
@@ -82,7 +85,8 @@ function SingleProductDetails() {
     } else {
       addToWishlistDataAPI(productId, projectId, token);
       setAddedToWishlist(true);
-      //getWishlistDataAPI();
+      getWishlistDataAPI();
+      getWishlistDataAPI();
     }
   }
 
@@ -210,7 +214,17 @@ function SingleProductDetails() {
               <p>Select Size</p>
               <div className="sizes">
                 {data?.size?.map((val, index) => {
-                  return <SizeComponent size={val} key={index} />;
+                  return (
+                    <SizeComponent
+                      size={val}
+                      key={index}
+                      index={index}
+                      state={selectSize}
+                      onclick={() => {
+                        setSelectSize(index);
+                      }}
+                    />
+                  );
                   //console.log(val);
                 })}
 
