@@ -4,14 +4,14 @@ import { projectId } from "../Constant/constant";
 
 function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState(localStorage.getItem("bewakoof"));
   const [userName, setUserName] = useState("");
   const [wishlistData, setWishlistdata] = useState([]);
   const [cartData, setCartdata] = useState([]);
 
   //console.log(isLoggedIn, token);
 
-  async function getWishlistDataAPI() {
+  async function getWishlistDataAPI(val) {
     try {
       let result = await fetch(
         `https://academics.newtonschool.co/api/v1/ecommerce/wishlist`,
@@ -20,7 +20,7 @@ function AuthProvider({ children }) {
 
           headers: {
             projectId: projectId,
-            Authorization: "Bearer " + token,
+            Authorization: "Bearer " + token || val,
           },
         }
       );
@@ -37,7 +37,7 @@ function AuthProvider({ children }) {
       //navigate("/signup");
     }
   }
-  async function getCartDataAPI() {
+  async function getCartDataAPI(val) {
     try {
       let result = await fetch(
         `https://academics.newtonschool.co/api/v1/ecommerce/cart`,
@@ -46,7 +46,7 @@ function AuthProvider({ children }) {
 
           headers: {
             projectId: projectId,
-            Authorization: "Bearer " + token,
+            Authorization: "Bearer " + token || val,
           },
         }
       );
@@ -64,15 +64,15 @@ function AuthProvider({ children }) {
     }
   }
 
-  useEffect(() => {
-    getWishlistDataAPI();
-    getCartDataAPI();
-  }, [token]);
   const login = () => {
     setIsLoggedIn(true);
   };
   const SetToken = (val) => {
     setToken(val);
+    console.log(val);
+    localStorage.setItem("bewakoof", val);
+    getCartDataAPI(val);
+    getWishlistDataAPI(val);
   };
   const logout = () => {
     setToken("");
@@ -80,11 +80,27 @@ function AuthProvider({ children }) {
     setIsLoggedIn(false);
     setCartdata([]);
     setWishlistdata([]);
+    localStorage.setItem("bewakoof", "");
   };
 
   const SetUserName = (val) => {
     setUserName(val);
   };
+  useEffect(() => {
+    if (localStorage.getItem("bewakoof") === null) {
+      localStorage.setItem("bewakoof", "");
+    } else {
+      let x = localStorage.getItem("bewakoof");
+      if (x) {
+        setIsLoggedIn(true);
+        getCartDataAPI(x);
+        getWishlistDataAPI(x);
+        setToken(x);
+      } else {
+        //setToken(localStorage.getItem("bewakoof"));
+      }
+    }
+  }, [isLoggedIn]);
 
   return (
     <AuthContext.Provider
@@ -100,6 +116,7 @@ function AuthProvider({ children }) {
         wishlistData,
         getWishlistDataAPI,
         cartData,
+        getCartDataAPI,
       }}
     >
       {children}

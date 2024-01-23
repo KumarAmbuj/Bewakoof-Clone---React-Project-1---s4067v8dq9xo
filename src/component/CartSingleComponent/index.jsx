@@ -13,13 +13,22 @@ import { projectId } from "../../Constant/constant";
 
 function CartSingleComponent(props) {
   const { deleteHandler } = props;
-  const { isLoggedIn, logout, token } = useContext(AuthContext);
+  const {
+    isLoggedIn,
+    logout,
+    token,
+    wishlistData,
+    getWishlistDataAPI,
+    getCartDataAPI,
+  } = useContext(AuthContext);
   const navigate = useNavigate();
 
   function addToWishlist() {
     let id = props.data.product._id;
     addToWishlistDataAPI(id, projectId, token);
     removeFromCartAPI(id, projectId, token);
+    getWishlistDataAPI();
+    getCartDataAPI();
   }
 
   return (

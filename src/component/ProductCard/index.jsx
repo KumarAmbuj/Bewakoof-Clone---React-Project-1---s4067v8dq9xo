@@ -89,7 +89,7 @@ function ProductCard(props) {
     removeFromWishlistAPI(_id, projectId, token);
     getWishlistDataAPI();
     setAddedToWishlist(false);
-    console.log("hello");
+    //console.log("hello");
   }
 
   return (

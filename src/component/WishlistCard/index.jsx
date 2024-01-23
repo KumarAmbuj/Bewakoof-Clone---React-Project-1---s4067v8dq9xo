@@ -11,7 +11,8 @@ import { removeFromWishlistAPI } from "../../ConstantAPI/constantAPI";
 import { projectId } from "../../Constant/constant";
 
 function WishlistCard(props) {
-  const { isLoggedIn, logout, token } = useContext(AuthContext);
+  const { isLoggedIn, logout, token, getWishlistDataAPI, getCartDataAPI } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   // async function removeFromWishlistAPI(id) {
   //   try {
@@ -48,12 +49,15 @@ function WishlistCard(props) {
 
   function removeFromWishlist(id) {
     removeFromWishlistAPI(id, projectId, token);
+    getWishlistDataAPI();
   }
 
   function addToCart() {
     let id = props.data.products._id;
     addToCartAPI(id, projectId, token);
     removeFromWishlistAPI(id, projectId, token);
+    getWishlistDataAPI();
+    getCartDataAPI();
   }
 
   return (

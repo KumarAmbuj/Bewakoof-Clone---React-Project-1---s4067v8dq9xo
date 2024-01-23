@@ -7,46 +7,13 @@ import { useContext } from "react";
 import "./wishlist.css";
 import Loader from "../../component/Loader";
 function Wishlist() {
-  const { isLoggedIn, logout, token } = useContext(AuthContext);
-  const [wishlistData, setWishlistData] = useState([]);
+  const { isLoggedIn, logout, token, wishlistData } = useContext(AuthContext);
+
   const [isLoader, setIsLoader] = useState(false);
 
-  async function getWishlistData() {
-    try {
-      setIsLoader(true);
-      let result = await fetch(
-        `https://academics.newtonschool.co/api/v1/ecommerce/wishlist`,
-        {
-          method: "GET",
-
-          headers: {
-            projectId: "zl6mct4l5ib6",
-            Authorization: "Bearer " + token,
-          },
-        }
-      );
-      let resultResponse = await result.json();
-      //console.log("data", resultResponse.data.items);
-      //setWishlistData(resultResponse?.data?.items);
-      //console.log("stateeeeeee", wishlistData);
-      //console.log(result);
-      if (resultResponse.status === "success") {
-        setWishlistData(resultResponse?.data?.items);
-      } else {
-        navigate("/");
-      }
-    } catch {
-      //toast.error("Some error occured");
-      console.log("errorrrrrrrrrrrr");
-      navigate("/");
-    } finally {
-      setIsLoader(false);
-    }
-  }
   useEffect(() => {
-    getWishlistData();
     window.scrollTo(0, 0);
-  }, []);
+  });
   return (
     <>
       {isLoader ? <Loader /> : ""}

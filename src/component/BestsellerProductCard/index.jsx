@@ -73,9 +73,14 @@ function BestsellerProductCard(props) {
     if (!isLoggedIn) {
       navigate("/login");
     } else {
-      sendWishlistData();
       setAddedToWishlist(true);
-      getWishlistDataAPI();
+      const myPromise = new Promise((resolve, reject) => {
+        resolve(sendWishlistData());
+      });
+
+      myPromise.then(getWishlistDataAPI());
+
+      //getWishlistDataAPI();
     }
   }
 
@@ -84,7 +89,7 @@ function BestsellerProductCard(props) {
     removeFromWishlistAPI(_id, projectId, token);
     getWishlistDataAPI();
     setAddedToWishlist(false);
-    console.log("hello");
+    //console.log("hello");
   }
 
   return (

@@ -7,7 +7,14 @@ import { Link } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
-  const { login, logout, SetToken, SetUserName } = useContext(AuthContext);
+  const {
+    login,
+    logout,
+    SetToken,
+    SetUserName,
+    getWishlistDataAPI,
+    getCartDataAPI,
+  } = useContext(AuthContext);
   //console.log(login, logout, SetToken);
   const [loginData, setLoginData] = useState({
     email: "",
@@ -44,6 +51,9 @@ function Login() {
         SetToken(resultResponse.token);
         SetUserName(resultResponse.data.name);
         setMessage(resultResponse);
+        // localStorage.setItem("bewakoof", resultResponse.token);
+        // getCartDataAPI();
+        // getWishlistDataAPI();
         navigate("/");
       } else {
         setMessage(resultResponse);
@@ -101,9 +111,9 @@ function Login() {
               onClick={passwordHandler}
             >
               {hidePassword ? (
-                <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                <i className="fa fa-eye-slash" aria-hidden="true"></i>
               ) : (
-                <i class="fa fa-eye" aria-hidden="true"></i>
+                <i className="fa fa-eye" aria-hidden="true"></i>
               )}
             </span>
           </div>

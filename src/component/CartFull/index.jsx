@@ -6,10 +6,18 @@ import { useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 function CartFull(props) {
-  const [cartData, setCartData] = useState(props.data);
+  //const [cartData, setCartData] = useState(props.data);
   const [totalPrice, setTotalPrice] = useState(0);
-  const { isLoggedIn, logout, token } = useContext(AuthContext);
-  const { getCartData } = props;
+  const {
+    isLoggedIn,
+    logout,
+    token,
+    wishlistData,
+    getWishlistDataAPI,
+    getCartDataAPI,
+    cartData,
+  } = useContext(AuthContext);
+
   const navigate = useNavigate();
   let sum = 0;
   for (let x of cartData) {
@@ -35,7 +43,7 @@ function CartFull(props) {
 
       //console.log(result);
       if (resultResponse.status === "success") {
-        getCartData();
+        getCartDataAPI();
         //navigate("/cart");
       } else {
         navigate("/");
@@ -48,8 +56,9 @@ function CartFull(props) {
   }
 
   function deleteFromCart(id) {
-    console.log(id);
+    //console.log(id);
     removeFromCartAPI(id);
+    getCartDataAPI();
   }
 
   return (

@@ -59,7 +59,7 @@ function ProductDetails(props) {
             ? data[0].subCategory[0].toUpperCase() +
               data[0].subCategory.slice(1)
             : ""}{" "}
-          for
+          
           <span className="resultCount">({data?.length})</span>
         </div>
 
