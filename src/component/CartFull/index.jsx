@@ -4,10 +4,12 @@ import "./cartFull.css";
 import { AuthContext } from "../../authentication/AuthContext";
 import { useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import AddressModalComponent from "../AddressModalComponent";
 
 function CartFull(props) {
   //const [cartData, setCartData] = useState(props.data);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [showAddressModal, setShowAddressModal] = useState(false);
   const {
     isLoggedIn,
     logout,
@@ -61,92 +63,105 @@ function CartFull(props) {
     getCartDataAPI();
   }
 
+  function handleGoToAddressModal() {
+    setShowAddressModal(true);
+  }
+  function hideAddressModal() {
+    setShowAddressModal(false);
+  }
+
   return (
-    <div className="cartFullContainer">
-      <div className="cartFullLeft">
-        <div className="cartCount">
-          <b>My Bag</b> {cartData.length} item(s)
-        </div>
-        <div className="freeDelivery">
-          Yay! You get FREE delivery on this order
-        </div>
-        {cartData
-          .slice()
-          .reverse()
-          .map((val) => {
-            return (
-              <CartSingleComponent
-                data={val}
-                key={val.product._id}
-                deleteHandler={() => {
-                  deleteFromCart(val.product._id);
-                }}
-              />
-            );
-          })}
+    <>
+      {showAddressModal ? (
+        <AddressModalComponent hideModal={hideAddressModal} />
+      ) : (
+        ""
+      )}
 
-        {/* <CartSingleComponent />
+      <div className="cartFullContainer">
+        <div className="cartFullLeft">
+          <div className="cartCount">
+            <b>My Bag</b> {cartData.length} item(s)
+          </div>
+          <div className="freeDelivery">
+            Yay! You get FREE delivery on this order
+          </div>
+          {cartData
+            .slice()
+            .reverse()
+            .map((val) => {
+              return (
+                <CartSingleComponent
+                  data={val}
+                  key={val.product._id}
+                  deleteHandler={() => {
+                    deleteFromCart(val.product._id);
+                  }}
+                />
+              );
+            })}
+
+          {/* <CartSingleComponent />
         <CartSingleComponent /> */}
-      </div>
-      <div className="cartFullRight">
-        <div className="saveExtra">
-          Save extra{" "}
-          <b style={{ marginLeft: "5px", marginRight: "5px" }}> ₹90 </b> with{" "}
-          <b style={{ marginLeft: "5px", marginRight: "5px" }}> TriBe</b>
         </div>
-
-        <div className="extraDiscount">
-          Whistles! Get extra 15% cashback on prepaid orders above Rs.699.
-          Coupon code - OOF15
-        </div>
-        <div className="applyCoupon">
-          <div className="applycouponInner">
-            Apply Coupon / Gift Card / Referral
-          </div>
-        </div>
-
-        <div className="priceSummary">
-          <div className="priceSummaryHeading">PRICE SUMMARY</div>
-          <div className="priceContent">
-            <div>Total MRP (Incl. of taxes)</div>
-            <div>₹{sum + Math.floor(sum / 2)}</div>
+        <div className="cartFullRight">
+          <div className="saveExtra">
+            Save extra{" "}
+            <b style={{ marginLeft: "5px", marginRight: "5px" }}> ₹90 </b> with{" "}
+            <b style={{ marginLeft: "5px", marginRight: "5px" }}> TriBe</b>
           </div>
 
-          <div className="priceContent">
-            <div>Shipping Charges</div>
-            <div>FREE</div>
+          <div className="extraDiscount">
+            Whistles! Get extra 15% cashback on prepaid orders above Rs.699.
+            Coupon code - OOF15
           </div>
-
-          <div className="priceContent">
-            <div>Bag Discount</div>
-            <div> ₹{Math.floor(sum / 2)}</div>
-          </div>
-
-          <div className="priceContent" style={{ marginBottom: "40px" }}>
-            <div>
-              <b>Subtotal</b>
-            </div>
-            <div>
-              {" "}
-              <b>₹{sum}</b>
+          <div className="applyCoupon">
+            <div className="applycouponInner">
+              Apply Coupon / Gift Card / Referral
             </div>
           </div>
-        </div>
-        <div className="priceAndAddressButton">
-          <div>
-            <p style={{ marginTop: "0px", fontSize: "12px" }}>Total</p>
-            <p>
-              <b>{sum}</b>
-            </p>
+
+          <div className="priceSummary">
+            <div className="priceSummaryHeading">PRICE SUMMARY</div>
+            <div className="priceContent">
+              <div>Total MRP (Incl. of taxes)</div>
+              <div>₹{sum + Math.floor(sum / 2)}</div>
+            </div>
+
+            <div className="priceContent">
+              <div>Shipping Charges</div>
+              <div>FREE</div>
+            </div>
+
+            <div className="priceContent">
+              <div>Bag Discount</div>
+              <div> ₹{Math.floor(sum / 2)}</div>
+            </div>
+
+            <div className="priceContent" style={{ marginBottom: "40px" }}>
+              <div>
+                <b>Subtotal</b>
+              </div>
+              <div>
+                {" "}
+                <b>₹{sum}</b>
+              </div>
+            </div>
           </div>
-          <div>
-            <Link to="/checkout">
-              <button>GO TO CHECKOUT</button>
-            </Link>
+          <div className="priceAndAddressButton">
+            <div>
+              <p style={{ marginTop: "0px", fontSize: "12px" }}>Total</p>
+              <p>
+                <b>{sum}</b>
+              </p>
+            </div>
+            <div>
+              <button onClick={handleGoToAddressModal}>GO TO ADDRESS</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

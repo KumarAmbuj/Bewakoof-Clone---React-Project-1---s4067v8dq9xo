@@ -1,5 +1,6 @@
 import "./trendingCard.css";
 import { memo } from "react";
+import { Link } from "react-router-dom";
 function TrendingCard(props) {
   const { name, image } = props.data;
   return (

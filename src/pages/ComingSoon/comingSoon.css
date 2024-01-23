@@ -1,0 +1,13 @@
+.comingSoonContainer{
+    height: 100vh;
+    width: 100vw;
+}
+.comingSoonImage{
+    height: 200px;
+    width: 300px;
+    margin: 20% auto;
+}
+.comingSoonImage img{
+    height: 100%;
+    width: 100%;
+}

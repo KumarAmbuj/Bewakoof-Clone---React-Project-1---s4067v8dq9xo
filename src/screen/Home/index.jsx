@@ -12,6 +12,7 @@ import Login from "../../pages/Login";
 import AuthProvider from "../../authentication/AuthProvider";
 import Wishlist from "../../pages/Wishlist";
 import Checkout from "../../pages/Checkout";
+import ComingSoon from "../../pages/ComingSoon";
 
 function Home() {
   return (
@@ -32,6 +33,7 @@ function Home() {
           <Route path="cart" element={<Cart />} />
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="checkout" element={<Checkout />} />
+          <Route path="coming-soon" element={<ComingSoon />} />
         </Routes>
 
         <Footer />

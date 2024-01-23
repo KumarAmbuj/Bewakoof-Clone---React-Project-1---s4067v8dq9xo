@@ -11,6 +11,7 @@ import { hoverMobileRealmeList } from "../../Constant/constant";
 import { hoverMobileVivoList } from "../../Constant/constant";
 import HoverSpecialComponent from "../HoverSpecialComponent";
 import { memo } from "react";
+import { Link } from "react-router-dom";
 
 function MobileMenuBarOnHover(props) {
   const { handleMobileMenuBarOnOver, handleMobileMenuBarOnLeave } = props;
@@ -29,7 +30,7 @@ function MobileMenuBarOnHover(props) {
               {hoverMobileNothingList.map((val, index) => {
                 return (
                   <div className="hoverMenuItem" key={index}>
-                    {val}
+                    <Link to="/coming-soon">{val}</Link>
                   </div>
                 );
               })}
@@ -40,7 +41,7 @@ function MobileMenuBarOnHover(props) {
               {hoverMobileAppleList.map((val, index) => {
                 return (
                   <div className="hoverMenuItem" key={index}>
-                    {val}
+                    <Link to="/coming-soon">{val}</Link>
                   </div>
                 );
               })}
@@ -50,7 +51,7 @@ function MobileMenuBarOnHover(props) {
               {hoverMobileXiomiList.map((val, index) => {
                 return (
                   <div className="hoverMenuItem" key={index}>
-                    {val}
+                    <Link to="/coming-soon">{val}</Link>
                   </div>
                 );
               })}
@@ -61,7 +62,7 @@ function MobileMenuBarOnHover(props) {
               {hoverMobileSamsungList.map((val, index) => {
                 return (
                   <div className="hoverMenuItem" key={index}>
-                    {val}
+                    <Link to="/coming-soon">{val}</Link>
                   </div>
                 );
               })}
@@ -71,7 +72,7 @@ function MobileMenuBarOnHover(props) {
               {hoverMobileOnePlusList.map((val, index) => {
                 return (
                   <div className="hoverMenuItem" key={index}>
-                    {val}
+                    <Link to="/coming-soon">{val}</Link>
                   </div>
                 );
               })}
@@ -82,7 +83,7 @@ function MobileMenuBarOnHover(props) {
               {hoverMobileRealmeList.map((val, index) => {
                 return (
                   <div className="hoverMenuItem" key={index}>
-                    {val}
+                    <Link to="/coming-soon">{val}</Link>
                   </div>
                 );
               })}
@@ -93,7 +94,7 @@ function MobileMenuBarOnHover(props) {
               {hoverMobileVivoList.map((val, index) => {
                 return (
                   <div className="hoverMenuItem" key={index}>
-                    {val}
+                    <Link to="/coming-soon">{val}</Link>
                   </div>
                 );
               })}

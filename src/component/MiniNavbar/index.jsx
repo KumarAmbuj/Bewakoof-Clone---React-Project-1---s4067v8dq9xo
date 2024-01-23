@@ -19,7 +19,8 @@ import { useContext } from "react";
 function MiniNavbar() {
   const [showSideNavbar, setShowSideNavbar] = useState(false);
 
-  const { isLoggedIn, logout } = useContext(AuthContext);
+  const { isLoggedIn, logout, wishlistData, cartData } =
+    useContext(AuthContext);
   const navigate = useNavigate();
 
   return (
@@ -44,14 +45,24 @@ function MiniNavbar() {
           <div>
             <FaMagnifyingGlass />
           </div>
-          <div>
+          <div style={{ position: "relative" }}>
+            {wishlistData?.length > 0 ? (
+              <div className="itemCount">{wishlistData?.length}</div>
+            ) : (
+              ""
+            )}
             <Link to={isLoggedIn ? "/wishlist" : "/login"}>
               {" "}
               {/* <FaRegHeart /> */}
               <i className="fa fa-heart-o"></i>
             </Link>
           </div>
-          <div>
+          <div style={{ position: "relative" }}>
+            {cartData?.length > 0 ? (
+              <div className="itemCount">{cartData?.length}</div>
+            ) : (
+              ""
+            )}
             <Link to={isLoggedIn ? "/cart" : "/login"}>
               {" "}
               {/* <FaShoppingBag style={{ cursor: "pointer" }} /> */}

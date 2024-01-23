@@ -1,0 +1,112 @@
+.addressModalContainer{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 9;
+    font-family: montserrat,sans-serif;
+    position: fixed;
+    left: 0;
+    top:0;
+    overflow-y: scroll;
+}
+
+.addressModalComponent{
+   
+    /* height: 200px; */
+    width: 55%;
+    /* outline: 1px solid red; */
+    background-color: white;
+    margin: 4% auto;
+    z-index: 10;
+    padding:20px 30px;
+    overflow-y: visible;
+
+}
+.addressHeaderCrossButton{
+    display: flex;
+    justify-content: space-between;
+}
+.addressHeader{
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    height: 40px;
+    border-bottom: 4px solid #fdd835;
+}
+.addressFormContainer{
+    margin-top: 20px;
+}
+.addressFormContainer input{
+    outline: none;
+    border: none;
+    width: 70%;
+    padding-left: 15px;
+    background-color: white;
+}
+.addressFormContainer fieldset{
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.addressBorderLine{
+    margin-top: 20px;
+    border: 1px solid rgb(226, 226, 226);
+    margin-bottom: 15px;
+}
+.cityStateFlex{
+    display: flex;
+    gap:20px;
+}
+.AddressButtons{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap:30px;
+}
+.goToCheckout{
+    padding: 10px 20px;
+   
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgb(47, 131, 131);
+    color:rgb(238, 232, 232);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.cancel{
+    padding: 10px 20px;
+   
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgb(47, 131, 131);
+    color:rgb(238, 232, 232);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+@media only screen and (max-width: 1100px) {
+    .addressModalComponent{
+    
+        width: 80%;
+        top:5%;
+        
+        left:10%;
+    
+       
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .addressModalComponent{
+    
+        width: 85%;
+        top:5%;
+        
+        left:10%;
+    
+       
+    }
+}

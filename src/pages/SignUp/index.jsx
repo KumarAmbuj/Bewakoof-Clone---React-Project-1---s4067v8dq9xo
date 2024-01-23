@@ -13,6 +13,7 @@ function SignUp() {
   });
   const [message, setMessage] = useState({});
   const [isLoader, setIsLoader] = useState(false);
+  const [hidePassword, setHidePassword] = useState(true);
 
   async function sendSignUpData() {
     try {
@@ -61,6 +62,10 @@ function SignUp() {
     //console.log(signUpData);
     //
     sendSignUpData();
+  }
+
+  function passwordHandler() {
+    setHidePassword(!hidePassword);
   }
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -113,11 +118,21 @@ function SignUp() {
           <div className="inputMobileNumber" style={{ marginTop: "10px" }}>
             <div className="mobileNumber">
               <input
-                type="text"
+                type={hidePassword ? "password" : "text"}
                 placeholder="password"
                 name="password"
                 onChange={handleChange}
               />
+              <span
+                style={{ marginRight: "-15px", cursor: "pointer" }}
+                onClick={passwordHandler}
+              >
+                {hidePassword ? (
+                  <i className="fa fa-eye-slash" aria-hidden="true"></i>
+                ) : (
+                  <i className="fa fa-eye" aria-hidden="true"></i>
+                )}
+              </span>
             </div>
           </div>
           <div className="continueButton">
