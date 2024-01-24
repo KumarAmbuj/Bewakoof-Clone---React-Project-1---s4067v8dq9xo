@@ -85,11 +85,12 @@ function ProductCard(props) {
     }
   }
 
-  function handleRemoveFromFavourite(e) {
+  async function handleRemoveFromFavourite(e) {
     e.stopPropagation();
-    removeFromWishlistAPI(_id, projectId, token);
-    getWishlistDataAPI();
     setAddedToWishlist(false);
+    await removeFromWishlistAPI(_id, projectId, token);
+    await getWishlistDataAPI();
+
     //console.log("hello");
   }
 

@@ -55,8 +55,8 @@ function SingleProductDetails() {
       //console.log(result);
       if (resultResponse.status === "success") {
         setAddedToCart(true);
-        getCartDataAPI();
-        getCartDataAPI();
+        //getCartDataAPI();
+        //getCartDataAPI();
       } else {
         //navigate("/signup");
       }
@@ -67,9 +67,10 @@ function SingleProductDetails() {
     }
   }
 
-  function handleAddToCart() {
+  async function handleAddToCart() {
     if (isLoggedIn) {
-      sendDataToCart();
+      await sendDataToCart();
+      await getCartDataAPI();
     } else {
       navigate("/login");
     }
@@ -79,23 +80,25 @@ function SingleProductDetails() {
     navigate("/cart");
   }
 
-  function handleFavourite() {
+  async function handleFavourite() {
     if (!isLoggedIn) {
       navigate("/login");
     } else {
-      addToWishlistDataAPI(productId, projectId, token);
       setAddedToWishlist(true);
-      getWishlistDataAPI();
-      getWishlistDataAPI();
+      await addToWishlistDataAPI(productId, projectId, token);
+
+      await getWishlistDataAPI();
+      //getWishlistDataAPI();
     }
   }
 
-  function handleRemoveFromFavourite(e) {
+  async function handleRemoveFromFavourite(e) {
     e.stopPropagation();
-    removeFromWishlistAPI(productId, projectId, token);
-    //getWishlistDataAPI();
     setAddedToWishlist(false);
-    console.log("hello");
+    await removeFromWishlistAPI(productId, projectId, token);
+    await getWishlistDataAPI();
+
+    //console.log("hello");
   }
 
   async function getProducts() {

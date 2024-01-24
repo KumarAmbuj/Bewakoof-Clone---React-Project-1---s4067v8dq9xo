@@ -73,27 +73,28 @@ function BestsellerProductCard(props) {
     }
   }
 
-  function handleFavourite(e) {
+  async function handleFavourite(e) {
     e.stopPropagation();
     if (!isLoggedIn) {
       navigate("/login");
     } else {
       setAddedToWishlist(true);
 
-      sendWishlistData();
-      getWishlistDataAPI();
-      getWishlistDataAPI();
+      await sendWishlistData();
+      await getWishlistDataAPI();
+      //getWishlistDataAPI();
 
       //getWishlistDataAPI();
     }
   }
 
-  function handleRemoveFromFavourite(e) {
+  async function handleRemoveFromFavourite(e) {
     e.stopPropagation();
-    removeFromWishlistAPI(_id, projectId, token);
-    getWishlistDataAPI();
-    getWishlistDataAPI();
     setAddedToWishlist(false);
+    await removeFromWishlistAPI(_id, projectId, token);
+    await getWishlistDataAPI();
+    //getWishlistDataAPI();
+
     //console.log("hello");
   }
 

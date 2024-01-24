@@ -25,14 +25,14 @@ function CartSingleComponent(props) {
   } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  function addToWishlist() {
+  async function addToWishlist() {
     let id = props.data.product._id;
-    addToWishlistDataAPI(id, projectId, token);
-    removeFromCartAPI(id, projectId, token);
-    getWishlistDataAPI();
-    getWishlistDataAPI();
-    getCartDataAPI();
-    getCartDataAPI();
+    await addToWishlistDataAPI(id, projectId, token);
+    await removeFromCartAPI(id, projectId, token);
+    await getWishlistDataAPI();
+    //getWishlistDataAPI();
+    await getCartDataAPI();
+    //getCartDataAPI();
   }
 
   return (
