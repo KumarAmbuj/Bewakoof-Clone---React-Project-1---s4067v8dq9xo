@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 function CategoriesToBag() {
   return (
     <div>
-      <div className="categoriesToBagText">CATEGORIES TO BAG</div>
+      <div className="categoriesToBagText">CATEGORIES YOU CAN ADD TO BAG</div>
       <div className="categoriesToBagCards">
         {categoriesToBagList.map((val, index) => {
           return (
