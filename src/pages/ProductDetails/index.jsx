@@ -23,7 +23,7 @@ function ProductDetails(props) {
     try {
       setIsLoader(true);
       const response = await fetch(
-        `https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=100&page=1?${location.search}`,
+        `https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=20&page=1?${location.search}`,
         {
           headers: {
             projectId: "zl6mct4l5ib6",
@@ -59,7 +59,6 @@ function ProductDetails(props) {
             ? data[0].subCategory[0].toUpperCase() +
               data[0].subCategory.slice(1)
             : ""}{" "}
-          
           <span className="resultCount">({data?.length})</span>
         </div>
 
