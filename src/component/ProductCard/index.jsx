@@ -61,7 +61,7 @@ function ProductCard(props) {
         }
       );
       let resultResponse = await result.json();
-      console.log(resultResponse);
+      console.log("wishlist added", resultResponse);
 
       //console.log(result);
     } catch {
@@ -73,14 +73,15 @@ function ProductCard(props) {
     }
   }
 
-  function handleFavourite(e) {
+  async function handleFavourite(e) {
     e.stopPropagation();
     if (!isLoggedIn) {
       navigate("/login");
     } else {
-      sendWishlistData();
       setAddedToWishlist(true);
-      getWishlistDataAPI();
+      await sendWishlistData();
+
+      await getWishlistDataAPI();
     }
   }
 
