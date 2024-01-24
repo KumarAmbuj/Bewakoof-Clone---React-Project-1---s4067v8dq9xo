@@ -34,4 +34,17 @@ a{
         text-transform: capitalize;
         height:50px;
     }
+    .categoriesMenu{
+        color: black;
+        font-size: 14px;
+    
+    }
+   
+  }
+
+  @media only screen and (max-width: 500px) {
+    
+    .categories{
+        display: none;
+    }
   }

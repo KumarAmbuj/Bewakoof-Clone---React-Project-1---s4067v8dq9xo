@@ -9,11 +9,12 @@
       /* outline: 1px solid red; */
       align-items: center;
       justify-content: space-between;
-      margin: 0 20px;
+      margin: 0 0px;
       padding-top: 7px;
       position: fixed;
       width: 100%;
       top:0;
+      left:0;
       background-color: white;
       box-shadow: 1px 1px 1px grey;
       z-index: 4;
