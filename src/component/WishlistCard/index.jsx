@@ -54,22 +54,22 @@ function WishlistCard(props) {
   //   }
   // }
 
-  function removeFromWishlist(id) {
-    removeFromWishlistAPI(id, projectId, token);
-    getWishlistDataAPI();
-    getWishlistDataAPI();
-    getCartDataAPI();
-    getCartDataAPI();
+  async function removeFromWishlist(id) {
+    await removeFromWishlistAPI(id, projectId, token);
+    await getWishlistDataAPI();
+    //getWishlistDataAPI();
+    await getCartDataAPI();
+    //getCartDataAPI();
   }
 
-  function addToCart() {
+  async function addToCart() {
     let id = props.data.products._id;
-    addToCartAPI(id, projectId, token);
-    removeFromWishlistAPI(id, projectId, token);
-    getWishlistDataAPI();
-    getWishlistDataAPI();
-    getCartDataAPI();
-    getCartDataAPI();
+    await addToCartAPI(id, projectId, token);
+    await removeFromWishlistAPI(id, projectId, token);
+    await getWishlistDataAPI();
+    //getWishlistDataAPI();
+    await getCartDataAPI();
+    //getCartDataAPI();
   }
 
   return (
