@@ -1,4 +1,3 @@
-import Home from "./screen/Home";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -6,7 +5,7 @@ import TopNavbar from "./component/TopNavbar";
 import MiddleNavbar from "./component/MiddleNavbar";
 import MiniNavbar from "./component/MiniNavbar";
 import Footer from "./component/Footer";
-import HomePage from "./screen/HomePage";
+
 import ProductDetails from "./pages/ProductDetails";
 
 import SingleProductDetails from "./pages/SingleProductDetails";
@@ -18,8 +17,6 @@ import Wishlist from "./pages/Wishlist";
 import Checkout from "./pages/Checkout";
 import ComingSoon from "./pages/ComingSoon";
 import Homepage from "./pages/Homepage";
-
-import { useEffect } from "react";
 
 function App() {
   return (
