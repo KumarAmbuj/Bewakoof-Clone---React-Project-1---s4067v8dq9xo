@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-import { useRef, memo } from "react";
+import { useRef, memo, useEffect } from "react";
 
 const SliderShow = () => {
   const settings = {
@@ -47,6 +47,9 @@ const SliderShow = () => {
   const goToPrev = () => {
     sliderRef.current.slickPrev();
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <div className="slider">

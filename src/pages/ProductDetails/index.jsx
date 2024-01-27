@@ -9,6 +9,7 @@ import Loader from "../../component/Loader";
 
 function ProductDetails(props) {
   const location = useLocation();
+  //console.log("location", location);
   //const { state } = location;
   //console.log(state);
   // const { category } = props.state;
@@ -33,8 +34,6 @@ function ProductDetails(props) {
 
       const responseJson = await response.json();
       setData(responseJson.data);
-      //console.log(responseJson.data);
-      //console.log(data[0].subCategory);
     } catch (error) {
       console.log("errrrorrrr");
     } finally {
@@ -44,7 +43,7 @@ function ProductDetails(props) {
 
   useEffect(() => {
     getProducts();
-    //document.getElementById("prod").scrollTop.toFixed;
+
     window.scrollTo(0, 0);
   }, [location]);
   return (
@@ -86,12 +85,6 @@ function ProductDetails(props) {
               <img src="https://images.bewakoof.com/uploads/category/desktop/Statement-Winter-jackets_Men_Inside-Desktop-banner_(1)-1702820716.jpg" />
             </div>
             <div className="productDetailsCards">
-              {/* <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard /> */}
               {data?.map((val) => {
                 return <ProductCard data={val} key={val._id} />;
               })}

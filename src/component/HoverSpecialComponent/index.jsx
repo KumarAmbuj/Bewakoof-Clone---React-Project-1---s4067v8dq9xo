@@ -6,7 +6,7 @@ function HoverSpecialComponent(props) {
   return (
     <div className="specialComponent">
       <div className="Image">
-        <img src={`./images/special/${image}`} />
+        <img src={`/images/special/${image}`} />
       </div>
       <div className="hoverSpecialText">
         <Link to="/coming-soon">{name}</Link>

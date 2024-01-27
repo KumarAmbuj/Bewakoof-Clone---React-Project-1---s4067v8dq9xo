@@ -20,8 +20,16 @@ import Loader from "../../component/Loader";
 
 function SingleProductDetails() {
   //console.log("hi");
-  const { isLoggedIn, logout, token, getCartDataAPI, getWishlistDataAPI } =
-    useContext(AuthContext);
+  const {
+    isLoggedIn,
+    logout,
+    token,
+    getCartDataAPI,
+    getWishlistDataAPI,
+    wishlistData,
+    cartData,
+  } = useContext(AuthContext);
+
   const [data, setData] = useState({});
   const [Image, setImage] = useState(data?.displayImage);
   const [addedToCart, setAddedToCart] = useState(false);
@@ -50,20 +58,14 @@ function SingleProductDetails() {
         }
       );
       let resultResponse = await result.json();
-      console.log(resultResponse);
+      //console.log("hellooooo", resultResponse);
 
-      //console.log(result);
       if (resultResponse.status === "success") {
         setAddedToCart(true);
-        //getCartDataAPI();
-        //getCartDataAPI();
       } else {
-        //navigate("/signup");
       }
     } catch {
-      //toast.error("Some error occured");
       console.log("errorrrrrrrrrrrr");
-      //navigate("/");
     }
   }
 
@@ -116,17 +118,31 @@ function SingleProductDetails() {
       const responseJson = await response.json();
       setData(responseJson.data);
       setImage(responseJson.data.displayImage);
-      //console.log(responseJson.data);
     } catch (error) {
     } finally {
       setIsLoader(false);
     }
   }
+
   useEffect(() => {
     getProducts();
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    let x = wishlistData?.filter((val) => {
+      return val?.products?._id == productId;
+    });
+    setAddedToWishlist(x.length > 0);
+  }, [wishlistData]);
+  useEffect(() => {
+    let x = cartData?.filter((val) => {
+      return val?.product?._id == productId;
+    });
+    setAddedToCart(x.length > 0);
+  }, [cartData]);
+
+  //console.log("ddddddd", data?.ratings);
   return (
     <>
       {isLoader ? <Loader /> : ""}
@@ -154,18 +170,6 @@ function SingleProductDetails() {
                 );
               })}
 
-              {/* <div className="smallerImage">
-              <img src="./images/singleImage.webp" />
-            </div>
-            <div className="smallerImage">
-              <img src="./images/singleImage.webp" />
-            </div>
-            <div className="smallerImage">
-              <img src="./images/singleImage.webp" />
-            </div>
-            <div className="smallerImage">
-              <img src="./images/singleImage.webp" />
-            </div> */}
               <div className="arrow">
                 <FaAngleDown />
               </div>
@@ -186,7 +190,7 @@ function SingleProductDetails() {
                   <FaStar />{" "}
                 </span>
                 <span className="starRatingNumber">
-                  {Math.floor(data?.ratings * 10) / 10}
+                  {data?.ratings && Math.floor(data?.ratings * 10) / 10}
                 </span>
               </button>
             </div>
@@ -196,7 +200,9 @@ function SingleProductDetails() {
 
               <span className="deletedPrice">
                 <span>₹</span>
-                <del>{Math.round(data?.price + data?.price * 0.5)}</del>
+                <del>
+                  {data?.price && Math.round(data?.price + data?.price * 0.5)}
+                </del>
               </span>
 
               <span className="percentageOff">50% OFF</span>
@@ -230,10 +236,6 @@ function SingleProductDetails() {
                   );
                   //console.log(val);
                 })}
-
-                {/* <SizeComponent />
-              <SizeComponent />
-              <SizeComponent /> */}
               </div>
             </div>
 

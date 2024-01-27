@@ -11,33 +11,14 @@ import { projectId } from "../../Constant/constant";
 import Loader from "../Loader";
 
 function ProductCard(props) {
-  const { isLoggedIn, logout, token, wishlistData, getWishlistDataAPI } =
+  const { isLoggedIn, token, wishlistData, getWishlistDataAPI } =
     useContext(AuthContext);
+
   const [addedToWishlist, setAddedToWishlist] = useState(false);
-  //console.log(wishlistData);
   const [isLoader, setIsLoader] = useState(false);
-
-  const { slider } = props;
-
-  //console.log(slider);
 
   const navigate = useNavigate();
   const { ratings, brand, displayImage, name, price, _id } = props.data;
-  //console.log(_id);
-
-  // let x = wishlistData.filter((val) => {
-  //   return val.products._id === _id;
-  // });
-  // console.log(x);
-
-  useEffect(() => {
-    let x = wishlistData.filter((val) => {
-      return val.products._id === _id;
-    });
-    setAddedToWishlist(x.length > 0);
-  }, []);
-
-  //setAddedToWishlist(x.length > 0);
 
   function navigateToSingleProductDetails(id) {
     navigate(`/single-product-details/${id}`);
@@ -93,6 +74,13 @@ function ProductCard(props) {
 
     //console.log("hello");
   }
+
+  useEffect(() => {
+    let x = wishlistData.filter((val) => {
+      return val.products._id === _id;
+    });
+    setAddedToWishlist(x.length > 0);
+  }, [wishlistData]);
 
   return (
     <>

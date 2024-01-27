@@ -15,20 +15,11 @@ function BestsellerProductCard(props) {
     useContext(AuthContext);
   const [addedToWishlist, setAddedToWishlist] = useState(false);
   const [loader, setLoader] = useState(false);
-  //console.log(wishlistData);
 
   const { slider } = props;
 
-  //console.log(slider);
-
   const navigate = useNavigate();
   const { ratings, brand, displayImage, name, price, _id } = props.data;
-  //console.log(_id);
-
-  // let x = wishlistData.filter((val) => {
-  //   return val.products._id === _id;
-  // });
-  // console.log(x);
 
   useEffect(() => {
     let x = wishlistData.filter((val) => {
@@ -36,8 +27,6 @@ function BestsellerProductCard(props) {
     });
     setAddedToWishlist(x.length > 0);
   }, []);
-
-  //setAddedToWishlist(x.length > 0);
 
   function navigateToSingleProductDetails(id) {
     navigate(`/single-product-details/${id}`);
@@ -82,9 +71,6 @@ function BestsellerProductCard(props) {
 
       await sendWishlistData();
       await getWishlistDataAPI();
-      //getWishlistDataAPI();
-
-      //getWishlistDataAPI();
     }
   }
 
@@ -93,9 +79,6 @@ function BestsellerProductCard(props) {
     setAddedToWishlist(false);
     await removeFromWishlistAPI(_id, projectId, token);
     await getWishlistDataAPI();
-    //getWishlistDataAPI();
-
-    //console.log("hello");
   }
 
   return (
@@ -106,19 +89,12 @@ function BestsellerProductCard(props) {
         onClick={() => {
           navigateToSingleProductDetails(_id);
         }}
-        // style={{ width: slider?.width }}
       >
         <div className="bestSellerProductCardImage">
           <img
             src={displayImage ? displayImage : "./images/singleImage.webp"}
           />
           <div className="tag">OVERSIZED FIT</div>
-          {/* <div className="star">
-          <span className="starIcon">
-            <FaStar />
-          </span>
-          <span className="starRating">{Math.round(ratings)}</span>
-        </div> */}
         </div>
         <div className="productNameIcon">
           <div className="productName" style={{ padding: "7px" }}>
@@ -141,11 +117,6 @@ function BestsellerProductCard(props) {
                   onClick={handleRemoveFromFavourite}
                 />
               )}
-              {/* <img
-              src="	https://images.bewakoof.com/web/Wishlist.svg"
-              style={{ height: "28px", width: "28px" }}
-              onClick={handleFavourite}
-            /> */}
             </span>
           </div>
         </div>
@@ -165,15 +136,6 @@ function BestsellerProductCard(props) {
 
           <span className="perOff">53% OFF</span>
         </div>
-        {/* <div className="specialMemberPrice">
-        <span className="priceBackground">
-          <span>₹</span>
-          {Math.round(price - (price * 10) / 100)} For Tribe Members
-        </span>
-      </div> */}
-        {/* <div className="btn">
-        <button>100% COTTON</button>
-      </div> */}
       </div>
     </>
   );

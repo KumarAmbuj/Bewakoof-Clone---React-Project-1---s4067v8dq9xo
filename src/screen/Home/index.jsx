@@ -13,8 +13,12 @@ import AuthProvider from "../../authentication/AuthProvider";
 import Wishlist from "../../pages/Wishlist";
 import Checkout from "../../pages/Checkout";
 import ComingSoon from "../../pages/ComingSoon";
+import { useEffect } from "react";
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <AuthProvider>

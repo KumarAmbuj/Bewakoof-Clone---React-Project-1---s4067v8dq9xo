@@ -3,16 +3,10 @@ import { FaShoppingBag } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { FaRegHeart } from "react-icons/fa";
 import { useState } from "react";
-//import SideNavbar from "../SideNavBar";
-//import SideNavbar from "./SideNavBar";
 import { memo } from "react";
-
 import SideNavbar from "../SideNavbar";
-
 import { AuthContext } from "../../authentication/AuthContext";
-
 import { searchResult } from "../../Constant/constant";
-
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 
@@ -67,7 +61,7 @@ function MiniNavbar() {
               {" "}
               {/* <FaShoppingBag style={{ cursor: "pointer" }} /> */}
               <img
-                src="./images/shoppingBag.png"
+                src="/images/shoppingBag.png"
                 style={{ height: "24px", width: "24px" }}
               />
             </Link>

@@ -11,7 +11,7 @@ function TopAccessories() {
       <div className="topAccessoriesCards">
         {topAccessoriesList.map((val, index) => {
           return (
-            <Link to="/coming-soon">
+            <Link to="/coming-soon" key={index}>
               <TrendingCard data={val} key={index} />
             </Link>
           );

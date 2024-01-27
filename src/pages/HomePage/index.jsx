@@ -1,8 +1,5 @@
-import { Carousel } from "react-responsive-carousel";
 import CategoryNavbar from "../../component/CategoryNavbar";
-
 import SliderShow from "../../component/Slider";
-import "./homepage.css";
 import CategoryList from "../../component/CategoryList";
 import Banner1 from "../../component/Banner1";
 import Banner2 from "../../component/Banner2";
@@ -13,14 +10,12 @@ import TopAccessories from "../../component/TopAccessories";
 import Banner4 from "../../component/Banner4";
 import Slider2 from "../../component/Slider2";
 import Slider3 from "../../component/Slider3";
-
-import { useState } from "react";
-import Home from "../Home";
 import BestSellerSlider from "../../component/BestSellerSlider";
 import Loader from "../../component/Loader";
-import { useEffect } from "react";
 
-function HomePage() {
+import { useState, useEffect } from "react";
+
+function Homepage() {
   const [isLoader, setIsLoader] = useState(false);
 
   useEffect(() => {
@@ -46,4 +41,4 @@ function HomePage() {
     </div>
   );
 }
-export default HomePage;
+export default Homepage;

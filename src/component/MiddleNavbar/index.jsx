@@ -88,7 +88,7 @@ function MiddleNavbar() {
           <div className="logo">
             <Link to="/">
               {" "}
-              <img src="./images/logo.svg" />
+              <img src="/images/logo.svg" />
             </Link>
           </div>
           <div
@@ -153,13 +153,13 @@ function MiddleNavbar() {
             <Link to={isLoggedIn ? "/cart" : "/login"}>
               {/* <FaShoppingBag /> */}
               <img
-                src="./images/shoppingBag.png"
+                src="/images/shoppingBag.png"
                 style={{ height: "22px", width: "22px" }}
               />
             </Link>
           </div>
           <div className="Flag">
-            <img src="./images/indiaFlag.png" />
+            <img src="/images/indiaFlag.png" />
           </div>
         </div>
       </div>
