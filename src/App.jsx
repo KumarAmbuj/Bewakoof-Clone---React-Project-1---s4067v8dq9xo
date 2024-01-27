@@ -5,9 +5,7 @@ import TopNavbar from "./component/TopNavbar";
 import MiddleNavbar from "./component/MiddleNavbar";
 import MiniNavbar from "./component/MiniNavbar";
 import Footer from "./component/Footer";
-
 import ProductDetails from "./pages/ProductDetails";
-
 import SingleProductDetails from "./pages/SingleProductDetails";
 import SignUp from "./pages/SignUp";
 import Cart from "./pages/Cart";
