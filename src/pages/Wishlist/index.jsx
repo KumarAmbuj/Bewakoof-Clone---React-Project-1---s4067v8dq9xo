@@ -32,12 +32,6 @@ function Wishlist() {
               .map((val) => {
                 return <WishlistCard data={val} key={val.products._id} />;
               })}
-            {/* <WishlistCard />
-            <WishlistCard />
-            <WishlistCard />
-            <WishlistCard />
-            <WishlistCard />
-            <WishlistCard /> */}
           </div>
         </div>
       )}

@@ -11,6 +11,11 @@ function SignUp() {
     password: "",
     appType: "ecommerce",
   });
+
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
   const [message, setMessage] = useState({});
   const [isLoader, setIsLoader] = useState(false);
   const [hidePassword, setHidePassword] = useState(true);
@@ -56,12 +61,34 @@ function SignUp() {
 
   function handleChange(e) {
     setMessage({});
+    setEmailError("");
+    setNameError("");
+    setPasswordError("");
     setSignUpData({ ...signUpData, [e.target.name]: e.target.value });
   }
   function handleSubmit() {
-    //console.log(signUpData);
-    //
-    sendSignUpData();
+    if (
+      signUpData.name.length >= 5 &&
+      signUpData.email.length >= 5 &&
+      signUpData.password.length >= 5 &&
+      signUpData.password.length <= 15
+    ) {
+      sendSignUpData();
+    } else {
+      if (signUpData.password.length < 5) {
+        setPasswordError(
+          "Password must have length greater than 5 and less than 15"
+        );
+      }
+      if (signUpData.email.length < 5) {
+        setEmailError(
+          "Email must have length greater than 5 and should contain @"
+        );
+      }
+      if (signUpData.name.length < 5) {
+        setNameError("Name must have length greater than 3");
+      }
+    }
   }
 
   function passwordHandler() {
@@ -103,6 +130,7 @@ function SignUp() {
               />
             </div>
           </div>
+          <div style={{ color: "red" }}>{nameError}</div>
 
           <div className="inputMobileNumber" style={{ marginTop: "10px" }}>
             <div className="mobileNumber">
@@ -114,6 +142,7 @@ function SignUp() {
               />
             </div>
           </div>
+          <div style={{ color: "red" }}>{emailError}</div>
 
           <div className="inputMobileNumber" style={{ marginTop: "10px" }}>
             <div className="mobileNumber">
@@ -135,6 +164,7 @@ function SignUp() {
               </span>
             </div>
           </div>
+          <div style={{ color: "red" }}>{passwordError}</div>
           <div className="continueButton">
             <button onClick={handleSubmit}>CONTINUE</button>
           </div>
