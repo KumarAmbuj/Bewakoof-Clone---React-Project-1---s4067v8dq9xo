@@ -19,7 +19,6 @@ import Homepage from "./pages/Homepage";
 function App() {
   return (
     <>
-      {/* <Home /> */}
       <div>
         <AuthProvider>
           <TopNavbar />
