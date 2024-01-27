@@ -19,7 +19,6 @@ import { projectId } from "../../Constant/constant";
 import Loader from "../../component/Loader";
 
 function SingleProductDetails() {
-  //console.log("hi");
   const {
     isLoggedIn,
     logout,
@@ -38,7 +37,6 @@ function SingleProductDetails() {
   const [selectSize, setSelectSize] = useState();
   const { productId } = useParams();
   const navigate = useNavigate();
-  //console.log(productId);
 
   async function sendDataToCart() {
     try {
@@ -58,7 +56,6 @@ function SingleProductDetails() {
         }
       );
       let resultResponse = await result.json();
-      //console.log("hellooooo", resultResponse);
 
       if (resultResponse.status === "success") {
         setAddedToCart(true);
@@ -90,7 +87,6 @@ function SingleProductDetails() {
       await addToWishlistDataAPI(productId, projectId, token);
 
       await getWishlistDataAPI();
-      //getWishlistDataAPI();
     }
   }
 
@@ -99,8 +95,6 @@ function SingleProductDetails() {
     setAddedToWishlist(false);
     await removeFromWishlistAPI(productId, projectId, token);
     await getWishlistDataAPI();
-
-    //console.log("hello");
   }
 
   async function getProducts() {

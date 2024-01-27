@@ -7,7 +7,7 @@ import { FaAngleDown } from "react-icons/fa";
 
 function Accordion(props) {
   const { name, subCategoryList } = props.data;
-  //console.log(name, subCategoryList);
+
   const [show, setShow] = useState(false);
   return (
     <div>
