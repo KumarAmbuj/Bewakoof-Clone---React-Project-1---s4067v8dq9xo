@@ -25,6 +25,9 @@ function Login() {
   const [message, setMessage] = useState({});
   const [hidePassword, setHidePassword] = useState(true);
 
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
   async function sendLoginData() {
     try {
       setIsLoader(true);
@@ -70,12 +73,31 @@ function Login() {
 
   function handleChange(e) {
     setMessage({});
+    setEmailError("");
+    setPasswordError("");
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
   }
 
   function handleSubmit() {
     //console.log(loginData);
-    sendLoginData();
+    if (
+      loginData.email.length >= 5 &&
+      loginData.password.length >= 5 &&
+      loginData.password.length <= 15
+    ) {
+      sendLoginData();
+    } else {
+      if (loginData.password.length < 5) {
+        setPasswordError(
+          "Password must have length greater than 5 and less than 15"
+        );
+      }
+      if (loginData.email.length < 5) {
+        setEmailError(
+          "Email must have length greater than 5 and should contain @"
+        );
+      }
+    }
   }
 
   function passwordHandler() {
@@ -99,6 +121,9 @@ function Login() {
               onChange={handleChange}
             />
           </div>
+          <div style={{ color: "red", fontSize: "12px", fontWeight: "700" }}>
+            {emailError}
+          </div>
           <div className="loginInputField">
             <input
               type={hidePassword ? "password" : "text"}
@@ -116,6 +141,9 @@ function Login() {
                 <i className="fa fa-eye" aria-hidden="true"></i>
               )}
             </span>
+          </div>
+          <div style={{ color: "red", fontSize: "12px", fontWeight: "700" }}>
+            {passwordError}
           </div>
           <div
             className={`loginResponse ${

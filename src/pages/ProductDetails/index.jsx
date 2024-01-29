@@ -9,10 +9,9 @@ import Loader from "../../component/Loader";
 
 function ProductDetails(props) {
   const location = useLocation();
-  
+
   const [data, setData] = useState([]);
   const [isLoader, setIsLoader] = useState(false);
-  
 
   async function getProducts() {
     try {
@@ -40,6 +39,10 @@ function ProductDetails(props) {
 
     window.scrollTo(0, 0);
   }, [location]);
+
+  function handleSelect(e) {
+    let value = e.target.value;
+  }
   return (
     <>
       {isLoader ? <Loader /> : ""}
@@ -59,11 +62,11 @@ function ProductDetails(props) {
           <div className="filterText">FILTER</div>
           <div className="sortBy">
             <span>SORT BY</span>
-            <select>
+            <select onChange={handleSelect}>
               <option>Popular</option>
-              <option>New</option>
-              <option>Price: High to Low</option>
-              <option>Price: Low to High</option>
+              <option value="1">New</option>
+              <option value="2">Price: High to Low</option>
+              <option value="3">Price: Low to High</option>
             </select>
           </div>
         </div>
