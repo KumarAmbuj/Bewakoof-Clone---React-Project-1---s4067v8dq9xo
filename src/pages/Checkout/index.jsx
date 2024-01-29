@@ -7,13 +7,16 @@ import UPIForm from "../../component/PaymentOptionsForm/UPI";
 import CashOnDeliveryForm from "../../component/PaymentOptionsForm/CashOnDelivery";
 import { AuthContext } from "../../authentication/AuthContext";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Checkout() {
   const [cartData, setCartDat] = useState([]);
   const [paymentMethod, setPaymentMethod] = useState(1);
   const { isLoggedIn, logout, token } = useContext(AuthContext);
   const navigate = useNavigate();
+  const { state } = useLocation();
+  const { Address } = state;
+  //console.log(Address);
 
   let totalPrice = 0;
   for (let x of cartData) {
@@ -146,7 +149,7 @@ function Checkout() {
             {paymentMethod == 3 && <UPIForm totalPrice={totalPrice} />}
             {paymentMethod == 4 && <NetBankingForm totalPrice={totalPrice} />}
             {paymentMethod == 5 && (
-              <CashOnDeliveryForm totalPrice={totalPrice} />
+              <CashOnDeliveryForm totalPrice={totalPrice} address={Address} />
             )}
           </div>
         </div>

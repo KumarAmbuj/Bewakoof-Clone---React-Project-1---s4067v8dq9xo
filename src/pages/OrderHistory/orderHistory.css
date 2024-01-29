@@ -1,0 +1,23 @@
+.orderHistoryContainer{
+    margin: 78px auto;
+    width: 70%;
+}
+.orderHistoryText{
+    width: 10rem;
+    margin-top: 50px;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: montserrat,sans-serif;
+    border-bottom: 3px solid rgb(243, 243, 45);
+}
+@media only screen and (max-width: 1000px) {
+    .orderHistoryContainer{
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .orderHistoryContainer{
+        width: 90%;
+    }
+}

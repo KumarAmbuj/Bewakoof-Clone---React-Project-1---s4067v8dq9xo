@@ -1,0 +1,73 @@
+.orderNumber{
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.orderHistoryComponentBox{
+    width: 100%;
+    display: flex;
+    
+    border: 1px solid rgb(216, 215, 215);
+    border-radius: 10px;
+    height: 16rem;
+    margin-top: 5px;
+    gap:20px;
+    box-sizing: border-box;
+}
+.orderHistoryComponentImage{
+    flex:0.9;
+}
+.orderHistoryComponentText{
+    flex:2;
+}
+.orderHistoryComponentImage img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.orderHistoryComponentText{
+    padding: 15px;
+}
+.productName{
+    font-size: 14px;
+    margin-top: 15px;
+}
+.productSize{
+    font-size: 14px;
+    margin-top: 15px;
+}
+.productDeliveryDate{
+    font-size: 12px;
+    margin-top: 15px;
+    color: rgb(170, 168, 168);
+}
+.orderConfirmButton{
+    margin-top: 14px;
+}
+
+.orderConfirmButton button{
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    background-color: rgb(227, 247, 240);
+    color: green;
+    font-size: 12px;
+}
+.orderInfoButton{
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+}
+
+.orderInfoButton button{
+    outline: none;
+    border: none;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: 600;
+    color: blue;
+    border: 2px solid blue;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(227, 247, 240);
+}

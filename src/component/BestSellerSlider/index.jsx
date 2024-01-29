@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState, useRef, memo } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import ProductCard from "../ProductCard";
 import BestsellerProductCard from "../BestsellerProductCard";
@@ -13,6 +13,7 @@ import BestsellerProductCard from "../BestsellerProductCard";
 function BestSellerSlider() {
   const [productData, setProductData] = useState([]);
   const [cardshow, setCardshow] = useState(5);
+  const navigate = useNavigate();
 
   // const [windowSize, setWindowSize] = useState([
   //   window.innerWidth,
@@ -75,7 +76,7 @@ function BestSellerSlider() {
     } catch {
       //toast.error("Some error occured");
       console.log("errorrrrrrrrrrrr");
-      navigate("/");
+      //navigate("/");
     }
   }
 

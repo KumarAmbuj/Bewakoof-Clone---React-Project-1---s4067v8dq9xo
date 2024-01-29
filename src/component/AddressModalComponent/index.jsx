@@ -1,9 +1,41 @@
+import { useState } from "react";
 import "./addressModalComponent.css";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../authentication/AuthContext";
+import { useContext } from "react";
 function AddressModalComponent(props) {
+  const { SetAddressName, SetAddressNumber } = useContext(AuthContext);
   const navigate = useNavigate();
-  function handleSubmit() {
-    navigate("/checkout");
+  const [Address, setAddress] = useState({
+    street: "",
+    city: "",
+    state: "",
+    country: "",
+    zipCode: "",
+  });
+  const [addressNameNumber, setAddressNameNumber] = useState({
+    name: "",
+    mobile: "",
+  });
+  function handleChange(e) {
+    setAddress({
+      ...Address,
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  function handleName(e) {
+    setAddressNameNumber({
+      ...addressNameNumber,
+      [e.target.name]: e.target.value,
+    });
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    SetAddressName(addressNameNumber.name);
+    SetAddressNumber(addressNameNumber.mobile);
+    navigate("/checkout", { state: { Address } });
+    console.log(addressNameNumber);
   }
   return (
     <div className="addressModalContainer">
@@ -23,7 +55,7 @@ function AddressModalComponent(props) {
             <div>
               <fieldset>
                 <legend>Country</legend>
-                <input type="text" value="India" disabled />
+                <input type="text" onChange={handleChange} name="country" />
               </fieldset>
             </div>
             <div className="addressBorderLine"></div>
@@ -31,14 +63,19 @@ function AddressModalComponent(props) {
             <div>
               <fieldset>
                 <legend>Full Name</legend>
-                <input type="text" required />
+                <input type="text" required name="name" onChange={handleName} />
               </fieldset>
             </div>
 
             <div>
               <fieldset>
                 <legend>Mobile Number</legend>
-                <input type="number" required />
+                <input
+                  type="number"
+                  required
+                  name="mobile"
+                  onChange={handleName}
+                />
               </fieldset>
             </div>
 
@@ -47,7 +84,12 @@ function AddressModalComponent(props) {
             <div>
               <fieldset>
                 <legend>Pincode/Postal Code/Zipcodee</legend>
-                <input type="text" required />
+                <input
+                  type="number"
+                  required
+                  name="zipCode"
+                  onChange={handleChange}
+                />
               </fieldset>
             </div>
 
@@ -55,14 +97,24 @@ function AddressModalComponent(props) {
               <div style={{ flex: 1 }}>
                 <fieldset>
                   <legend>City</legend>
-                  <input type="text" required />
+                  <input
+                    type="text"
+                    required
+                    name="city"
+                    onChange={handleChange}
+                  />
                 </fieldset>
               </div>
 
               <div style={{ flex: 1 }}>
                 <fieldset>
                   <legend>State</legend>
-                  <input type="text" required />
+                  <input
+                    type="text"
+                    required
+                    name="state"
+                    onChange={handleChange}
+                  />
                 </fieldset>
               </div>
             </div>
@@ -70,7 +122,12 @@ function AddressModalComponent(props) {
             <div>
               <fieldset>
                 <legend>Flat no./Building, Street name</legend>
-                <input type="text" required />
+                <input
+                  type="text"
+                  required
+                  name="street"
+                  onChange={handleChange}
+                />
               </fieldset>
             </div>
 

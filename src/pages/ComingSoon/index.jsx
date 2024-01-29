@@ -7,7 +7,7 @@ function ComingSoon() {
   return (
     <div className="comingSoonContainer">
       <div className="comingSoonImage">
-        <img src="https://lh3.googleusercontent.com/proxy/qKxWo5ubofjwkMOAiQuivligDcNLuGFL4DjuNi5KAVIaPbA5PyR6rCuPo2H73zABg62wwl52iwf1iW46jz3fUiJp0w" />
+        <img src="https://cdn.dribbble.com/users/1147690/screenshots/6386072/food-street3.gif" />
       </div>
     </div>
   );

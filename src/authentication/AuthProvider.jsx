@@ -9,6 +9,8 @@ function AuthProvider({ children }) {
   const [wishlistData, setWishlistdata] = useState([]);
   const [cartData, setCartdata] = useState([]);
   const [loader, setLoader] = useState(false);
+  const [addressName, setAddressName] = useState("");
+  const [addressNumber, setAddressNumber] = useState("");
 
   //console.log(isLoggedIn, token);
 
@@ -86,6 +88,8 @@ function AuthProvider({ children }) {
   const logout = () => {
     setToken("");
     SetUserName("");
+    setAddressName("");
+    setAddressNumber("");
     setIsLoggedIn(false);
     setCartdata([]);
     setWishlistdata([]);
@@ -95,6 +99,15 @@ function AuthProvider({ children }) {
   const SetUserName = (val) => {
     setUserName(val);
   };
+
+  const SetAddressName = (val) => {
+    setAddressName(val);
+  };
+
+  const SetAddressNumber = (val) => {
+    setAddressNumber(val);
+  };
+
   useEffect(() => {
     if (localStorage.getItem("bewakoof") === null) {
       localStorage.setItem("bewakoof", "");
@@ -128,6 +141,10 @@ function AuthProvider({ children }) {
         getCartDataAPI,
         loader,
         setLoader,
+        SetAddressName,
+        SetAddressNumber,
+        addressName,
+        addressNumber,
       }}
     >
       {children}

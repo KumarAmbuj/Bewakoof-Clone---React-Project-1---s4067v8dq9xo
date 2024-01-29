@@ -15,6 +15,9 @@ import Wishlist from "./pages/Wishlist";
 import Checkout from "./pages/Checkout";
 import ComingSoon from "./pages/ComingSoon";
 import Homepage from "./pages/Homepage";
+import OrderPlaced from "./pages/OrderPlaced";
+import OrderHistory from "./pages/OrderHistory";
+import SingleOrderHistory from "./pages/SingleOrderHostory";
 
 function App() {
   return (
@@ -37,6 +40,12 @@ function App() {
             <Route path="wishlist" element={<Wishlist />} />
             <Route path="checkout" element={<Checkout />} />
             <Route path="coming-soon" element={<ComingSoon />} />
+            <Route path="order-placed" element={<OrderPlaced />} />
+            <Route path="order-history" element={<OrderHistory />} />
+            <Route
+              path="single-order-history/:orderId"
+              element={<SingleOrderHistory />}
+            />
           </Routes>
 
           <Footer />

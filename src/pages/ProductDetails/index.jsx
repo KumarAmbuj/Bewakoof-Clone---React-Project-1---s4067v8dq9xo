@@ -9,16 +9,10 @@ import Loader from "../../component/Loader";
 
 function ProductDetails(props) {
   const location = useLocation();
-  //console.log("location", location);
-  //const { state } = location;
-  //console.log(state);
-  // const { category } = props.state;
-  //console.log(category);
+  
   const [data, setData] = useState([]);
   const [isLoader, setIsLoader] = useState(false);
-  //const location = useLocation();
-  //console.log(location);
-  //let x = JSON.parse(location.search.slice(8));
+  
 
   async function getProducts() {
     try {
