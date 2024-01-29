@@ -3,6 +3,7 @@ import "./orderHistory.css";
 import { AuthContext } from "../../authentication/AuthContext";
 import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import OrderHistoryEmptyComponent from "../../component/OrderHistoryEmptyComponent";
 
 function OrderHistory() {
   const { token } = useContext(AuthContext);
@@ -44,9 +45,13 @@ function OrderHistory() {
     <>
       <div className="orderHistoryContainer">
         <div className="orderHistoryText">Order History</div>
-        {orderData.reverse().map((val) => {
-          return <OrderHistoryComponent data={val} key={val.order._id} />;
-        })}
+        {orderData.length > 0 ? (
+          orderData.reverse().map((val) => {
+            return <OrderHistoryComponent data={val} key={val.order._id} />;
+          })
+        ) : (
+          <OrderHistoryEmptyComponent />
+        )}
       </div>
     </>
   );

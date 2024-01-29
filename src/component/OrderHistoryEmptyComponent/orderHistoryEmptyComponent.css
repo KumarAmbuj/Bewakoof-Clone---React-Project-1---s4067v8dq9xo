@@ -1,0 +1,11 @@
+.orderHistoryEmptyContainer{
+    height: 90vh;
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.orderHistoryEmptyContainer img{
+    height: 200px;
+    width: 200px;
+}

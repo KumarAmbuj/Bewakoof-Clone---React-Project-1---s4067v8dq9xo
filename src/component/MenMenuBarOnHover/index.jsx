@@ -17,7 +17,7 @@ function MenMenuBarOnHover(props) {
   const navigate = useNavigate();
   function moveToProductDetails(val) {
     //console.log(val);
-    const path = val.toLowerCase().split(" ").join("-");
+    //const path = val.toLowerCase().split(" ").join("-");
     navigate(`/product-details`);
   }
   return (

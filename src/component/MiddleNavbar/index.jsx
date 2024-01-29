@@ -13,11 +13,13 @@ import { AuthContext } from "../../authentication/AuthContext";
 import { searchResult } from "../../Constant/constant";
 
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import UserIconHoverComponent from "../UserIconHoverComponent";
 
 function MiddleNavbar() {
   const [menMenuBar, setMenMenuBar] = useState(false);
   const [womenMenuBar, setWomenMenuBar] = useState(false);
   const [mobileMenuBar, setMobileMenuBar] = useState(false);
+  const [userIconHover, setUserIconHover] = useState(false);
   const [searchResultData, setSearchResultData] = useState([]);
   const [searchVal, setSearchVal] = useState("");
   const { isLoggedIn, logout, cartData, wishlistData } =
@@ -49,6 +51,15 @@ function MiddleNavbar() {
   }
   function mobileMenuOnMouseLeave() {
     setMobileMenuBar(false);
+    // console.log(mobileMenuBar);
+  }
+
+  function userMenuOnMouseOver() {
+    setUserIconHover(true);
+    // console.log(mobileMenuBar);
+  }
+  function userMenuOnMouseLeave() {
+    setUserIconHover(false);
     // console.log(mobileMenuBar);
   }
 
@@ -129,7 +140,15 @@ function MiddleNavbar() {
             {!isLoggedIn ? (
               <Link to="/signup">Login</Link>
             ) : (
-              <span onClick={handleLogout}>Logout</span>
+              <div
+                onMouseOver={userMenuOnMouseOver}
+                onMouseLeave={userMenuOnMouseLeave}
+                style={{ fontSize: "22px" }}
+                className="navbarUserIcon"
+              >
+                <i className="fa fa-user"></i>
+                {userIconHover ? <UserIconHoverComponent /> : ""}
+              </div>
             )}
           </div>
           <div className="heart">

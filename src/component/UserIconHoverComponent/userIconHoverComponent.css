@@ -1,0 +1,31 @@
+.userIconOnHoverContainer{
+    width: 200px;
+    
+    z-index: 5;
+    position: fixed;
+    top:28px;
+    left:-50px;
+    
+    /* outline: 1px solid red; */
+    
+    background-color: white;
+   
+    position: absolute;
+    font-family: montserrat,sans-serif
+}
+.userMenuName{
+    background-color: rgb(233, 229, 229);
+    color: grey;
+    padding:10px;
+    font-size: 14px;
+    margin-top: 20px;
+    font-style: italic;
+}
+.userMenu{
+    padding: 10px;
+    font-size: 14px;
+    
+}
+.userMenu:hover{
+    background-color: rgb(233, 229, 229);
+}
