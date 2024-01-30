@@ -146,6 +146,17 @@
     height: 7px;
     font-size: 14px;
 }
+.clearCart button{
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: rgb(243, 161, 161);
+    color:red;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
 @media only screen and (max-width: 1000px) {
     .cartFullContainer{
     

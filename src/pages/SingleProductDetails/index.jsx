@@ -35,6 +35,8 @@ function SingleProductDetails() {
   const [addedToWishlist, setAddedToWishlist] = useState(false);
   const [isLoader, setIsLoader] = useState(false);
   const [selectSize, setSelectSize] = useState();
+  const [size, setSize] = useState("");
+  const [sizeError, setSizeError] = useState("");
   const { productId } = useParams();
   const navigate = useNavigate();
 
@@ -46,7 +48,7 @@ function SingleProductDetails() {
           method: "PATCH",
           body: JSON.stringify({
             quantity: 1,
-            size: "S",
+            size: size,
           }),
           headers: {
             projectId: "zl6mct4l5ib6",
@@ -68,8 +70,12 @@ function SingleProductDetails() {
 
   async function handleAddToCart() {
     if (isLoggedIn) {
-      await sendDataToCart();
-      await getCartDataAPI();
+      if (size) {
+        await sendDataToCart();
+        await getCartDataAPI();
+      } else {
+        setSizeError("please select a size");
+      }
     } else {
       navigate("/login");
     }
@@ -225,6 +231,8 @@ function SingleProductDetails() {
                       state={selectSize}
                       onclick={() => {
                         setSelectSize(index);
+                        setSize(val);
+                        setSizeError("");
                       }}
                     />
                   );
@@ -232,7 +240,9 @@ function SingleProductDetails() {
                 })}
               </div>
             </div>
-
+            <div style={{ fontSize: "12px", fontWeight: "700", color: "red" }}>
+              {sizeError}
+            </div>
             <div className="addToBagWishlist">
               <button className="addToBag" onClick={handleAddToCart}>
                 <span>

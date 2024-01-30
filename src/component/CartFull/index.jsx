@@ -5,6 +5,7 @@ import { AuthContext } from "../../authentication/AuthContext";
 import { useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import AddressModalComponent from "../AddressModalComponent";
+import { projectId } from "../../Constant/constant";
 
 function CartFull(props) {
   //const [cartData, setCartData] = useState(props.data);
@@ -57,6 +58,29 @@ function CartFull(props) {
     }
   }
 
+  async function clearCart() {
+    try {
+      //setIsLoader(true);
+      const response = await fetch(
+        `https://academics.newtonschool.co/api/v1/ecommerce/cart/`,
+        {
+          method: "DELETE",
+          headers: {
+            projectId: projectId,
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+
+      const responseJson = await response.json();
+      console.log(responseJson);
+    } catch (error) {
+      console.log("errrrorrrr");
+    } finally {
+      //setIsLoader(false);
+    }
+  }
+
   function deleteFromCart(id) {
     //console.log(id);
     removeFromCartAPI(id);
@@ -68,6 +92,12 @@ function CartFull(props) {
   }
   function hideAddressModal() {
     setShowAddressModal(false);
+  }
+
+  async function handleDeleteAllCart() {
+    await clearCart();
+    await getCartDataAPI();
+    //console.log("hello");
   }
 
   return (
@@ -82,6 +112,9 @@ function CartFull(props) {
         <div className="cartFullLeft">
           <div className="cartCount">
             <b>My Bag</b> {cartData.length} item(s)
+            <span style={{ marginLeft: "15px" }} className="clearCart">
+              <button onClick={handleDeleteAllCart}>Clear Cart</button>
+            </span>
           </div>
           <div className="freeDelivery">
             Yay! You get FREE delivery on this order
