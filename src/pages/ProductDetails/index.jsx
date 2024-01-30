@@ -41,7 +41,25 @@ function ProductDetails(props) {
   }, [location]);
 
   function handleSelect(e) {
+    let x = [...data];
     let value = e.target.value;
+    //
+    if (value === "1") {
+      x = x.sort((a, b) => b.name.length - a.name.length);
+      setData([...x]);
+    } else if (value === "2") {
+      x = x.sort((a, b) => b.price - a.price);
+      setData([...x]);
+    } else if (value === "3") {
+      x = x.sort((a, b) => a.price - b.price);
+      setData([...x]);
+    } else if (value === "4") {
+      x = x.sort((a, b) => a.ratings - b.ratings);
+      setData([...x]);
+    } else if (value === "5") {
+      x = x.sort((a, b) => b.ratings - a.ratings);
+      setData([...x]);
+    }
   }
   return (
     <>
@@ -67,6 +85,8 @@ function ProductDetails(props) {
               <option value="1">New</option>
               <option value="2">Price: High to Low</option>
               <option value="3">Price: Low to High</option>
+              <option value="4">Rating: Low to High</option>
+              <option value="5">Rating: High to Low</option>
             </select>
           </div>
         </div>
