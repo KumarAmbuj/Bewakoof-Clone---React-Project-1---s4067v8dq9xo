@@ -11,6 +11,7 @@ function AuthProvider({ children }) {
   const [loader, setLoader] = useState(false);
   const [addressName, setAddressName] = useState("");
   const [addressNumber, setAddressNumber] = useState("");
+  const [addressType, setAddressType] = useState("");
 
   //console.log(isLoggedIn, token);
 
@@ -90,6 +91,7 @@ function AuthProvider({ children }) {
     SetUserName("");
     setAddressName("");
     setAddressNumber("");
+    setAddressType("");
     setIsLoggedIn(false);
     setCartdata([]);
     setWishlistdata([]);
@@ -106,6 +108,10 @@ function AuthProvider({ children }) {
 
   const SetAddressNumber = (val) => {
     setAddressNumber(val);
+  };
+
+  const SetAddressType = (val) => {
+    setAddressType(val);
   };
 
   useEffect(() => {
@@ -145,6 +151,8 @@ function AuthProvider({ children }) {
         SetAddressNumber,
         addressName,
         addressNumber,
+        SetAddressType,
+        addressType,
       }}
     >
       {children}

@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../authentication/AuthContext";
 import { useContext } from "react";
 function AddressModalComponent(props) {
-  const { SetAddressName, SetAddressNumber } = useContext(AuthContext);
+  const { SetAddressName, SetAddressNumber, SetAddressType, addressType } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const [Address, setAddress] = useState({
     street: "",
@@ -17,7 +18,11 @@ function AddressModalComponent(props) {
     name: "",
     mobile: "",
   });
+
+  const [addressTypeError, setAddressTypeError] = useState("");
+
   function handleChange(e) {
+    setAddressTypeError("");
     setAddress({
       ...Address,
       [e.target.name]: e.target.value,
@@ -25,6 +30,7 @@ function AddressModalComponent(props) {
   }
 
   function handleName(e) {
+    setAddressTypeError("");
     setAddressNameNumber({
       ...addressNameNumber,
       [e.target.name]: e.target.value,
@@ -34,9 +40,19 @@ function AddressModalComponent(props) {
     e.preventDefault();
     SetAddressName(addressNameNumber.name);
     SetAddressNumber(addressNameNumber.mobile);
-    navigate("/checkout", { state: { Address } });
-    console.log(addressNameNumber);
+
+    if (addressType) {
+      navigate("/checkout", { state: { Address } });
+    } else {
+      setAddressTypeError("please choose address type");
+    }
+    //console.log(addressNameNumber);
   }
+
+  function handleAddressType(val) {
+    SetAddressType(val);
+  }
+
   return (
     <div className="addressModalContainer">
       <div className="addressModalComponent">
@@ -145,6 +161,44 @@ function AddressModalComponent(props) {
               </fieldset>
             </div>
             <div className="addressBorderLine"></div>
+
+            <div style={{ marginTop: "15px" }}>Save address as</div>
+            <div className="addressTypeButtons">
+              <span
+                className={`addressTypeSpan ${
+                  addressType === "Home" ? "activeType" : ""
+                }`}
+                onClick={() => {
+                  handleAddressType("Home");
+                }}
+              >
+                Home
+              </span>
+              <span
+                className={`addressTypeSpan ${
+                  addressType === "Office" ? "activeType" : ""
+                }`}
+                onClick={() => {
+                  handleAddressType("Office");
+                }}
+              >
+                Office
+              </span>
+              <span
+                className={`addressTypeSpan ${
+                  addressType === "Other" ? "activeType" : ""
+                }`}
+                onClick={() => {
+                  handleAddressType("Other");
+                }}
+              >
+                Other
+              </span>
+            </div>
+
+            <div style={{ color: "red", fontSize: "13px", fontWeight: "700" }}>
+              {addressTypeError}
+            </div>
 
             <div className="AddressButtons">
               <button type="submit" className="goToCheckout">

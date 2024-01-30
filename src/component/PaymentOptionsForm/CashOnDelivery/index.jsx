@@ -7,7 +7,8 @@ import { projectId } from "../../../Constant/constant";
 import { useNavigate } from "react-router-dom";
 
 function CashOnDeliveryForm(props) {
-  const { cartData, token, getCartDataAPI } = useContext(AuthContext);
+  const { cartData, token, getCartDataAPI, addressType } =
+    useContext(AuthContext);
   const navigate = useNavigate();
 
   //console.log(props.address);
@@ -27,7 +28,7 @@ function CashOnDeliveryForm(props) {
           body: JSON.stringify({
             productId: id,
             quantity: 1,
-            addressType: "HOME",
+            addressType: addressType,
             address: props.address,
           }),
         }

@@ -18,6 +18,7 @@ import Homepage from "./pages/Homepage";
 import OrderPlaced from "./pages/OrderPlaced";
 import OrderHistory from "./pages/OrderHistory";
 import SingleOrderHistory from "./pages/SingleOrderHostory";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
               path="single-order-history/:orderId"
               element={<SingleOrderHistory />}
             />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
 
           <Footer />
