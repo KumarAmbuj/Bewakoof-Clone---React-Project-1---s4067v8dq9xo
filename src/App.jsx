@@ -14,11 +14,12 @@ import AuthProvider from "./authentication/AuthProvider";
 import Wishlist from "./pages/Wishlist";
 import Checkout from "./pages/Checkout";
 import ComingSoon from "./pages/ComingSoon";
-import Homepage from "./pages/Homepage";
+
 import OrderPlaced from "./pages/OrderPlaced";
 import OrderHistory from "./pages/OrderHistory";
 import SingleOrderHistory from "./pages/SingleOrderHostory";
 import PageNotFound from "./pages/PageNotFound";
+import Homepage from "./pages/Homepage";
 
 function App() {
   return (
