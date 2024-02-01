@@ -19,7 +19,8 @@ import OrderPlaced from "./pages/OrderPlaced";
 import OrderHistory from "./pages/OrderHistory";
 import SingleOrderHistory from "./pages/SingleOrderHostory";
 import PageNotFound from "./pages/PageNotFound";
-import Homepage from "./pages/Homepage";
+
+import HomePage from "./pages/Home";
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
           <MiddleNavbar />
           <MiniNavbar />
           <Routes>
-            <Route path="/" element={<Homepage />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="product-details" element={<ProductDetails />} />
             <Route
               path="single-product-details/:productId"

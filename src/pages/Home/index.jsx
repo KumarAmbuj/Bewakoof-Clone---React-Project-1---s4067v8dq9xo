@@ -15,7 +15,7 @@ import Loader from "../../component/Loader";
 
 import { useState, useEffect } from "react";
 
-export default function Homepage() {
+function HomePage() {
   const [isLoader, setIsLoader] = useState(false);
 
   useEffect(() => {
@@ -41,3 +41,4 @@ export default function Homepage() {
     </div>
   );
 }
+export default HomePage;
