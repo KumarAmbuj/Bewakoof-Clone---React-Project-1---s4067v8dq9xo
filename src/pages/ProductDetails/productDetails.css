@@ -106,7 +106,26 @@
     margin-top: 15px;
     margin-left: 10px;
 }
+.pagination{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.paginationButton{
+   
+    outline: none;
+    padding: 7px;
+    border-radius: 5px;
+    border:1px solid black;
+    color:black;
+    font-weight:700 ;
+    cursor: pointer;
+}
+.activePaginationButton{
+    background-color: black;
+    color:white;
 
+}
 
 @media only screen and (max-width: 767px) {
     .productDetailsFilter {

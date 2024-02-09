@@ -5,10 +5,12 @@ function AccordionInnerContainer(props) {
   const arr = props.data;
   const [searchParams, setSearchParams] = useSearchParams();
   let obj = JSON.parse(searchParams.get("filter"));
-  //console.log(searchParams.get("filter"));
+  console.log();
+  let search = JSON.parse(searchParams.get("search"));
+  // console.log(search);
   const navigate = useNavigate();
   function handleClick(val) {
-    console.log(val);
+    //console.log(val);
     if (obj[val.type]) {
       delete obj[val.type];
       obj = { ...obj, ...val.filter };

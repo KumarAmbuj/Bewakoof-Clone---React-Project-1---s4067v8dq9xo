@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
+import { paginationArray } from "../../Constant/constant";
 import ProductCard from "../../component/ProductCard";
 import "./productDetails.css";
 import Accordion from "../../component/Accordion";
@@ -12,12 +12,13 @@ function ProductDetails(props) {
 
   const [data, setData] = useState([]);
   const [isLoader, setIsLoader] = useState(false);
+  const [page, setPage] = useState(1);
 
   async function getProducts() {
     try {
       setIsLoader(true);
       const response = await fetch(
-        `https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=20&page=1?${location.search}`,
+        `https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?limit=20&page=${page}?${location.search}`,
         {
           headers: {
             projectId: "zl6mct4l5ib6",
@@ -41,7 +42,7 @@ function ProductDetails(props) {
     getProducts();
 
     window.scrollTo(0, 0);
-  }, [location]);
+  }, [location, page]);
 
   function handleSelect(e) {
     let x = [...data];
@@ -63,6 +64,10 @@ function ProductDetails(props) {
       x = x.sort((a, b) => b.ratings - a.ratings);
       setData([...x]);
     }
+  }
+
+  function handlePagination(val) {
+    setPage(val);
   }
   return (
     <>
@@ -107,6 +112,24 @@ function ProductDetails(props) {
             <div className="productDetailsCards">
               {data?.map((val) => {
                 return <ProductCard data={val} key={val._id} />;
+              })}
+            </div>
+
+            <div className="pagination">
+              {paginationArray.map((val, index) => {
+                return (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      handlePagination(val);
+                    }}
+                    className={`paginationButton ${
+                      page === val ? "activePaginationButton" : ""
+                    }`}
+                  >
+                    {val}
+                  </button>
+                );
               })}
             </div>
           </div>
