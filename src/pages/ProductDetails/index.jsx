@@ -26,6 +26,9 @@ function ProductDetails(props) {
       );
 
       const responseJson = await response.json();
+      console.log(responseJson);
+      // aplly here filter
+      //use here function for filter
       setData(responseJson.data);
     } catch (error) {
       console.log("errrrorrrr");
@@ -66,10 +69,10 @@ function ProductDetails(props) {
       {isLoader ? <Loader /> : ""}
       <div className="prod" id="prod">
         <div className="miniCategory">
-          Home / Clothing / {data.length > 0 ? data[0].subCategory : ""}
+          Home / Clothing / {data?.length > 0 ? data[0].subCategory : ""}
         </div>
         <div className="productDetailsHeading">
-          {data.length > 0
+          {data?.length > 0
             ? data[0].subCategory[0].toUpperCase() +
               data[0].subCategory.slice(1)
             : ""}{" "}

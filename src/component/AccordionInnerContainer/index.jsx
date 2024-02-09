@@ -1,30 +1,33 @@
 import "./accordionInnerContainer.css";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams, useNavigate } from "react-router-dom";
 import { memo } from "react";
 function AccordionInnerContainer(props) {
   const arr = props.data;
+  const [searchParams, setSearchParams] = useSearchParams();
+  let obj = JSON.parse(searchParams.get("filter"));
+  //console.log(searchParams.get("filter"));
+  const navigate = useNavigate();
+  function handleClick(val) {
+    console.log(val);
+    if (obj[val.type]) {
+      delete obj[val.type];
+      obj = { ...obj, ...val.filter };
+    } else {
+      obj = { ...obj, ...val.filter };
+    }
+    navigate(`/product-details?&filter=${JSON.stringify(obj)}`);
+  }
   return (
     <div className="accordionInnerContainer">
-      {/* <div className="subcategoryName">Bewakoof</div>
-      <div className="subcategoryName">Bewakoof</div>
-      <div className="subcategoryName">Bewakoof</div>
-      <div className="subcategoryName">Bewakoof</div>
-      <div className="subcategoryName">Bewakoof</div>
-      <div className="subcategoryName">Bewakoof</div>
-      <div className="subcategoryName">Bewakoof</div>
-      <div className="subcategoryName">Bewakoof</div> */}
       {arr.map((val, index) => {
         return (
-          <Link
-            to={`/product-details?search=${JSON.stringify(
-              val.search
-            )}&filter=${JSON.stringify(val.filter)}`}
-            className="hoverMenuItem"
+          <div
+            className="subcategoryName"
+            onClick={() => handleClick(val)}
             key={index}
-            style={{ listStyle: "none", textDecoration: "none" }}
           >
-            <div className="subcategoryName">{val.name}</div>
-          </Link>
+            {val.name}
+          </div>
         );
       })}
     </div>

@@ -727,843 +727,338 @@ export const categoryNavbarList = [
 export const AccordionList = [
   {
     name: "Category",
+
     subCategoryList: [
       {
-        name: "T-Shirt",
-        search: { name: "", description: "" },
+        name: "T-shirt",
+        type: "SubCategory",
+        search: { name: "tshirt", description: "tshirt" },
         filter: { subCategory: "tshirt" },
-      },
-      {
-        name: "Boxer",
-        search: { name: "", description: "" },
-        filter: { subCategory: "shorts" },
       },
 
       {
-        name: "Vest",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
+        name: "Jumpsuit",
+        type: "SubCategory",
+        search: { name: "Jumpsuit", description: "Jumpsuit" },
+        filter: { subCategory: "jumpsuit" },
       },
+
+      {
+        name: "Jogger",
+        type: "SubCategory",
+        search: { name: "jogger", description: "jogger" },
+        filter: { subCategory: "jogger" },
+      },
+
       {
         name: "Shirt",
-        search: { name: "", description: "" },
+        type: "SubCategory",
+        search: { name: "shirt", description: "shirt" },
         filter: { subCategory: "shirt" },
       },
+
       {
         name: "Jeans",
-        search: { name: "", description: "" },
+        type: "SubCategory",
+        search: { name: "jeans", description: "jeans" },
         filter: { subCategory: "jeans" },
       },
-      {
-        name: "Shorts",
-        search: { name: "", description: "" },
-        filter: { subCategory: "shorts" },
-      },
 
-      {
-        name: "Sweatshirt",
-        search: { name: "", description: "" },
-        filter: { subCategory: "sweater" },
-      },
-
-      {
-        name: "Joggers",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jogger" },
-      },
-      {
-        name: "Hoodies",
-        search: { name: "", description: "" },
-        filter: { subCategory: "hoodie" },
-      },
-      {
-        name: "Pyjama",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Jacket",
-        search: { name: "", description: "" },
-        filter: { subCategory: "hoodie" },
-      },
-      {
-        name: "Co-Ordinates",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
       {
         name: "Sweater",
-        search: { name: "", description: "" },
+        type: "SubCategory",
+        search: { name: "sweater", description: "sweater" },
         filter: { subCategory: "sweater" },
       },
 
       {
-        name: "Casual Pants",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jogger" },
+        name: "Pyjama",
+        type: "SubCategory",
+        search: { name: "pyjama", description: "pyjama" },
+        filter: { subCategory: "pyjamas" },
+      },
+
+      {
+        name: "Hoodie",
+        type: "SubCategory",
+        search: { name: "Hoodie", description: "Hoodie" },
+        filter: { subCategory: "hoodie" },
       },
       {
-        name: "Track Pant",
-        search: { name: "", description: "" },
+        name: "Tracksuit",
+        type: "SubCategory",
+        search: { name: "tracksuit", description: "tracksuit" },
         filter: { subCategory: "tracksuit" },
       },
       {
         name: "Kurta",
-        search: { name: "", description: "" },
+        type: "SubCategory",
+        search: { name: "kurta", description: "kurta" },
         filter: { subCategory: "kurta" },
       },
+
       {
         name: "Kurti",
-        search: { name: "", description: "" },
+        type: "SubCategory",
+        search: { name: "kurti", description: "kurti" },
         filter: { subCategory: "kurti" },
       },
       {
-        name: "Tracksuit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
+        name: "Shorts",
+        type: "SubCategory",
+        search: { name: "shorts", description: "shorts" },
+        filter: { subCategory: "shorts" },
       },
 
       {
-        name: "Denim",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
+        name: "Trouser",
+        type: "SubCategory",
+        search: { name: "Trouser", description: "Trouser" },
+        filter: { subCategory: "trouser" },
       },
     ],
   },
-  // {
-  //   name: "Sizes",
-  //   subCategoryList: [
-  //     "XS",
-  //     "S",
-  //     "M",
-  //     "L",
-  //     "XL",
-  //     "2XL",
-  //     "3XL",
-  //     "28",
-  //     "30",
-  //     "32",
-  //     "34",
-  //     "36",
-  //     "38",
-  //     "40",
-  //     "42",
-  //     "44",
-  //     "46",
-  //     "48",
-  //     "50",
-  //   ],
-  // },
+
+  {
+    name: "Sizes",
+
+    subCategoryList: [
+      {
+        name: "S",
+        type: "size",
+        filter: { size: "S" },
+      },
+
+      {
+        name: "M",
+        type: "size",
+        filter: { size: "M" },
+      },
+
+      {
+        name: "L",
+        type: "size",
+
+        filter: { size: "L" },
+      },
+
+      {
+        name: "XL",
+        type: "size",
+
+        filter: { size: "XL" },
+      },
+
+      {
+        name: "XXL",
+        type: "size",
+
+        filter: { size: "XXL" },
+      },
+    ],
+  },
+
   {
     name: "Brand",
+
     subCategoryList: [
-      {
-        name: "Bewakoof®",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Bewakoof Air® 1.0",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
+      { name: "Bewakoof®", type: "brand", filter: { brand: "Bewakoof®" } },
+      { name: "TISTABENE", type: "brand", filter: { brand: "TISTABENE" } },
+      { name: "7 Shores", type: "brand", filter: { brand: "7Shores" } },
       {
         name: "Campus Sutra",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
+        type: "brand",
+        filter: { brand: "Campus Sutra" },
       },
       {
+        name: "OFFICIAL DISNEY MERCHANDISE",
+        type: "brand",
+        filter: { brand: "OFFICIAL DISNEY MERCHANDISE" },
+      },
+      {
+        name: "Style Quotient",
+        type: "brand",
+        filter: { brand: "Style Quotient" },
+      },
+      { name: "Breakbounce", type: "brand", filter: { brand: "Breakbounce" } },
+      { name: "Chkokko", type: "brand", filter: { brand: "Chkokko" } },
+      { name: "XYXX", type: "brand", filter: { brand: "XYXX" } },
+      { name: "Rigo", type: "brand", filter: { brand: "Rigo" } },
+      { name: "Alstyle", type: "brand", filter: { brand: "Alstyle" } },
+      { type: "brand", name: "Brown Mocha", filter: { brand: "Brown Mocha" } },
+      { type: "brand", name: "Hubberholme", filter: { brand: "Hubberholme" } },
+      {
+        type: "brand",
+        name: "CHIMPAAANZEE",
+        filter: { brand: "CHIMPAAANZEE" },
+      },
+      { type: "brand", name: "Smugglerz", filter: { brand: "Smugglerz" } },
+      { type: "brand", name: "Blue Tyga", filter: { brand: "Blue Tyga" } },
+      {
+        type: "brand",
+        name: "TALES and STORIES",
+        filter: { brand: "TALES and STORIES" },
+      },
+      { type: "brand", name: "Belliskey", filter: { brand: "Belliskey" } },
+      { type: "brand", name: "ANGEL FAB", filter: { brand: "ANGEL FAB" } },
+      { type: "brand", name: "Kotty", filter: { brand: "Kotty" } },
+      { type: "brand", name: "Belliskey", filter: { brand: "Belliskey" } },
+      {
+        type: "brand",
+        name: "Thomas Scott",
+        filter: { brand: "Thomas Scott" },
+      },
+      { type: "brand", name: "Old Grey", filter: { brand: "Old Grey" } },
+      { type: "brand", name: "BLANCK", filter: { brand: "BLANCK" } },
+      {
+        type: "brand",
         name: "Urban Scottish",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
+        filter: { brand: "Urban Scottish" },
       },
       {
-        name: "Old Grey",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
+        type: "brand",
+        name: "THE DAILY OUTFITS",
+        filter: { brand: "THE DAILY OUTFITS" },
       },
       {
-        name: "Bushirt",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
+        type: "brand",
+        name: "TrueBuyWorld",
+        filter: { brand: "TrueBuyWorld" },
+      },
+      { type: "brand", name: "INDICLUB", filter: { brand: "INDICLUB" } },
+      {
+        type: "brand",
+        name: "OFFICIAL TOM & JERRY MERCHANDISE",
+        filter: { brand: "OFFICIAL TOM & JERRY MERCHANDISE" },
       },
       {
-        name: "Bushirt",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
+        type: "brand",
+        name: "Bewakoof Air® 1.0",
+        filter: { brand: "Bewakoof Air® 1.0" },
       },
       {
-        name: "Bewakoof Heavy Duty® 1.0",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
+        type: "brand",
+        name: "OFFICIAL CARTOON NETWORK MERCHANDISE",
+        filter: { brand: "OFFICIAL CARTOON NETWORK MERCHANDISE" },
       },
       {
-        name: "Rigo",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Difference Of Opinion",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Trends Tower",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Indiclub",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Tistabene",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "What's Down",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Dillinger",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Chkokko",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "7 Shores",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Greciilooks",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Bewakoof American Pima",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Smugglerz",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Breakbounce",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Door 74",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Rodamo",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "The Daily Outfits",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
+        type: "brand",
         name: "Mad Over Print",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
+        filter: { brand: "Mad Over Print" },
       },
       {
-        name: "Shopolics",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Flynoff",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "The Dry State",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Brown Mocha",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
+        type: "brand",
+        name: "Lounge Dreams",
+        filter: { brand: "Lounge Dreams" },
       },
     ],
   },
   {
-    name: "Design",
-    subCategoryList: [
-      {
-        name: "Graphic Print",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Solid",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Printed",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Aop",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Typography",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Color Block",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Washed",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Checked",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Striped",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Self Design",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Tie & Dye",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Camouflage",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Floral Print",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Abstract",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Ethnic Motifs",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Geometric Print",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Ombre",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Paisley",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Textured",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Embroidered",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Marble Print",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Polka Print",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Chevron/Zig Zag",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Cut & Sew",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-      {
-        name: "Polka Dots",
-        search: { name: "", description: "" },
-        filter: { subCategory: "jeans" },
-      },
-    ],
-  },
-  {
-    name: "Fit",
-    subCategoryList: [
-      {
-        name: "Regular Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Oversized Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Slim Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Relaxed Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Super Loose Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Boxy Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Skinny Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Straight Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Loose Comfort Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Square Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Loose Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Tapered Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Wide Leg",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-      {
-        name: "Monster Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tracksuit" },
-      },
-    ],
-  },
-  {
-    name: "Sleeve",
-    subCategoryList: [
-      {
-        name: "Regular Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "shirt" },
-      },
-      {
-        name: "Half Sleeve",
-        search: { name: "", description: "" },
-        filter: { subCategory: "shirt" },
-      },
-      {
-        name: "Full Sleeve",
-        search: { name: "", description: "" },
-        filter: { subCategory: "shirt" },
-      },
-      {
-        name: "Sleeveless",
-        search: { name: "", description: "" },
-        filter: { subCategory: "shirt" },
-      },
-      {
-        name: "Raglan Sleeve",
-        search: { name: "", description: "" },
-        filter: { subCategory: "shirt" },
-      },
-    ],
-  },
+    name: "COLOR",
 
-  {
-    name: "Neck",
     subCategoryList: [
+      { type: "color", name: "GREEN", filter: { color: "GREEN" } },
       {
-        name: "Regular Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
+        type: "color",
+        name: "CREAM",
+        color: "CREAM",
+        filter: { color: "CREAM" },
       },
       {
-        name: "Round Neck",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
+        type: "color",
+        name: "ORANGE",
+        color: "ORANGE",
+        filter: { color: "ORANGE" },
+      },
+      { type: "color", name: "BLUE", color: "BLUE", filter: { color: "BLUE" } },
+      {
+        type: "color",
+        name: "BROWN",
+        color: "BROWN",
+        filter: { color: "BROWN" },
+      },
+      { type: "color", name: "GREY", color: "GREY", filter: { color: "GREY" } },
+      { type: "color", name: "RED", color: "RED", filter: { color: "RED" } },
+      {
+        type: "color",
+        name: "YELLOW",
+        color: "YELLOW",
+        filter: { color: "YELLOW" },
       },
       {
-        name: "Hooded",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
+        type: "color",
+        name: "WHITE",
+        color: "WHITE",
+        filter: { color: "WHITE" },
       },
       {
-        name: "Spread Collar",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
+        type: "color",
+        name: "BLACK",
+        color: "BLACK",
+        filter: { color: "BLACK" },
       },
       {
-        name: "Collar",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
+        type: "color",
+        name: "OLIVE",
+        color: "OLIVE",
+        filter: { color: "OLIVE" },
       },
       {
-        name: "Lapel Collar",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
+        type: "color",
+        name: "MAROON",
+        color: "MAROON",
+        filter: { color: "MAROON" },
       },
       {
-        name: "Slim Collar",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
+        type: "color",
+        name: "PURPLE",
+        color: "PURPLE",
+        filter: { color: "PURPLE" },
       },
       {
-        name: "Mandarin Collar",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
+        type: "color",
+        name: "BEIGE",
+        color: "BEIGE",
+        filter: { color: "BEIGE" },
+      },
+      { type: "color", name: "PINK", color: "PINK", filter: { color: "PINK" } },
+      {
+        type: "color",
+        name: "MULTICOLOR",
+        color: "MULTICOLOR",
+        filter: { color: "MULTICOLOR" },
       },
       {
-        name: "Polo",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
+        type: "color",
+        name: "CHARCOAL",
+        color: "CHARCOAL",
+        filter: { color: "CHARCOAL" },
       },
       {
-        name: "V-Neck",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
-      },
-      {
-        name: "High Neck",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
-      },
-      {
-        name: "Stand Collar",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
-      },
-      {
-        name: "Henley Neck",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
-      },
-      {
-        name: "Scoop Neck",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
-      },
-      {
-        name: "Turtle Neck",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
-      },
-      {
-        name: "Resort Collar",
-        search: { name: "", description: "" },
-        filter: { subCategory: "tshirt" },
+        type: "color",
+        name: "SILVER",
+        color: "SILVER",
+        filter: { color: "SILVER" },
       },
     ],
   },
   {
-    name: "Type",
+    name: "Gender",
+
     subCategoryList: [
       {
-        name: "Regular Fit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
+        name: "Men",
+        filter: { gender: "Men" },
+        type: "gender",
       },
       {
-        name: "T-Shirt",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Boxer",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Vest",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Shirt",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Shorts",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Jeans",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Sweatshirt",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Hoodies",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Joggers",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Cargo",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Pyjama",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Trousers",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Lounge Pants",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Shirt & Shorts Set",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Jacket",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Flat Knits",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Puffer Jacket",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "T-Shirt & Shorts Set",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Sweater",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Wind Cheater",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Trackpants",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Chino",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Casual Pants",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Long Kurta",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Short Kurta",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Tracksuit",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Denim",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Polo",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Sports Shorts",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Co-Ordinates",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Cargo Jogger",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Hoodie & Jogger Set",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "T-Shirt & Jogger Set",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Bombers",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Kurta",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Parachute Pants",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Sweatshirt & Jogger Set",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Harem Pants",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
-      },
-      {
-        name: "Nehru Jacket",
-        search: { name: "", description: "" },
-        filter: { subCategory: "pyjamas" },
+        name: "Women",
+
+        filter: { gender: "Women" },
+        type: "gender",
       },
     ],
   },
-  // {
-  //   name: "Ratings",
-  //   subCategoryList: [
-  //     "4.5 and above",
-  //     "4 and above",
-  //     "3.5 and above",
-  //     "3 and above",
-  //     "2.5 and above",
-  //     "2 and above",
-  //     "1.5 and above",
-  //   ],
-  // },
-  // {
-  //   name: "Discount",
-  //   subCategoryList: [
-  //     "10% Or More",
-  //     "20% Or More",
-  //     "30% Or More",
-  //     "40% Or More",
-  //     "50% Or More",
-  //     "60% Or More",
-  //     "70% Or More",
-  //     "80% Or More",
-  //   ],
-  // },
-  // {
-  //   name: "Sort By",
-  //   subCategoryList: [
-  //     "Popular",
-  //     "New",
-  //     "Price : High to Low",
-  //     "Price : Low to High",
-  //   ],
-  // },
 ];
 
 export const searchResult = [
