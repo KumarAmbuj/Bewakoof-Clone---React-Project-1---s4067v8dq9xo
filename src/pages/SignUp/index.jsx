@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./signup.css";
 import { Link, useNavigate } from "react-router-dom";
 import Loader from "../../component/Loader";
+import mixpanel from "mixpanel-browser";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -89,6 +90,19 @@ function SignUp() {
         setNameError("Name must have length greater than 3");
       }
     }
+
+    const userData = {
+      email,
+      password,
+      method: 'email',
+      userType: 'Free',
+    };
+
+    mixpanel.track('CONTINUE', {
+      method: userData.method,
+      userType: userData.userType,
+      email: sendSignUpData.email,
+    });
   }
 
   function passwordHandler() {
